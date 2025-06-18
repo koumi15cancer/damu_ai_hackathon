@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Hiking at Lands End",
+    "category": "hiking",
+    "location": "San Francisco",
+    "cost_per_person": 0,
+    "group_size": [2, 20],
+    "description": "Scenic coastal trail with breathtaking views of the Golden Gate Bridge."
+  },
+  {
+    "id": 2,
+    "name": "Movie Night at AMC Metreon",
+    "category": "movies",
+    "location": "San Francisco",
+    "cost_per_person": 15,
+    "group_size": [2, 50],
+    "description": "Watch the latest blockbuster in a state-of-the-art theater."
+  },
+  {
+    "id": 3,
+    "name": "Board Game Cafe",
+    "category": "games",
+    "location": "San Francisco",
+    "cost_per_person": 10,
+    "group_size": [4, 12],
+    "description": "Enjoy a variety of board games while sipping on coffee and snacks."
+  },
+  {
+    "id": 4,
+    "name": "Escape Room Challenge",
+    "category": "games",
+    "location": "San Francisco",
+    "cost_per_person": 25,
+    "group_size": [4, 8],
+    "description": "Solve puzzles and escape from themed rooms within 60 minutes."
+  },
+  {
+    "id": 5,
+    "name": "Cooking Class at Sur La Table",
+    "category": "dining",
+    "location": "San Francisco",
+    "cost_per_person": 75,
+    "group_size": [4, 16],
+    "description": "Learn to cook gourmet dishes with professional chefs."
+  },
+  {
+    "id": 6,
+    "name": "Golden Gate Park Picnic",
+    "category": "dining",
+    "location": "San Francisco",
+    "cost_per_person": 20,
+    "group_size": [2, 30],
+    "description": "Enjoy a picnic in the beautiful Golden Gate Park with team-provided food."
+  },
+  {
+    "id": 7,
+    "name": "Bowling at Presidio Bowl",
+    "category": "games",
+    "location": "San Francisco",
+    "cost_per_person": 18,
+    "group_size": [4, 20],
+    "description": "Classic bowling fun with shoe rental included."
+  },
+  {
+    "id": 8,
+    "name": "Wine Tasting Tour",
+    "category": "dining",
+    "location": "San Francisco",
+    "cost_per_person": 45,
+    "group_size": [4, 12],
+    "description": "Visit local wineries and learn about wine tasting."
+  },
+  {
+    "id": 9,
+    "name": "Indoor Rock Climbing",
+    "category": "hiking",
+    "location": "San Francisco",
+    "cost_per_person": 22,
+    "group_size": [2, 15],
+    "description": "Challenge yourself with indoor rock climbing walls."
+  },
+  {
+    "id": 10,
+    "name": "Comedy Night",
+    "category": "movies",
+    "location": "San Francisco",
+    "cost_per_person": 20,
+    "group_size": [4, 30],
+    "description": "Enjoy a night of laughter at a local comedy club."
+  }
+] 
