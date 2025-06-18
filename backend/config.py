@@ -8,8 +8,38 @@ load_dotenv()
 GOOGLE_CLIENT_ID = os.getenv('GOOGLE_CLIENT_ID')
 GOOGLE_CLIENT_SECRET = os.getenv('GOOGLE_CLIENT_SECRET')
 
-# OpenAI API configuration
+# AI Provider API Keys
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+ANTHROPIC_API_KEY = os.getenv('ANTHROPIC_API_KEY')
+GOOGLE_AI_API_KEY = os.getenv('GOOGLE_AI_API_KEY')
+
+# AI Configuration
+AI_CONFIG = {
+    'default_provider': os.getenv('DEFAULT_AI_PROVIDER', 'openai'),
+    'fallback_provider': os.getenv('FALLBACK_AI_PROVIDER', 'anthropic'),
+    'models': {
+        'openai': {
+            'default': 'gpt-4',
+            'fallback': 'gpt-3.5-turbo',
+            'available': ['gpt-4', 'gpt-4-turbo', 'gpt-3.5-turbo', 'gpt-4o']
+        },
+        'anthropic': {
+            'default': 'claude-3-sonnet-20240229',
+            'fallback': 'claude-3-haiku-20240307',
+            'available': ['claude-3-sonnet-20240229', 'claude-3-haiku-20240307', 'claude-3-opus-20240229']
+        },
+        'google': {
+            'default': 'gemini-1.5-pro',
+            'fallback': 'gemini-1.5-flash',
+            'available': ['gemini-1.5-pro', 'gemini-1.5-flash', 'gemini-1.0-pro']
+        }
+    },
+    'settings': {
+        'temperature': 0.7,
+        'max_tokens': 500,
+        'timeout': 30
+    }
+}
 
 # Google Maps API configuration
 GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
