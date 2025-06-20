@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "date": "2024-01-15",
+    "theme": "fun",
+    "location": "District 1",
+    "participants": ["Ben", "Sarah", "Mike", "Lisa"],
+    "activities": ["Korean BBQ", "Karaoke"],
+    "total_cost": 1200000
+  },
+  {
+    "id": 2,
+    "date": "2024-02-20",
+    "theme": "chill",
+    "location": "District 3",
+    "participants": ["Ben", "Lisa", "Emma", "Sophie"],
+    "activities": ["Cafe hopping", "Board games"],
+    "total_cost": 800000
+  },
+  {
+    "id": 3,
+    "date": "2024-03-10",
+    "theme": "outdoor",
+    "location": "District 7",
+    "participants": ["Mike", "David", "Emma", "Alex"],
+    "activities": ["Park walk", "Street food"],
+    "total_cost": 600000
+  },
+  {
+    "id": 4,
+    "date": "2024-04-05",
+    "theme": "fun",
+    "location": "Binh Thanh",
+    "participants": ["Sarah", "David", "Alex", "Sophie"],
+    "activities": ["Escape room", "Bowling"],
+    "total_cost": 1000000
+  },
+  {
+    "id": 5,
+    "date": "2024-05-12",
+    "theme": "chill",
+    "location": "District 2",
+    "participants": ["Ben", "Emma", "Sophie", "Lisa"],
+    "activities": ["Yoga class", "Healthy dinner"],
+    "total_cost": 900000
+  }
+]

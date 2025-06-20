@@ -218,12 +218,12 @@ def main():
     load_dotenv()
     
     # Check if any AI providers are configured
-    required_keys = ['OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'GOOGLE_AI_API_KEY']
+    required_keys = ['OPENAI_API_KEY', 'GOOGLE_AI_API_KEY']
     configured_providers = [key for key in required_keys if os.getenv(key)]
     
     if not configured_providers:
         print("⚠️  No AI provider API keys found in environment variables")
-        print("Please set at least one of: OPENAI_API_KEY, ANTHROPIC_API_KEY, GOOGLE_AI_API_KEY")
+        print("Please set at least one of: OPENAI_API_KEY, GOOGLE_AI_API_KEY")
         return
     
     print(f"Configured providers: {configured_providers}")
