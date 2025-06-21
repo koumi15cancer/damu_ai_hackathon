@@ -1057,7 +1057,12 @@ def clear_analytics_cache(
 def load_analytics_data():
     """Load analytics data from JSON file."""
     try:
-        with open("analytics_data.json", "r", encoding="utf-8") as f:
+        # Ensure tmp directory exists
+        tmp_dir = "tmp"
+        os.makedirs(tmp_dir, exist_ok=True)
+
+        analytics_file = os.path.join(tmp_dir, "analytics_data.json")
+        with open(analytics_file, "r", encoding="utf-8") as f:
             return json.load(f)
     except FileNotFoundError:
         return {"analytics_history": [], "suggestions_history": []}
@@ -1069,6 +1074,10 @@ def load_analytics_data():
 def save_analytics_data(analytics_data, suggestions, analytics_summary):
     """Save analytics data to JSON file."""
     try:
+        # Ensure tmp directory exists
+        tmp_dir = "tmp"
+        os.makedirs(tmp_dir, exist_ok=True)
+
         existing_data = load_analytics_data()
 
         # Add new analytics entry
@@ -1087,7 +1096,8 @@ def save_analytics_data(analytics_data, suggestions, analytics_summary):
                 -50:
             ]
 
-        with open("analytics_data.json", "w", encoding="utf-8") as f:
+        analytics_file = os.path.join(tmp_dir, "analytics_data.json")
+        with open(analytics_file, "w", encoding="utf-8") as f:
             json.dump(existing_data, f, indent=2, ensure_ascii=False)
 
     except Exception as e:

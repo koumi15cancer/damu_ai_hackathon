@@ -14,7 +14,23 @@
       "Korean BBQ",
       "Karaoke"
     ],
-    "total_cost": 1200000
+    "total_cost": 1200000,
+    "member_ratings": [
+      {
+        "member_name": "Sarah",
+        "rating": 3,
+        "feedback": "",
+        "categories": {
+          "fun": 3,
+          "organization": 3,
+          "value": 4,
+          "overall": 4
+        },
+        "submitted_at": "2025-06-21T08:18:31.801Z"
+      }
+    ],
+    "ai_rating": 3,
+    "rating": 3.0
   },
   {
     "id": 2,
