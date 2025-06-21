@@ -825,13 +825,26 @@ def create_analytics_summary(analytics_data):
         else:
             rating_trend = "No rating data available"
         
+        # Generate time series data for charting
+        time_series_data = []
+        # Sort events chronologically for the chart
+        sorted_events = sorted(analytics_data['events'], key=lambda x: x.get('date', ''))
+        for event in sorted_events:
+            if event.get('date') and event.get('rating') is not None:
+                time_series_data.append({
+                    'date': event.get('date'),
+                    'rating': event.get('rating'),
+                    'theme': event.get('theme'),
+                })
+        
         return {
             'total_events': len(events),
             'most_popular_theme': most_popular_theme,
             'average_cost': round(average_cost, 2),
             'common_activities': common_activities,
             'rating_trends': rating_trend,
-            'theme_distribution': theme_counts
+            'theme_distribution': theme_counts,
+            'time_series_data': time_series_data
         }
         
     except Exception as e:
