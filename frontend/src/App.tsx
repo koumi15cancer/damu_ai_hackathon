@@ -36,6 +36,8 @@ import {
   Tabs,
   Tab,
   IconButton,
+  Avatar,
+  AvatarGroup,
 } from "@mui/material";
 import {
   ExpandMore,
@@ -53,10 +55,14 @@ import {
   Psychology,
   Science,
   Settings,
+  TrendingUp,
+  Lightbulb,
+  Analytics,
 } from "@mui/icons-material";
 import axios from "axios";
 import History from "./History";
 import TeamMemberManagement from "./TeamMemberManagement";
+import AnalyticsSuggestions from "./AnalyticsSuggestions";
 
 interface TeamMember {
   id: string;
@@ -101,6 +107,8 @@ function App() {
   const [saveSuccessDialogOpen, setSaveSuccessDialogOpen] = useState<boolean>(false);
   const [savingPlan, setSavingPlan] = useState<boolean>(false);
   const [duplicateDialogOpen, setDuplicateDialogOpen] = useState<boolean>(false);
+  const [analyticsSuggestions, setAnalyticsSuggestions] = useState<any>(null);
+  const [loadingSuggestions, setLoadingSuggestions] = useState(false);
 
   const [userPreferences, setUserPreferences] = useState<UserPreferences>({
     theme: "fun 🎉",
@@ -113,6 +121,7 @@ function App() {
   // Load team members on component mount
   useEffect(() => {
     loadTeamMembers();
+    loadAnalyticsSuggestions();
   }, []);
 
   const loadTeamMembers = async () => {
@@ -131,6 +140,18 @@ function App() {
       setError(
         "Failed to load team members. Please check if the backend server is running."
       );
+    }
+  };
+
+  const loadAnalyticsSuggestions = async () => {
+    setLoadingSuggestions(true);
+    try {
+      const response = await axios.get('http://localhost:5000/analytics/suggestions?limit=5');
+      setAnalyticsSuggestions(response.data);
+    } catch (error) {
+      console.error('Failed to load suggestions:', error);
+    } finally {
+      setLoadingSuggestions(false);
     }
   };
 
@@ -380,18 +401,45 @@ function App() {
               variant='contained'
               size='large'
               onClick={handleGeneratePlans}
-              disabled={
-                loading || userPreferences.available_members.length === 0
-              }
-              sx={{ mt: 2 }}
-              fullWidth>
-              {loading ? (
-                <CircularProgress size={24} color='inherit' />
-              ) : (
-                "Generate Team Bonding Plans"
-              )}
+              disabled={userPreferences.available_members.length === 0}
+              sx={{ mt: 2 }}>
+              Generate Event Plans
             </Button>
           </Grid>
+
+          {/* Analytics Suggestions */}
+          {analyticsSuggestions && analyticsSuggestions.suggestions && analyticsSuggestions.suggestions.length > 0 && (
+            <Grid item xs={12}>
+              <Paper sx={{ p: 3, mt: 3, bgcolor: 'grey.50' }}>
+                <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center' }}>
+                  <Lightbulb sx={{ mr: 1, color: 'warning.main' }} />
+                  AI Suggestions for Better Events
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                  Based on your recent events, here are some insights to improve your team bonding:
+                </Typography>
+                <Grid container spacing={2}>
+                  {analyticsSuggestions.suggestions.slice(0, 2).map((suggestion: any, index: number) => (
+                    <Grid item xs={12} md={6} key={index}>
+                      <Card variant="outlined" sx={{ p: 2 }}>
+                        <Typography variant="subtitle2" color="primary" gutterBottom>
+                          {suggestion.title}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {suggestion.description}
+                        </Typography>
+                        <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
+                          <Typography variant="caption" color="text.secondary">
+                            Confidence: {Math.round(suggestion.confidence * 100)}%
+                          </Typography>
+                        </Box>
+                      </Card>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Paper>
+            </Grid>
+          )}
         </Grid>
       </Paper>
 
@@ -490,6 +538,7 @@ function App() {
             <Tab label='🎉 Event Planner' />
             <Tab label='👥 Team Members' />
             <Tab label='📅 History' />
+            <Tab label='📊 Analytics' />
           </Tabs>
         </Box>
 
@@ -497,6 +546,7 @@ function App() {
         {activeTab === 0 && renderEventPlanner()}
         {activeTab === 1 && <TeamMemberManagement />}
         {activeTab === 2 && <History />}
+        {activeTab === 3 && <AnalyticsSuggestions />}
       </Box>
 
       {/* Plan Detail Dialog */}
