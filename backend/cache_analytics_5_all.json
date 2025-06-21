@@ -1,0 +1,63 @@
+{
+  "suggestions": [
+    {
+      "type": "theme_preference",
+      "title": "Prioritize 'Fun' Themed Events with Variety",
+      "description": "Data shows a strong preference for 'Fun' themed events (3 out of 5 events, including the highest rated ones).  While this is a good starting point, explore different interpretations of 'Fun' to avoid repetition.  For example, instead of generic 'Fun', try themes like 'Retro Game Night', 'Culinary Challenge', or 'Murder Mystery Dinner'. This adds a layer of novelty and caters to diverse interests within the team.",
+      "confidence": 0.9,
+      "data_points": 3,
+      "impact": "high"
+    },
+    {
+      "type": "cost_optimization",
+      "title": "Optimize Event Costs for Similar Experiences",
+      "description": "The 'Fun' events on 2025-06-21 demonstrate that engaging experiences can be achieved at different price points (300,000 VND vs. 450,000 VND). Analyze the specific activities within these events to understand what contributed to the similar high ratings despite the cost difference. This will help in planning future cost-effective events without compromising enjoyment.",
+      "confidence": 0.85,
+      "data_points": 2,
+      "impact": "medium"
+    },
+    {
+      "type": "activity_variety",
+      "title": "Introduce More Collaborative and Creative Activities",
+      "description": "While the current activities offer some variety, consider incorporating more collaborative and creative options.  Examples include escape rooms, team cooking classes, pottery workshops, or volunteering events. These activities encourage teamwork, communication, and shared accomplishment, leading to stronger bonds.",
+      "confidence": 0.8,
+      "data_points": 5,
+      "impact": "high"
+    },
+    {
+      "type": "timing",
+      "title": "Improve Event Rating Collection",
+      "description": "Two events lack rating data. Implement a consistent system for gathering feedback after each event.  A simple online survey or even a quick poll in a team chat can provide valuable insights for future planning.  This will help understand the effectiveness of different themes, activities, and cost levels.",
+      "confidence": 0.95,
+      "data_points": 2,
+      "impact": "medium"
+    },
+    {
+      "type": "location",
+      "title": "Explore Different Locations and Leverage Local Experiences",
+      "description": "The Street Food Tour in Phu Nhuan suggests an interest in exploring local experiences.  Diversify locations beyond regular venues. Consider parks, museums, art galleries, or even nearby towns for day trips. This adds a fresh perspective and can often be more cost-effective than traditional venues.",
+      "confidence": 0.75,
+      "data_points": 1,
+      "impact": "medium"
+    }
+  ],
+  "analytics_summary": {
+    "total_events": 5,
+    "most_popular_theme": "fun 🎉",
+    "average_cost": 650000.0,
+    "common_activities": [
+      "Team Dinner",
+      "Karaoke Night",
+      "Bar Hopping",
+      "Street Food Tour in Phu Nhuan",
+      "Board Games at The Workshop"
+    ],
+    "rating_trends": "Excellent - High satisfaction with recent events",
+    "theme_distribution": {
+      "fun 🎉": 2,
+      "chill": 1,
+      "fun": 1,
+      "outdoor": 1
+    }
+  }
+}

@@ -1,72 +1,75 @@
 [
   {
-    "id": 1,
+    "id": "bcc231fa-4b1d-4da2-96b1-a2cf5a9ca58f",
     "name": "Ben",
-    "location": "Mizuki Park, Binh Chanh",
-    "preferences": ["Vegetarian", "Chill places", "Cafe-hopping"],
+    "location": "MP7, Mizuki Park, Bình Hưng, Bình Chánh, Hồ Chí Minh, Vietnam",
+    "preferences": [
+      "Vegetarian",
+      "Bar",
+      "Dinner & chat",
+      "Asian food",
+      "Games"
+    ],
     "vibe": "Chill"
   },
   {
-    "id": 2,
-    "name": "Cody",
-    "location": "Huynh Tan Phat, D7",
-    "preferences": ["Meat-lover", "BBQ", "Bar/beer club", "Karaoke"],
-    "vibe": "Energetic"
-  },
-  {
-    "id": 3,
+    "id": "017a5ff1-591e-46b6-b903-1863dbf5e00b",
     "name": "Lil Thanh",
-    "location": "Le Duc Tho, Go Vap",
-    "preferences": ["Hotpot", "Outdoor walks", "Chill cafes"],
-    "vibe": "Chill"
+    "location": "41 Đ. Lê Đức Thọ, Phường 15, Gò Vấp, Hồ Chí Minh, Vietnam",
+    "preferences": [
+      "Meat-lover",
+      "BBQ",
+      "Hotpot",
+      "Games",
+      "Dinner & chat"
+    ],
+    "vibe": "Mixed"
   },
   {
-    "id": 4,
+    "id": "0109d71f-3d87-4e29-8edc-3dbc8c7e2a92",
+    "name": "Cody",
+    "location": "785 Huỳnh Tấn Phát, Phú Thuận, Quận 7, Hồ Chí Minh, Vietnam",
+    "preferences": [
+      "Dinner & chat",
+      "Office snacks",
+      "Games",
+      "Bar",
+      "Movie night",
+      "Outdoor walks",
+      "Meat-lover",
+      "BBQ"
+    ],
+    "vibe": "Energetic"
+  },
+  {
+    "id": "1fb18377-dc39-43b9-9370-c2d266bb468d",
     "name": "Big Thanh",
-    "location": "D1",
-    "preferences": ["Hotpot", "Karaoke", "Bar"],
+    "location": "Novaland - Garden Gate Phú Nhuận, 08 Hoàng Minh Giám, Phường 9, Phú Nhuận, Hồ Chí Minh 700000, Vietnam",
+    "preferences": [
+      "BBQ",
+      "Meat-lover",
+      "Hotpot",
+      "Bar",
+      "Asian food",
+      "Rooftop bar"
+    ],
     "vibe": "Energetic"
   },
   {
-    "id": 5,
+    "id": "916aa348-c135-4f17-a7cb-5e45f8f2373a",
     "name": "Mason",
-    "location": "D3",
-    "preferences": ["Games", "Movie night", "Office snacks"],
+    "location": "37/12 Đường 41, Linh Đông, Thủ Đức, Hồ Chí Minh, Vietnam",
+    "preferences": [
+      "Meat-lover",
+      "BBQ",
+      "Hotpot",
+      "Movie night",
+      "Dinner & chat",
+      "Office snacks",
+      "Games",
+      "Bar",
+      "Karaoke"
+    ],
     "vibe": "Mixed"
-  },
-  {
-    "id": 6,
-    "name": "Hoa",
-    "location": "D10",
-    "preferences": ["Vegetarian", "Asian food", "Dinner & chat"],
-    "vibe": "Chill"
-  },
-  {
-    "id": 7,
-    "name": "Khang",
-    "location": "Tan Phu",
-    "preferences": ["BBQ", "Karaoke", "Bar"],
-    "vibe": "Energetic"
-  },
-  {
-    "id": 8,
-    "name": "Huy",
-    "location": "Binh Thanh",
-    "preferences": ["Games", "Cafe-hopping", "Movie night"],
-    "vibe": "Mixed"
-  },
-  {
-    "id": 9,
-    "name": "Seven",
-    "location": "Phu Nhuan",
-    "preferences": ["BBQ", "Rooftop bar", "Dinner & chat"],
-    "vibe": "Energetic"
-  },
-  {
-    "id": 10,
-    "name": "Roy",
-    "location": "D5",
-    "preferences": ["Hotpot", "Karaoke", "Bar", "Games"],
-    "vibe": "Energetic"
   }
 ]

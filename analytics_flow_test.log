@@ -1,0 +1,40 @@
+2025-06-21 13:16:52,650 - INFO - 🎯 Analytics Flow Logging Test
+2025-06-21 13:16:52,650 - INFO - ============================================================
+2025-06-21 13:16:52,650 - INFO - 🚀 Starting Analytics Flow Test
+2025-06-21 13:16:52,650 - INFO - ============================================================
+2025-06-21 13:16:52,650 - INFO - 📊 Step 1: Checking initial analytics state
+2025-06-21 13:16:52,657 - INFO - ✅ Initial analytics loaded: 4 suggestions
+2025-06-21 13:16:52,657 - INFO - 📋 Step 2: Generating and saving a new plan
+2025-06-21 13:16:52,660 - INFO - ✅ Plan saved successfully: 92520bc9-2fc9-49e4-b862-e03b1b1535e9
+2025-06-21 13:16:52,660 - INFO - ⏳ Step 3: Waiting for processing...
+2025-06-21 13:16:54,665 - INFO - 📊 Step 4: Checking analytics after plan save
+2025-06-21 13:17:06,646 - INFO - ✅ Updated analytics loaded: 5 suggestions
+2025-06-21 13:17:06,647 - INFO - 🔄 Step 5: Testing manual analytics trigger
+2025-06-21 13:17:06,650 - INFO - ✅ Analytics trigger completed: Analytics update triggered successfully
+2025-06-21 13:17:06,650 - INFO - 📊 Step 6: Checking analytics after manual trigger
+2025-06-21 13:17:18,018 - INFO - ✅ Final analytics loaded: 5 suggestions
+2025-06-21 13:17:18,018 - INFO - 💾 Step 7: Testing cache behavior
+2025-06-21 13:17:18,018 - INFO - 🧪 Testing cache behavior...
+2025-06-21 13:17:28,616 - INFO - ⏱️ First request (fresh): 10.595s
+2025-06-21 13:17:28,616 - INFO - ⏱️ Second request (cached): 0.003s
+2025-06-21 13:17:28,616 - INFO - 🚀 Cache speedup: 3238.8x faster
+2025-06-21 13:17:28,616 - INFO - ✅ Cache data consistency verified
+2025-06-21 13:17:28,616 - INFO - 📈 Step 8: Generating test summary
+2025-06-21 13:17:28,616 - INFO - 📊 Test Summary:
+2025-06-21 13:17:28,616 - INFO - ----------------------------------------
+2025-06-21 13:17:28,616 - INFO - 📈 Suggestions count:
+2025-06-21 13:17:28,616 - INFO -   - Initial: 4
+2025-06-21 13:17:28,616 - INFO -   - After plan save: 5
+2025-06-21 13:17:28,616 - INFO -   - After manual trigger: 5
+2025-06-21 13:17:28,616 - INFO - ✅ Analytics updated after plan save
+2025-06-21 13:17:28,616 - INFO - ✅ Manual trigger successful
+2025-06-21 13:17:28,616 - INFO - 📊 Analytics Summary:
+2025-06-21 13:17:28,616 - INFO -   - Total events: 5
+2025-06-21 13:17:28,616 - INFO -   - Average cost: 750,000 VND
+2025-06-21 13:17:28,616 - INFO -   - Most popular theme: chill
+2025-06-21 13:17:28,616 - INFO - 🎉 Analytics Flow Test completed successfully!
+2025-06-21 13:17:28,617 - INFO - 🧪 Testing error scenarios...
+2025-06-21 13:17:40,829 - WARNING - ⚠️ Unexpected response for invalid limit: 200
+2025-06-21 13:17:40,833 - INFO - ✅ Non-existent theme handled correctly
+2025-06-21 13:17:40,833 - INFO - 🎉 All tests completed successfully!
+2025-06-21 13:17:40,833 - INFO - 📝 Check 'analytics_flow_test.log' for detailed logs

@@ -99,5 +99,198 @@
       "Healthy dinner"
     ],
     "total_cost": 900000
+  },
+  {
+    "id": "92520bc9-2fc9-49e4-b862-e03b1b1535e9",
+    "created_at": "2025-06-21T13:16:52.659174",
+    "date": "2025-06-21",
+    "theme": "fun 🎉",
+    "location": "District 1, Ho Chi Minh City",
+    "participants": [
+      "Alice",
+      "Bob",
+      "Charlie"
+    ],
+    "activities": [
+      "Team Dinner",
+      "Karaoke Night",
+      "Bar Hopping"
+    ],
+    "total_cost": 450000,
+    "phases": [
+      {
+        "activity": "Team Dinner",
+        "location": "Pho 24, District 1",
+        "cost": 250000
+      },
+      {
+        "activity": "Karaoke Night",
+        "location": "Karaoke Bar, District 1",
+        "cost": 150000
+      },
+      {
+        "activity": "Bar Hopping",
+        "location": "Bui Vien Street, District 1",
+        "cost": 50000
+      }
+    ],
+    "fit_analysis": "Perfect for energetic team members who enjoy social activities",
+    "rating": 4.5,
+    "contribution_needed": 0
+  },
+  {
+    "id": "00c33fd1-a11c-4a24-ab8f-dd4de83b9b1d",
+    "created_at": "2025-06-21T13:36:51.989268",
+    "date": "2024-01-15",
+    "theme": "fun 🎉",
+    "location": "District 1",
+    "participants": [
+      "Alice",
+      "Bob",
+      "Charlie"
+    ],
+    "activities": [
+      "Hotpot Dinner",
+      "Karaoke",
+      "Bar Hopping"
+    ],
+    "total_cost": 450000,
+    "rating": 4,
+    "phases": [
+      {
+        "activity": "Hotpot Dinner",
+        "cost": 250000
+      },
+      {
+        "activity": "Karaoke",
+        "cost": 100000
+      },
+      {
+        "activity": "Bar Hopping",
+        "cost": 100000
+      }
+    ]
+  },
+  {
+    "id": "b4f52568-4476-4794-a7da-d46276a4ee97",
+    "created_at": "2025-06-21T13:36:51.992221",
+    "date": "2024-01-20",
+    "theme": "chill 🧘",
+    "location": "District 2",
+    "participants": [
+      "Alice",
+      "Bob",
+      "David"
+    ],
+    "activities": [
+      "Cafe Meeting",
+      "Board Games"
+    ],
+    "total_cost": 200000,
+    "rating": 5,
+    "phases": [
+      {
+        "activity": "Cafe Meeting",
+        "cost": 150000
+      },
+      {
+        "activity": "Board Games",
+        "cost": 50000
+      }
+    ]
+  },
+  {
+    "id": "d8d81da4-3acf-4969-8afb-9c769b313d06",
+    "created_at": "2025-06-21T13:36:51.995239",
+    "date": "2024-01-25",
+    "theme": "outdoor 🌤",
+    "location": "District 7",
+    "participants": [
+      "Alice",
+      "Charlie",
+      "Eve"
+    ],
+    "activities": [
+      "Park Walk",
+      "Outdoor Dining"
+    ],
+    "total_cost": 300000,
+    "rating": 4,
+    "phases": [
+      {
+        "activity": "Park Walk",
+        "cost": 0
+      },
+      {
+        "activity": "Outdoor Dining",
+        "cost": 300000
+      }
+    ]
+  },
+  {
+    "id": "9da83a84-b28e-42b1-b106-4dcddd10544b",
+    "created_at": "2025-06-21T13:46:24.789986",
+    "date": "2025-06-21",
+    "theme": "fun 🎉",
+    "location": "Ho Chi Minh City",
+    "participants": [
+      "Ben",
+      "Lil Thanh",
+      "Cody",
+      "Big Thanh",
+      "Mason"
+    ],
+    "activities": [
+      "Street Food Tour in Phu Nhuan",
+      "Board Games at The Workshop"
+    ],
+    "total_cost": 300000,
+    "phases": [
+      {
+        "activity": "Street Food Tour in Phu Nhuan",
+        "coordinates": {
+          "lat": 10.7948,
+          "lng": 106.6754
+        },
+        "cost": 150000,
+        "indicators": [
+          "outdoor",
+          "vegetarian-friendly",
+          "alcohol-friendly"
+        ],
+        "isAlcoholFriendly": true,
+        "isIndoor": false,
+        "isOutdoor": true,
+        "isVegetarianFriendly": true,
+        "location": "Phan Xích Long Street, Phu Nhuan District, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+        "location_valid": true,
+        "map_link": "https://www.google.com/maps?q=10.7948,106.6754",
+        "zone": "Phu Nhuan"
+      },
+      {
+        "activity": "Board Games at The Workshop",
+        "coordinates": {
+          "lat": 10.7769,
+          "lng": 106.7009
+        },
+        "cost": 150000,
+        "indicators": [
+          "indoor",
+          "vegetarian-friendly",
+          "alcohol-friendly"
+        ],
+        "isAlcoholFriendly": true,
+        "isIndoor": true,
+        "isOutdoor": false,
+        "isVegetarianFriendly": true,
+        "location": "27 Ngô Đức Kế, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+        "location_valid": true,
+        "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+        "zone": "D1"
+      }
+    ],
+    "fit_analysis": "Suits team members: Ben, Lil Thanh, Big Thanh, Cody, Mason",
+    "rating": 4.5,
+    "contribution_needed": 0
   }
 ]
