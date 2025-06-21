@@ -1,25 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
-  Container,
-  Typography,
-  Paper,
-  Grid,
-  Card,
-  CardContent,
-  Box,
-  Chip,
-  Button,
   CircularProgress,
-  Alert,
-  Divider,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  SelectChangeEvent,
-  LinearProgress,
-  IconButton,
-  Tooltip
 } from '@mui/material';
 import {
   TrendingUp,
@@ -27,12 +8,21 @@ import {
   Psychology,
   Refresh,
   Analytics,
-  Star,
   AttachMoney,
   Group,
-  Schedule
+  Schedule,
 } from '@mui/icons-material';
 import axios from 'axios';
+import { Button } from './components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from './components/ui/select';
+import { Label } from './components/ui/label';
 
 interface Suggestion {
   type: string;
@@ -58,299 +48,254 @@ interface AnalyticsData {
 }
 
 const AnalyticsSuggestions: React.FC = () => {
-  const [analyticsData, setAnalyticsData] = useState<AnalyticsData | null>(null);
+  const [analyticsData, setAnalyticsData] = useState<AnalyticsData | null>(
+    null
+  );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [limit, setLimit] = useState<number>(10);
   const [themeFilter, setThemeFilter] = useState<string>('');
 
-  const loadAnalytics = async () => {
+  const loadAnalytics = useCallback(async () => {
     setLoading(true);
     setError(null);
-    
+
     try {
       const params = new URLSearchParams();
       params.append('limit', limit.toString());
       if (themeFilter) {
         params.append('theme', themeFilter);
       }
-      
-      const response = await axios.get(`http://localhost:5000/analytics/suggestions?${params}`);
+
+      const response = await axios.get(
+        `http://localhost:5000/analytics/suggestions?${params}`
+      );
       setAnalyticsData(response.data);
     } catch (err: any) {
       setError(err.response?.data?.error || 'Failed to load analytics');
     } finally {
       setLoading(false);
     }
-  };
+  }, [limit, themeFilter]);
 
   useEffect(() => {
     loadAnalytics();
-  }, [limit, themeFilter]);
+  }, [loadAnalytics]);
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'theme':
-        return <Group />;
+        return <Group className="h-5 w-5" />;
       case 'activity':
-        return <TrendingUp />;
+        return <TrendingUp className="h-5 w-5" />;
       case 'cost':
-        return <AttachMoney />;
+        return <AttachMoney className="h-5 w-5" />;
       case 'timing':
-        return <Schedule />;
+        return <Schedule className="h-5 w-5" />;
       default:
-        return <Lightbulb />;
-    }
-  };
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'theme':
-        return 'primary';
-      case 'activity':
-        return 'success';
-      case 'cost':
-        return 'warning';
-      case 'timing':
-        return 'info';
-      default:
-        return 'default';
+        return <Lightbulb className="h-5 w-5" />;
     }
   };
 
   const getConfidenceColor = (confidence: number) => {
-    if (confidence >= 0.8) return 'success';
-    if (confidence >= 0.6) return 'warning';
-    return 'error';
+    if (confidence >= 0.8) return 'text-green-500';
+    if (confidence >= 0.6) return 'text-yellow-500';
+    return 'text-red-500';
   };
 
   const formatConfidence = (confidence: number) => {
     return `${(confidence * 100).toFixed(0)}%`;
   };
 
-  if (loading) {
+  if (loading && !analyticsData) {
     return (
-      <Container maxWidth="lg" sx={{ py: 4 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 400 }}>
-          <CircularProgress />
-        </Box>
-      </Container>
+      <div className="flex justify-center items-center h-96">
+        <CircularProgress />
+      </div>
     );
   }
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-        <Box>
-          <Typography variant="h4" component="h1" gutterBottom>
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-3xl font-bold text-foreground">
             📊 Event Analytics & Suggestions
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
+          </h1>
+          <p className="text-muted-foreground">
             AI-powered insights based on your recent team bonding events
-          </Typography>
-        </Box>
-        <Tooltip title="Refresh Analytics">
-          <IconButton onClick={loadAnalytics} disabled={loading}>
-            <Refresh />
-          </IconButton>
-        </Tooltip>
-      </Box>
+          </p>
+        </div>
+        <Button variant="outline" onClick={loadAnalytics} disabled={loading}>
+          <Refresh className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
+        </Button>
+      </div>
 
-      {/* Filters */}
-      <Paper sx={{ p: 3, mb: 3 }}>
-        <Typography variant="h6" gutterBottom>
-          <Analytics sx={{ mr: 1, verticalAlign: 'middle' }} />
-          Analysis Filters
-        </Typography>
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
-            <FormControl fullWidth>
-              <InputLabel>Events to Analyze</InputLabel>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center">
+            <Analytics className="mr-2" /> Analysis Filters
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <Label>Events to Analyze</Label>
               <Select
                 value={limit.toString()}
-                label="Events to Analyze"
-                onChange={(e: SelectChangeEvent) => setLimit(Number(e.target.value))}
+                onValueChange={(value) => setLimit(Number(value))}
               >
-                <MenuItem value={5}>Last 5 events</MenuItem>
-                <MenuItem value={10}>Last 10 events</MenuItem>
-                <MenuItem value={20}>Last 20 events</MenuItem>
-                <MenuItem value={50}>Last 50 events</MenuItem>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select number of events" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="5">Last 5 events</SelectItem>
+                  <SelectItem value="10">Last 10 events</SelectItem>
+                  <SelectItem value="20">Last 20 events</SelectItem>
+                  <SelectItem value="50">Last 50 events</SelectItem>
+                </SelectContent>
               </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <FormControl fullWidth>
-              <InputLabel>Filter by Theme</InputLabel>
+            </div>
+            <div>
+              <Label>Filter by Theme</Label>
               <Select
                 value={themeFilter}
-                label="Filter by Theme"
-                onChange={(e: SelectChangeEvent) => setThemeFilter(e.target.value)}
+                onValueChange={(value) => setThemeFilter(value === "all" ? "" : value)}
               >
-                <MenuItem value="">All themes</MenuItem>
-                <MenuItem value="fun 🎉">Fun 🎉</MenuItem>
-                <MenuItem value="chill 🧘">Chill 🧘</MenuItem>
-                <MenuItem value="outdoor 🌤">Outdoor 🌤</MenuItem>
+                <SelectTrigger>
+                  <SelectValue placeholder="Filter by theme" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All themes</SelectItem>
+                  <SelectItem value="fun 🎉">Fun 🎉</SelectItem>
+                  <SelectItem value="chill 🧘">Chill 🧘</SelectItem>
+                  <SelectItem value="outdoor 🌤">Outdoor 🌤</SelectItem>
+                </SelectContent>
               </Select>
-            </FormControl>
-          </Grid>
-        </Grid>
-      </Paper>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {error && (
-        <Alert severity="error" sx={{ mb: 3 }}>
-          {error}
-        </Alert>
+        <div className="bg-destructive/10 border border-destructive/20 text-destructive p-4 rounded-md">
+          <h5 className="font-bold">Error</h5>
+          <p>{error}</p>
+        </div>
       )}
 
       {analyticsData && (
         <>
-          {/* Analytics Summary */}
-          <Paper sx={{ p: 3, mb: 3 }}>
-            <Typography variant="h6" gutterBottom>
-              📈 Analytics Summary
-            </Typography>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={3}>
-                <Box textAlign="center">
-                  <Typography variant="h4" color="primary">
+          <Card>
+            <CardHeader>
+              <CardTitle>📈 Analytics Summary</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div>
+                  <p className="text-3xl font-bold text-primary">
                     {analyticsData.analytics_summary.total_events}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  </p>
+                  <p className="text-sm text-muted-foreground">
                     Events Analyzed
-                  </Typography>
-                </Box>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Box textAlign="center">
-                  <Typography variant="h6" color="success.main">
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xl font-semibold text-green-600">
                     {analyticsData.analytics_summary.most_popular_theme}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  </p>
+                  <p className="text-sm text-muted-foreground">
                     Most Popular Theme
-                  </Typography>
-                </Box>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Box textAlign="center">
-                  <Typography variant="h6" color="warning.main">
-                    {analyticsData.analytics_summary.average_cost.toLocaleString()} VND
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Average Cost
-                  </Typography>
-                </Box>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Box textAlign="center">
-                  <Typography variant="h6" color="info.main">
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xl font-semibold text-amber-600">
+                    {analyticsData.analytics_summary.average_cost.toLocaleString()}{' '}
+                    VND
+                  </p>
+                  <p className="text-sm text-muted-foreground">Average Cost</p>
+                </div>
+                <div>
+                  <p className="text-xl font-semibold text-blue-600">
                     {analyticsData.analytics_summary.common_activities.length}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  </p>
+                  <p className="text-sm text-muted-foreground">
                     Common Activities
-                  </Typography>
-                </Box>
-              </Grid>
-            </Grid>
-            
-            <Divider sx={{ my: 2 }} />
-            
-            <Typography variant="subtitle1" gutterBottom>
-              Rating Trend
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {analyticsData.analytics_summary.rating_trends}
-            </Typography>
-            
-            {analyticsData.analytics_summary.common_activities.length > 0 && (
-              <>
-                <Typography variant="subtitle1" gutterBottom sx={{ mt: 2 }}>
-                  Popular Activities
-                </Typography>
-                <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-                  {analyticsData.analytics_summary.common_activities.map((activity, index) => (
-                    <Chip
-                      key={index}
-                      label={activity}
-                      size="small"
-                      variant="outlined"
-                      color="primary"
-                    />
-                  ))}
-                </Box>
-              </>
-            )}
-          </Paper>
+                  </p>
+                </div>
+              </div>
+              <div className="mt-6">
+                <h4 className="font-semibold mb-2">Rating Trend</h4>
+                <p className="text-sm text-muted-foreground">
+                  {analyticsData.analytics_summary.rating_trends}
+                </p>
+              </div>
+              <div className="mt-6">
+                <h4 className="font-semibold mb-2">Popular Activities</h4>
+                <div className="flex flex-wrap gap-2">
+                  {analyticsData.analytics_summary.common_activities.map(
+                    (activity, index) => (
+                      <div
+                        key={index}
+                        className="bg-secondary text-secondary-foreground px-2 py-1 text-xs rounded"
+                      >
+                        {activity}
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
-          {/* AI Suggestions */}
-          <Typography variant="h5" gutterBottom>
-            <Psychology sx={{ mr: 1, verticalAlign: 'middle' }} />
-            AI-Powered Suggestions
-          </Typography>
-          
-          {analyticsData.suggestions.length === 0 ? (
-            <Paper sx={{ p: 3, textAlign: 'center' }}>
-              <Typography variant="body1" color="text.secondary">
-                No suggestions available. Try analyzing more events or different themes.
-              </Typography>
-            </Paper>
-          ) : (
-            <Grid container spacing={3}>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Psychology className="mr-2" /> AI-Powered Suggestions
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
               {analyticsData.suggestions.map((suggestion, index) => (
-                <Grid item xs={12} md={6} key={index}>
-                  <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <CardContent sx={{ flexGrow: 1 }}>
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                          {getCategoryIcon(suggestion.category)}
-                          <Typography variant="h6" sx={{ ml: 1 }}>
-                            {suggestion.title}
-                          </Typography>
-                        </Box>
-                        <Chip
-                          label={suggestion.category}
-                          size="small"
-                          color={getCategoryColor(suggestion.category) as any}
-                          variant="outlined"
-                        />
-                      </Box>
-                      
-                      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                        {suggestion.description}
-                      </Typography>
-                      
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                          <Typography variant="caption" color="text.secondary" sx={{ mr: 1 }}>
-                            Confidence:
-                          </Typography>
-                          <Typography
-                            variant="caption"
-                            color={`${getConfidenceColor(suggestion.confidence)}.main`}
-                            sx={{ fontWeight: 'bold' }}
-                          >
-                            {formatConfidence(suggestion.confidence)}
-                          </Typography>
-                        </Box>
-                        <Typography variant="caption" color="text.secondary">
-                          Based on {suggestion.data_points} data points
-                        </Typography>
-                      </Box>
-                      
-                      <LinearProgress
-                        variant="determinate"
-                        value={suggestion.confidence * 100}
-                        color={getConfidenceColor(suggestion.confidence) as any}
-                        sx={{ mt: 1 }}
-                      />
-                    </CardContent>
-                  </Card>
-                </Grid>
+                <Card key={index} className="bg-muted/30">
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center">
+                      <div className="p-2 mr-3 bg-primary/10 rounded-full text-primary">
+                        {getCategoryIcon(suggestion.category)}
+                      </div>
+                      {suggestion.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      {suggestion.description}
+                    </p>
+                    <div className="flex justify-between items-center text-xs text-muted-foreground">
+                      <span>
+                        Based on {suggestion.data_points} data point(s)
+                      </span>
+                      <div className="flex items-center space-x-2">
+                        <span>Confidence:</span>
+                        <div className="w-24 bg-background rounded-full h-2.5">
+                          <div
+                            className="bg-primary h-2.5 rounded-full"
+                            style={{
+                              width: `${suggestion.confidence * 100}%`,
+                            }}
+                          ></div>
+                        </div>
+                        <span className={getConfidenceColor(suggestion.confidence)}>
+                          {formatConfidence(suggestion.confidence)}
+                        </span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
-            </Grid>
-          )}
+            </CardContent>
+          </Card>
         </>
       )}
-    </Container>
+    </div>
   );
 };
 

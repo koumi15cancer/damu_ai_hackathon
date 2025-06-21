@@ -1,30 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
-  Box,
-  Button,
-  TextField,
-  Typography,
-  Container,
-  Paper,
-  Card,
-  CardContent,
-  Chip,
   CircularProgress,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Checkbox,
-  FormControlLabel,
-  FormGroup,
-  Grid,
-  Divider,
   Rating,
-  Alert,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -33,36 +10,54 @@ import {
   ListItemText,
   ListItemIcon,
   SelectChangeEvent,
-  Tabs,
-  Tab,
-  IconButton,
-  Avatar,
-  AvatarGroup,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import {
   ExpandMore,
   LocationOn,
   AttachMoney,
   Group,
-  Star,
-  Restaurant,
-  LocalBar,
-  SportsEsports,
-  Nature,
   EmojiEvents,
-  Schedule,
   Directions,
-  Psychology,
-  Science,
-  Settings,
-  TrendingUp,
   Lightbulb,
-  Analytics,
+  Nature,
+  SportsEsports,
+  Palette,
 } from "@mui/icons-material";
 import axios from "axios";
 import History from "./History";
 import TeamMemberManagement from "./TeamMemberManagement";
 import AnalyticsSuggestions from "./AnalyticsSuggestions";
+import UIStyleDemo from "./components/UIStyleDemo";
+import { Button } from "./components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
+import { Input } from "./components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./components/ui/select";
+import { Checkbox } from "./components/ui/checkbox";
+import { Label } from "./components/ui/label";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "./components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
+import { cn } from "./lib/utils";
+import { Badge } from "./components/ui/badge";
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "./components/ui/alert";
 
 interface TeamMember {
   id: string;
@@ -103,12 +98,56 @@ function App() {
   const [error, setError] = useState<string>("");
   const [selectedPlan, setSelectedPlan] = useState<EventPlan | null>(null);
   const [planDialogOpen, setPlanDialogOpen] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<number>(0);
-  const [saveSuccessDialogOpen, setSaveSuccessDialogOpen] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState("planner");
+  const [saveSuccessDialogOpen, setSaveSuccessDialogOpen] =
+    useState<boolean>(false);
   const [savingPlan, setSavingPlan] = useState<boolean>(false);
   const [duplicateDialogOpen, setDuplicateDialogOpen] = useState<boolean>(false);
   const [analyticsSuggestions, setAnalyticsSuggestions] = useState<any>(null);
-  const [loadingSuggestions, setLoadingSuggestions] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState<string>("dark");
+  const [themeMenuAnchor, setThemeMenuAnchor] = useState<null | HTMLElement>(
+    null
+  );
+
+  const themes = [
+    { name: "default", label: "Default", class: "" },
+    { name: "light-pink", label: "Light Pink", class: "light-pink" },
+    { name: "light-purple", label: "Light Purple", class: "light-purple" },
+    { name: "light-yellow", label: "Light Yellow", class: "light-yellow" },
+    { name: "light-orange", label: "Light Orange", class: "light-orange" },
+    { name: "light-green", label: "Light Green", class: "light-green" },
+    { name: "light-blue", label: "Light Blue", class: "light-blue" },
+    { name: "dark", label: "Dark", class: "dark" },
+    { name: "dark-pink", label: "Dark Pink", class: "dark-pink" },
+    { name: "dark-purple", label: "Dark Purple", class: "dark-purple" },
+    { name: "dark-yellow", label: "Dark Yellow", class: "dark-yellow" },
+    { name: "dark-orange", label: "Dark Orange", class: "dark-orange" },
+    { name: "dark-green", label: "Dark Green", class: "dark-green" },
+    { name: "dark-blue", label: "Dark Blue", class: "dark-blue" },
+  ];
+
+  const changeTheme = (themeClass: string) => {
+    themes.forEach((theme) => {
+      if (theme.class && theme.class.trim() !== "") {
+        document.body.classList.remove(theme.class);
+      }
+    });
+
+    if (themeClass && themeClass.trim() !== "") {
+      document.body.classList.add(themeClass);
+    }
+
+    setCurrentTheme(themeClass || "default");
+    setThemeMenuAnchor(null);
+  };
+
+  const handleThemeMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setThemeMenuAnchor(event.currentTarget);
+  };
+
+  const handleThemeMenuClose = () => {
+    setThemeMenuAnchor(null);
+  };
 
   const [userPreferences, setUserPreferences] = useState<UserPreferences>({
     theme: "fun 🎉",
@@ -118,17 +157,16 @@ function App() {
     location_zone: "",
   });
 
-  // Load team members on component mount
   useEffect(() => {
     loadTeamMembers();
     loadAnalyticsSuggestions();
+    changeTheme("dark");
   }, []);
 
   const loadTeamMembers = async () => {
     try {
       const response = await axios.get("http://localhost:5000/team-members");
       setTeamMembers(response.data);
-      // Set all members as available by default
       setUserPreferences((prev: UserPreferences) => ({
         ...prev,
         available_members: response.data.map(
@@ -144,14 +182,13 @@ function App() {
   };
 
   const loadAnalyticsSuggestions = async () => {
-    setLoadingSuggestions(true);
     try {
-      const response = await axios.get('http://localhost:5000/analytics/suggestions?limit=5');
+      const response = await axios.get(
+        "http://localhost:5000/analytics/suggestions?limit=5"
+      );
       setAnalyticsSuggestions(response.data);
     } catch (error) {
-      console.error('Failed to load suggestions:', error);
-    } finally {
-      setLoadingSuggestions(false);
+      console.error("Failed to load suggestions:", error);
     }
   };
 
@@ -167,6 +204,7 @@ function App() {
 
       if (response.data.error) {
         setError(response.data.error);
+        setPlans([]);
         return;
       }
 
@@ -180,12 +218,15 @@ function App() {
   };
 
   const handleMemberToggle = (memberName: string) => {
-    setUserPreferences((prev: UserPreferences) => ({
-      ...prev,
-      available_members: prev.available_members.includes(memberName)
-        ? prev.available_members.filter((name: string) => name !== memberName)
-        : [...prev.available_members, memberName],
-    }));
+    setUserPreferences((prev: UserPreferences) => {
+      const isMemberSelected = prev.available_members.includes(memberName);
+      return {
+        ...prev,
+        available_members: isMemberSelected
+          ? prev.available_members.filter((name) => name !== memberName)
+          : [...prev.available_members, memberName],
+      };
+    });
   };
 
   const handlePlanClick = (plan: EventPlan) => {
@@ -198,33 +239,29 @@ function App() {
 
     try {
       setSavingPlan(true);
-      
-      // Prepare the plan data for saving
+
       const planData = {
-        date: userPreferences.date_time || new Date().toISOString().split('T')[0],
+        date:
+          userPreferences.date_time || new Date().toISOString().split("T")[0],
         theme: userPreferences.theme,
         location: userPreferences.location_zone || "Ho Chi Minh City",
         participants: userPreferences.available_members,
-        activities: selectedPlan.phases.map(phase => phase.activity),
+        activities: selectedPlan.phases.map((phase) => phase.activity),
         total_cost: selectedPlan.total_cost,
         phases: selectedPlan.phases,
         fit_analysis: selectedPlan.fit_analysis,
         rating: selectedPlan.rating,
-        contribution_needed: selectedPlan.contribution_needed
+        contribution_needed: selectedPlan.contribution_needed,
       };
 
-      // Save the plan to the backend
-      const response = await axios.post("http://localhost:5000/event-history", planData);
-      
-      // Close the dialog and show success message
+      await axios.post("http://localhost:5000/event-history", planData);
+
       setPlanDialogOpen(false);
       setSelectedPlan(null);
       setSaveSuccessDialogOpen(true);
-      
     } catch (error: any) {
       console.error("Failed to save plan:", error);
-      
-      // Handle duplicate detection from backend
+
       if (error.response && error.response.status === 409) {
         setDuplicateDialogOpen(true);
       } else {
@@ -248,384 +285,361 @@ function App() {
     }
   };
 
-  const getThemeColor = (theme: string) => {
-    switch (theme) {
-      case "fun 🎉":
-        return "#ff6b6b";
-      case "chill 🧘":
-        return "#4ecdc4";
-      case "outdoor 🌤":
-        return "#45b7d1";
-      default:
-        return "#95a5a6";
-    }
-  };
-
   const renderEventPlanner = () => (
-    <Container maxWidth='lg' sx={{ py: 4 }}>
-      <Typography variant='h3' component='h1' gutterBottom align='center'>
-        Team Bonding Event Planner
-      </Typography>
-      <Typography
-        variant='h6'
-        color='text.secondary'
-        align='center'
-        gutterBottom>
-        Generate personalized team bonding plans based on member preferences
-      </Typography>
+    <div className="space-y-6">
+      <div className="text-center">
+        <h1 className="text-3xl font-bold text-foreground">
+          Team Bonding Event Planner
+        </h1>
+        <p className="text-muted-foreground">
+          Generate personalized team bonding plans based on member preferences
+        </p>
+      </div>
 
-      <Paper elevation={3} sx={{ p: 4, mt: 4 }}>
-        <Typography variant='h5' gutterBottom>
-          Event Preferences
-        </Typography>
-
-        <Grid container spacing={3}>
-          {/* Theme Selection */}
-          <Grid item xs={12} md={6}>
-            <FormControl fullWidth>
-              <InputLabel>Event Theme</InputLabel>
+      <Card>
+        <CardHeader>
+          <CardTitle>Event Preferences</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <Label>Event Theme</Label>
               <Select
                 value={userPreferences.theme}
-                label='Event Theme'
-                onChange={(e: SelectChangeEvent) =>
-                  setUserPreferences((prev: UserPreferences) => ({
-                    ...prev,
-                    theme: e.target.value,
-                  }))
-                }>
-                <MenuItem value='fun 🎉'>Fun 🎉</MenuItem>
-                <MenuItem value='chill 🧘'>Chill 🧘</MenuItem>
-                <MenuItem value='outdoor 🌤'>Outdoor 🌤</MenuItem>
+                onValueChange={(value) =>
+                  setUserPreferences((prev) => ({ ...prev, theme: value }))
+                }
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a theme" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="fun 🎉">Fun 🎉</SelectItem>
+                  <SelectItem value="chill 🧘">Chill 🧘</SelectItem>
+                  <SelectItem value="outdoor 🌤">Outdoor 🌤</SelectItem>
+                </SelectContent>
               </Select>
-            </FormControl>
-          </Grid>
-
-          {/* Budget Contribution */}
-          <Grid item xs={12} md={6}>
-            <FormControl fullWidth>
-              <InputLabel>Budget Contribution</InputLabel>
+            </div>
+            <div>
+              <Label>Budget Contribution</Label>
               <Select
                 value={userPreferences.budget_contribution}
-                label='Budget Contribution'
-                onChange={(e: SelectChangeEvent) =>
-                  setUserPreferences((prev: UserPreferences) => ({
+                onValueChange={(value) =>
+                  setUserPreferences((prev) => ({
                     ...prev,
-                    budget_contribution: e.target.value,
+                    budget_contribution: value,
                   }))
-                }>
-                <MenuItem value='No'>No additional contribution</MenuItem>
-                <MenuItem value='Yes, up to 50,000 VND'>
-                  Yes, up to 50,000 VND
-                </MenuItem>
-                <MenuItem value='Yes, up to 100,000 VND'>
-                  Yes, up to 100,000 VND
-                </MenuItem>
-                <MenuItem value='Yes, up to 150,000 VND'>
-                  Yes, up to 150,000 VND
-                </MenuItem>
-                <MenuItem value='Yes, up to 200,000 VND'>
-                  Yes, up to 200,000 VND
-                </MenuItem>
+                }
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select budget" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="No">No additional contribution</SelectItem>
+                  <SelectItem value="Yes, up to 50,000 VND">
+                    Yes, up to 50,000 VND
+                  </SelectItem>
+                  <SelectItem value="Yes, up to 100,000 VND">
+                    Yes, up to 100,000 VND
+                  </SelectItem>
+                  <SelectItem value="Yes, up to 150,000 VND">
+                    Yes, up to 150,000 VND
+                  </SelectItem>
+                  <SelectItem value="Yes, up to 200,000 VND">
+                    Yes, up to 200,000 VND
+                  </SelectItem>
+                </SelectContent>
               </Select>
-            </FormControl>
-          </Grid>
+            </div>
+            <div>
+              <Label>Preferred Date & Time</Label>
+              <Input
+                type="datetime-local"
+                value={userPreferences.date_time}
+                onChange={(e) =>
+                  setUserPreferences((prev) => ({
+                    ...prev,
+                    date_time: e.target.value,
+                  }))
+                }
+              />
+            </div>
+            <div>
+              <Label>Preferred Location Zone</Label>
+              <Input
+                placeholder="e.g., District 1"
+                value={userPreferences.location_zone}
+                onChange={(e) =>
+                  setUserPreferences((prev) => ({
+                    ...prev,
+                    location_zone: e.target.value,
+                  }))
+                }
+              />
+            </div>
+          </div>
 
-          {/* Date and Time */}
-          <Grid item xs={12} md={6}>
-            <TextField
-              fullWidth
-              label='Preferred Date & Time'
-              type='datetime-local'
-              value={userPreferences.date_time}
-              onChange={(e) =>
-                setUserPreferences((prev: UserPreferences) => ({
-                  ...prev,
-                  date_time: e.target.value,
-                }))
-              }
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
-          </Grid>
-
-          {/* Location Zone */}
-          <Grid item xs={12} md={6}>
-            <TextField
-              fullWidth
-              label='Preferred Location Zone'
-              placeholder='e.g., District 1'
-              value={userPreferences.location_zone}
-              onChange={(e) =>
-                setUserPreferences((prev: UserPreferences) => ({
-                  ...prev,
-                  location_zone: e.target.value,
-                }))
-              }
-            />
-          </Grid>
-
-          {/* Team Members */}
-          <Grid item xs={12}>
-            <Typography variant='h6' gutterBottom>
+          <div>
+            <h3 className="text-lg font-medium text-foreground mb-2">
               Available Team Members
-            </Typography>
-            <FormGroup row>
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {teamMembers.map((member) => (
-                <FormControlLabel
-                  key={member.id}
-                  control={
-                    <Checkbox
-                      checked={userPreferences.available_members.includes(
-                        member.name
-                      )}
-                      onChange={() => handleMemberToggle(member.name)}
-                    />
-                  }
-                  label={
-                    <Box>
-                      <Typography variant='body2'>{member.name}</Typography>
-                      <Typography variant='caption' color='text.secondary'>
-                        {member.vibe} • {member.location}
-                      </Typography>
-                    </Box>
-                  }
-                />
+                <div key={member.id} className="flex items-center space-x-2">
+                  <Checkbox
+                    id={member.id}
+                    checked={userPreferences.available_members.includes(
+                      member.name
+                    )}
+                    onCheckedChange={() => handleMemberToggle(member.name)}
+                  />
+                  <Label
+                    htmlFor={member.id}
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    <span className="block">{member.name}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {member.vibe} • {member.location}
+                    </span>
+                  </Label>
+                </div>
               ))}
-            </FormGroup>
-          </Grid>
+            </div>
+          </div>
 
-          {/* Generate Button */}
-          <Grid item xs={12}>
+          <div>
             <Button
-              variant='contained'
-              size='large'
               onClick={handleGeneratePlans}
-              disabled={userPreferences.available_members.length === 0}
-              sx={{ mt: 2 }}>
-              Generate Event Plans
+              disabled={
+                loading || userPreferences.available_members.length === 0
+              }
+              size="lg"
+            >
+              {loading && (
+                <CircularProgress
+                  size={20}
+                  color="inherit"
+                  className="mr-2"
+                />
+              )}
+              {loading ? "Generating Plans..." : "Generate Event Plans"}
             </Button>
-          </Grid>
+          </div>
 
-          {/* Analytics Suggestions */}
-          {analyticsSuggestions && analyticsSuggestions.suggestions && analyticsSuggestions.suggestions.length > 0 && (
-            <Grid item xs={12}>
-              <Paper sx={{ p: 3, mt: 3, bgcolor: 'grey.50' }}>
-                <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Lightbulb sx={{ mr: 1, color: 'warning.main' }} />
-                  AI Suggestions for Better Events
-                </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                  Based on your recent events, here are some insights to improve your team bonding:
-                </Typography>
-                <Grid container spacing={2}>
-                  {analyticsSuggestions.suggestions.slice(0, 2).map((suggestion: any, index: number) => (
-                    <Grid item xs={12} md={6} key={index}>
-                      <Card variant="outlined" sx={{ p: 2 }}>
-                        <Typography variant="subtitle2" color="primary" gutterBottom>
-                          {suggestion.title}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          {suggestion.description}
-                        </Typography>
-                        <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-                          <Typography variant="caption" color="text.secondary">
-                            Confidence: {Math.round(suggestion.confidence * 100)}%
-                          </Typography>
-                        </Box>
-                      </Card>
-                    </Grid>
-                  ))}
-                </Grid>
-              </Paper>
-            </Grid>
-          )}
-        </Grid>
-      </Paper>
+          {analyticsSuggestions &&
+            analyticsSuggestions.suggestions &&
+            analyticsSuggestions.suggestions.length > 0 && (
+              <Card className="bg-muted/50">
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <Lightbulb className="mr-2 text-yellow-500" />
+                    AI Suggestions for Better Events
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Based on your recent events, here are some insights to
+                    improve your team bonding:
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {analyticsSuggestions.suggestions
+                      .slice(0, 2)
+                      .map((suggestion: any, index: number) => (
+                        <Card key={index} className="bg-background">
+                          <CardHeader>
+                            <CardTitle className="text-base text-primary">
+                              {suggestion.title}
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            <p className="text-sm text-muted-foreground">
+                              {suggestion.description}
+                            </p>
+                            <p className="text-xs text-muted-foreground mt-2">
+                              Confidence:{" "}
+                              {Math.round(suggestion.confidence * 100)}%
+                            </p>
+                          </CardContent>
+                        </Card>
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+        </CardContent>
+      </Card>
 
-      {/* Error Display */}
       {error && (
-        <Alert severity='error' sx={{ mt: 2 }}>
-          {error}
+        <Alert variant="destructive">
+          <AlertTitle>Error</AlertTitle>
+          <AlertDescription>{error}</AlertDescription>
         </Alert>
       )}
 
-      {/* Generated Plans */}
       {plans.length > 0 && (
-        <Box sx={{ mt: 4 }}>
-          <Typography variant='h5' gutterBottom>
+        <div>
+          <h2 className="text-2xl font-bold text-foreground mb-4">
             Generated Plans ({plans.length})
-          </Typography>
-          <Grid container spacing={3}>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {plans.map((plan, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    cursor: "pointer",
-                    transition: "transform 0.2s",
-                    "&:hover": {
-                      transform: "translateY(-4px)",
-                    },
-                  }}
-                  onClick={() => handlePlanClick(plan)}>
-                  <CardContent>
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                      <Box
-                        sx={{
-                          backgroundColor: getThemeColor(userPreferences.theme),
-                          borderRadius: "50%",
-                          p: 1,
-                          mr: 2,
-                        }}>
-                        {getThemeIcon(userPreferences.theme)}
-                      </Box>
-                      <Typography variant='h6'>Plan {index + 1}</Typography>
-                    </Box>
-
-                    <Box sx={{ mb: 2 }}>
-                      <Typography
-                        variant='body2'
-                        color='text.secondary'
-                        gutterBottom>
-                        {plan.fit_analysis}
-                      </Typography>
-                    </Box>
-
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                      <Rating value={plan.rating} readOnly size='small' />
-                      <Typography variant='body2' sx={{ ml: 1 }}>
-                        {plan.rating}/5
-                      </Typography>
-                    </Box>
-
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                      <AttachMoney sx={{ mr: 1, color: "text.secondary" }} />
-                      <Typography variant='body2'>
-                        {plan.total_cost.toLocaleString()} VND
-                      </Typography>
-                    </Box>
-
-                    {plan.contribution_needed > 0 && (
-                      <Alert severity='warning' sx={{ mb: 2 }}>
+              <Card
+                key={index}
+                className="cursor-pointer transition-transform hover:-translate-y-1"
+                onClick={() => handlePlanClick(plan)}
+              >
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <div className="p-2 mr-3 bg-primary/10 rounded-full text-primary">
+                      {getThemeIcon(userPreferences.theme)}
+                    </div>
+                    Plan {index + 1}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-muted-foreground">
+                    {plan.fit_analysis}
+                  </p>
+                  <div className="flex items-center">
+                    <Rating value={plan.rating} readOnly size="small" />
+                    <span className="text-sm ml-2">{plan.rating}/5</span>
+                  </div>
+                  <div className="flex items-center text-muted-foreground">
+                    <AttachMoney fontSize="small" className="mr-1" />
+                    <span className="text-sm">
+                      {plan.total_cost.toLocaleString()} VND
+                    </span>
+                  </div>
+                  {plan.contribution_needed > 0 && (
+                    <Alert variant="warning" className="mt-2">
+                      <AlertDescription>
                         Additional contribution:{" "}
                         {plan.contribution_needed.toLocaleString()} VND
-                      </Alert>
-                    )}
-
-                    <Typography variant='body2' color='text.secondary'>
-                      {plan.phases.length} phase
-                      {plan.phases.length !== 1 ? "s" : ""}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+                      </AlertDescription>
+                    </Alert>
+                  )}
+                  <p className="text-sm text-muted-foreground">
+                    {plan.phases.length} phase
+                    {plan.phases.length !== 1 ? "s" : ""}
+                  </p>
+                </CardContent>
+              </Card>
             ))}
-          </Grid>
-        </Box>
+          </div>
+        </div>
       )}
-    </Container>
+    </div>
   );
 
   return (
-    <Container maxWidth='lg'>
-      <Box sx={{ my: 4 }}>
-        {/* Main Tabs */}
-        <Box sx={{ borderBottom: 1, borderColor: "divider", mb: 3 }}>
-          <Tabs
-            value={activeTab}
-            onChange={(e, newValue) => setActiveTab(newValue)}>
-            <Tab label='🎉 Event Planner' />
-            <Tab label='👥 Team Members' />
-            <Tab label='📅 History' />
-            <Tab label='📊 Analytics' />
-          </Tabs>
-        </Box>
+    <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <div className="absolute top-4 left-4 z-50">
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={handleThemeMenuOpen}
+          aria-label="Change theme"
+        >
+          <Palette />
+        </Button>
+        <Menu
+          anchorEl={themeMenuAnchor}
+          open={Boolean(themeMenuAnchor)}
+          onClose={handleThemeMenuClose}
+        >
+          {themes.map((theme) => (
+            <MenuItem
+              key={theme.name}
+              onClick={() => changeTheme(theme.class)}
+              selected={currentTheme === theme.name}
+            >
+              {theme.label}
+            </MenuItem>
+          ))}
+        </Menu>
+      </div>
 
-        {/* Tab Content */}
-        {activeTab === 0 && renderEventPlanner()}
-        {activeTab === 1 && <TeamMemberManagement />}
-        {activeTab === 2 && <History />}
-        {activeTab === 3 && <AnalyticsSuggestions />}
-      </Box>
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <TabsList>
+          <TabsTrigger value="planner">🎉 Event Planner</TabsTrigger>
+          <TabsTrigger value="members">👥 Team Members</TabsTrigger>
+          <TabsTrigger value="history">📅 History</TabsTrigger>
+          <TabsTrigger value="analytics">📊 Analytics</TabsTrigger>
+          <TabsTrigger value="demo">🎨 UIStyleDemo</TabsTrigger>
+        </TabsList>
+        <TabsContent value="planner" className="mt-4">
+          {renderEventPlanner()}
+        </TabsContent>
+        <TabsContent value="members" className="mt-4">
+          <TeamMemberManagement />
+        </TabsContent>
+        <TabsContent value="history" className="mt-4">
+          <History />
+        </TabsContent>
+        <TabsContent value="analytics" className="mt-4">
+          <AnalyticsSuggestions />
+        </TabsContent>
+        <TabsContent value="demo" className="mt-4">
+          <UIStyleDemo />
+        </TabsContent>
+      </Tabs>
 
-      {/* Plan Detail Dialog */}
-      <Dialog
-        open={planDialogOpen}
-        onClose={() => setPlanDialogOpen(false)}
-        maxWidth='md'
-        fullWidth>
-        {selectedPlan && (
-          <>
-            <DialogTitle>
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-                <Box
-                  sx={{
-                    backgroundColor: getThemeColor(userPreferences.theme),
-                    borderRadius: "50%",
-                    p: 1,
-                    mr: 2,
-                  }}>
-                  {getThemeIcon(userPreferences.theme)}
-                </Box>
-                <Typography variant='h5' sx={{ fontWeight: "bold" }}>
-                  Team Bonding Plan
-                </Typography>
-              </Box>
-            </DialogTitle>
+      <Dialog open={planDialogOpen} onOpenChange={setPlanDialogOpen}>
+        <DialogContent className="max-w-3xl">
+          {selectedPlan && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="flex items-center">
+                  <div className="p-2 mr-3 bg-primary/10 rounded-full text-primary">
+                    {getThemeIcon(userPreferences.theme)}
+                  </div>
+                  <span className="text-2xl font-bold">
+                    Team Bonding Plan
+                  </span>
+                </DialogTitle>
+              </DialogHeader>
 
-            <DialogContent>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={8}>
-                  <Typography variant='h6' gutterBottom>
-                    📍 Event Phases
-                  </Typography>
-
+              <div className="grid md:grid-cols-3 gap-6 py-4">
+                <div className="md:col-span-2 space-y-3">
+                  <h3 className="text-lg font-semibold">📍 Event Phases</h3>
                   {selectedPlan.phases.map(
                     (phase: EventPhase, index: number) => (
                       <Accordion key={index} sx={{ mb: 2 }}>
                         <AccordionSummary expandIcon={<ExpandMore />}>
-                          <Box
-                            sx={{
-                              display: "flex",
-                              alignItems: "center",
-                              width: "100%",
-                            }}>
-                            <Typography variant='h6' sx={{ flexGrow: 1 }}>
+                          <div className="flex justify-between items-center w-full">
+                            <h4 className="font-semibold">
                               Phase {index + 1}: {phase.activity}
-                            </Typography>
-                            <Chip
-                              label={`${phase.cost.toLocaleString()} VND`}
-                              color='primary'
-                              size='small'
-                            />
-                          </Box>
+                            </h4>
+                            <Badge>
+                              {phase.cost.toLocaleString()} VND
+                            </Badge>
+                          </div>
                         </AccordionSummary>
-
                         <AccordionDetails>
                           <List dense>
                             <ListItem>
                               <ListItemIcon>
-                                <LocationOn color='primary' />
+                                <LocationOn color="primary" />
                               </ListItemIcon>
                               <ListItemText
-                                primary='Address'
+                                primary="Address"
                                 secondary={phase.location}
                               />
                             </ListItem>
-
                             {phase.map_link && (
                               <ListItem>
                                 <ListItemIcon>
-                                  <Directions color='primary' />
+                                  <Directions color="primary" />
                                 </ListItemIcon>
                                 <ListItemText
-                                  primary='Google Maps'
+                                  primary="Google Maps"
                                   secondary={
                                     <a
                                       href={phase.map_link}
-                                      target='_blank'
-                                      rel='noopener noreferrer'>
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="text-blue-500 hover:underline"
+                                    >
                                       Open in Maps
                                     </a>
                                   }
@@ -633,200 +647,178 @@ function App() {
                               </ListItem>
                             )}
                           </List>
-
-                          <Box
-                            sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
+                          <div className="flex gap-2 flex-wrap">
                             {phase.indicators.map((indicator, idx) => (
-                              <Chip
-                                key={idx}
-                                label={indicator}
-                                size='small'
-                                color={
-                                  indicator === "indoor"
-                                    ? "primary"
-                                    : indicator === "outdoor"
-                                    ? "secondary"
-                                    : indicator === "vegetarian-friendly"
-                                    ? "success"
-                                    : indicator === "alcohol-friendly"
-                                    ? "warning"
-                                    : "default"
-                                }
-                              />
+                              <Badge key={idx} variant="secondary">
+                                {indicator}
+                              </Badge>
                             ))}
-                          </Box>
+                          </div>
                         </AccordionDetails>
                       </Accordion>
                     )
                   )}
-                </Grid>
+                </div>
 
-                <Grid item xs={12} md={4}>
-                  <Paper sx={{ p: 2, mb: 2 }}>
-                    <Typography variant='h6' gutterBottom>
-                      💰 Cost Breakdown
-                    </Typography>
-                    <Typography
-                      variant='h4'
-                      sx={{ color: "#27ae60", fontWeight: "bold" }}>
-                      {selectedPlan.total_cost.toLocaleString()} VND
-                    </Typography>
-                    <Typography variant='body2' sx={{ color: "#7f8c8d" }}>
-                      per person
-                    </Typography>
-                    {selectedPlan.contribution_needed > 0 && (
-                      <Alert severity='warning' sx={{ mt: 1 }}>
-                        Additional contribution:{" "}
-                        {selectedPlan.contribution_needed.toLocaleString()} VND
-                      </Alert>
-                    )}
-                  </Paper>
+                <div className="space-y-4">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg">💰 Cost Breakdown</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-3xl font-bold text-green-600">
+                        {selectedPlan.total_cost.toLocaleString()} VND
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        per person
+                      </p>
+                      {selectedPlan.contribution_needed > 0 && (
+                        <Alert variant="warning" className="mt-2">
+                          <AlertDescription>
+                            Additional contribution:{" "}
+                            {selectedPlan.contribution_needed.toLocaleString()}{" "}
+                            VND
+                          </AlertDescription>
+                        </Alert>
+                      )}
+                    </CardContent>
+                  </Card>
 
-                  <Paper sx={{ p: 2, mb: 2 }}>
-                    <Typography variant='h6' gutterBottom>
-                      👥 Team Fit
-                    </Typography>
-                    <Typography variant='body2' sx={{ color: "#7f8c8d" }}>
-                      {selectedPlan.fit_analysis}
-                    </Typography>
-                    <Box sx={{ display: "flex", alignItems: "center", mt: 1 }}>
-                      <Rating
-                        value={selectedPlan.rating}
-                        readOnly
-                        size='small'
-                      />
-                      <Typography variant='body2' sx={{ ml: 1 }}>
-                        {selectedPlan.rating}/5
-                      </Typography>
-                    </Box>
-                  </Paper>
-                </Grid>
-              </Grid>
-            </DialogContent>
-
-            <DialogActions>
-              <Button onClick={() => setPlanDialogOpen(false)}>Close</Button>
-              <Button
-                variant='contained'
-                color='primary'
-                onClick={handleSavePlan}
-                disabled={savingPlan}
-                startIcon={savingPlan ? <CircularProgress size={20} /> : null}>
-                {savingPlan ? 'Saving...' : 'Save Plan'}
-              </Button>
-            </DialogActions>
-          </>
-        )}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg">👥 Team Fit</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">
+                        {selectedPlan.fit_analysis}
+                      </p>
+                      <div className="flex items-center mt-2">
+                        <Rating
+                          value={selectedPlan.rating}
+                          readOnly
+                          size="small"
+                        />
+                        <span className="ml-2 text-sm">
+                          {selectedPlan.rating}/5
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+              <DialogFooter>
+                <Button
+                  variant="outline"
+                  onClick={() => setPlanDialogOpen(false)}
+                >
+                  Close
+                </Button>
+                <Button onClick={handleSavePlan} disabled={savingPlan}>
+                  {savingPlan && (
+                    <CircularProgress
+                      size={20}
+                      color="inherit"
+                      className="mr-2"
+                    />
+                  )}
+                  {savingPlan ? "Saving..." : "Save Plan"}
+                </Button>
+              </DialogFooter>
+            </>
+          )}
+        </DialogContent>
       </Dialog>
 
-      {/* Save Success Dialog */}
       <Dialog
         open={saveSuccessDialogOpen}
-        onClose={() => setSaveSuccessDialogOpen(false)}
-        maxWidth='sm'
-        fullWidth>
-        <DialogTitle>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Box
-              sx={{
-                backgroundColor: "#4caf50",
-                borderRadius: "50%",
-                p: 1,
-                mr: 2,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: 40,
-                height: 40
-              }}>
-              <Typography variant="h6" sx={{ color: "white" }}>✓</Typography>
-            </Box>
-            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-              Plan Saved Successfully!
-            </Typography>
-          </Box>
-        </DialogTitle>
+        onOpenChange={setSaveSuccessDialogOpen}
+      >
         <DialogContent>
-          <Typography variant="body1" sx={{ mb: 2 }}>
-            Your team bonding plan has been saved to the event history.
-          </Typography>
-          <Alert severity="info" sx={{ mb: 2 }}>
-            <Typography variant="body2">
-              You can now view, edit, or delete this plan from the <strong>History tab</strong>.
-            </Typography>
-          </Alert>
-          <Typography variant="body2" color="text.secondary">
-            The plan includes all phases, costs, and team fit analysis for future reference.
-          </Typography>
+          <DialogHeader>
+            <DialogTitle className="flex items-center">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-green-500 text-white mr-3">
+                <span className="text-xl">✓</span>
+              </div>
+              <span className="font-bold">Plan Saved Successfully!</span>
+            </DialogTitle>
+          </DialogHeader>
+          <DialogDescription className="py-4 space-y-2">
+            <p>Your team bonding plan has been saved to the event history.</p>
+            <Alert variant="info">
+              <AlertDescription>
+                You can now view, edit, or delete this plan from the{" "}
+                <strong>History tab</strong>.
+              </AlertDescription>
+            </Alert>
+            <p className="text-xs text-muted-foreground">
+              The plan includes all phases, costs, and team fit analysis for
+              future reference.
+            </p>
+          </DialogDescription>
+          <DialogFooter>
+            <Button
+              variant="outline"
+              onClick={() => setSaveSuccessDialogOpen(false)}
+            >
+              Close
+            </Button>
+            <Button
+              onClick={() => {
+                setSaveSuccessDialogOpen(false);
+                setActiveTab("history");
+              }}
+            >
+              View in History
+            </Button>
+          </DialogFooter>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setSaveSuccessDialogOpen(false)}>Close</Button>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              setSaveSuccessDialogOpen(false);
-              setActiveTab(2); // Switch to History tab
-            }}>
-            View in History
-          </Button>
-        </DialogActions>
       </Dialog>
 
-      {/* Duplicate Detection Dialog */}
       <Dialog
         open={duplicateDialogOpen}
-        onClose={() => setDuplicateDialogOpen(false)}
-        maxWidth='sm'
-        fullWidth>
-        <DialogTitle>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Box
-              sx={{
-                backgroundColor: "#ff9800",
-                borderRadius: "50%",
-                p: 1,
-                mr: 2,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: 40,
-                height: 40
-              }}>
-              <Typography variant="h6" sx={{ color: "white" }}>⚠</Typography>
-            </Box>
-            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-              Plan Already Exists
-            </Typography>
-          </Box>
-        </DialogTitle>
+        onOpenChange={setDuplicateDialogOpen}
+      >
         <DialogContent>
-          <Typography variant="body1" sx={{ mb: 2 }}>
-            A similar plan has already been saved to the event history.
-          </Typography>
-          <Alert severity="warning" sx={{ mb: 2 }}>
-            <Typography variant="body2">
-              This prevents duplicate entries in your history. You can view the existing plan in the <strong>History tab</strong>.
-            </Typography>
-          </Alert>
-          <Typography variant="body2" color="text.secondary">
-            If you want to save a different version, try modifying the plan details first.
-          </Typography>
+          <DialogHeader>
+            <DialogTitle className="flex items-center">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-amber-500 text-white mr-3">
+                <span className="text-xl">⚠</span>
+              </div>
+              <span className="font-bold">Plan Already Exists</span>
+            </DialogTitle>
+          </DialogHeader>
+          <DialogDescription className="py-4 space-y-2">
+            <p>A similar plan has already been saved to the event history.</p>
+            <Alert variant="warning">
+              <AlertDescription>
+                This prevents duplicate entries in your history. You can view
+                the existing plan in the <strong>History tab</strong>.
+              </AlertDescription>
+            </Alert>
+            <p className="text-xs text-muted-foreground">
+              If you want to save a different version, try modifying the plan
+              details first.
+            </p>
+          </DialogDescription>
+          <DialogFooter>
+            <Button
+              variant="outline"
+              onClick={() => setDuplicateDialogOpen(false)}
+            >
+              Close
+            </Button>
+            <Button
+              onClick={() => {
+                setDuplicateDialogOpen(false);
+                setActiveTab("history");
+              }}
+            >
+              View in History
+            </Button>
+          </DialogFooter>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setDuplicateDialogOpen(false)}>Close</Button>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              setDuplicateDialogOpen(false);
-              setActiveTab(2); // Switch to History tab
-            }}>
-            View in History
-          </Button>
-        </DialogActions>
       </Dialog>
-    </Container>
+    </div>
   );
 }
 
