@@ -1,35 +1,37 @@
 import React, { useState, useEffect } from "react";
 import {
-  Box,
-  Button,
-  TextField,
-  Typography,
-  Container,
-  Paper,
-  Card,
-  CardContent,
-  Chip,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  IconButton,
-  Grid,
-  Alert,
-} from "@mui/material";
-import {
   Add,
   Edit,
   Delete,
   LocationOn,
   Psychology,
-  Favorite,
 } from "@mui/icons-material";
 import axios from "axios";
+import { Button } from "./components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "./components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "./components/ui/dialog";
+import { Input } from "./components/ui/input";
+import { Label } from "./components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./components/ui/select";
+import { Badge } from "./components/ui/badge";
+import { CircularProgress } from "@mui/material";
 
 interface TeamMember {
   id: string;
@@ -96,6 +98,14 @@ function TeamMemberManagement() {
     }
   };
 
+  const handleSaveMember = async () => {
+    if (editingMember) {
+      await handleUpdateMember();
+    } else {
+      await handleAddMember();
+    }
+  };
+
   const handleAddMember = async () => {
     try {
       setLoading(true);
@@ -105,7 +115,7 @@ function TeamMemberManagement() {
       );
       setTeamMembers([...teamMembers, response.data]);
       setDialogOpen(false);
-      setNewMember({ name: "", location: "", preferences: [], vibe: "Mixed" });
+      resetForm();
     } catch (error) {
       console.error("Failed to add team member:", error);
       setError("Failed to add team member. Please try again.");
@@ -129,8 +139,7 @@ function TeamMemberManagement() {
         )
       );
       setDialogOpen(false);
-      setEditingMember(null);
-      setNewMember({ name: "", location: "", preferences: [], vibe: "Mixed" });
+      resetForm();
     } catch (error) {
       console.error("Failed to update team member:", error);
       setError("Failed to update team member. Please try again.");
@@ -168,8 +177,13 @@ function TeamMemberManagement() {
 
   const openAddDialog = () => {
     setEditingMember(null);
-    setNewMember({ name: "", location: "", preferences: [], vibe: "Mixed" });
+    resetForm();
     setDialogOpen(true);
+  };
+
+  const resetForm = () => {
+    setEditingMember(null);
+    setNewMember({ name: "", location: "", preferences: [], vibe: "Mixed" });
   };
 
   const handlePreferenceToggle = (preference: string) => {
@@ -181,200 +195,170 @@ function TeamMemberManagement() {
     }));
   };
 
-  const getVibeColor = (vibe: string) => {
+  const getVibeBadgeVariant = (
+    vibe: string
+  ): "default" | "secondary" | "destructive" | "outline" => {
     switch (vibe) {
       case "Chill":
-        return "#4ecdc4";
+        return "default";
       case "Energetic":
-        return "#ff6b6b";
+        return "destructive";
       case "Mixed":
-        return "#95a5a6";
+        return "secondary";
       default:
-        return "#95a5a6";
+        return "outline";
     }
   };
 
   return (
-    <Container maxWidth='lg' sx={{ py: 4 }}>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          mb: 4,
-        }}>
-        <Typography variant='h4' component='h1'>
+    <div className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h1 className="text-3xl font-bold text-foreground">
           Team Member Management
-        </Typography>
-        <Button variant='contained' startIcon={<Add />} onClick={openAddDialog}>
-          Add Member
+        </h1>
+        <Button onClick={openAddDialog}>
+          <Add className="mr-2 h-4 w-4" /> Add Member
         </Button>
-      </Box>
+      </div>
 
       {error && (
-        <Alert severity='error' sx={{ mb: 3 }}>
-          {error}
-        </Alert>
+        <div className="bg-destructive/10 border border-destructive/20 text-destructive p-4 rounded-md">
+          <h5 className="font-bold">Error</h5>
+          <p>{error}</p>
+        </div>
       )}
 
-      <Grid container spacing={3}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {teamMembers.map((member) => (
-          <Grid item xs={12} md={6} lg={4} key={member.id}>
-            <Card>
-              <CardContent>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    mb: 2,
-                  }}>
-                  <Typography variant='h6' component='h2'>
-                    {member.name}
-                  </Typography>
-                  <Box>
-                    <IconButton
-                      size='small'
-                      onClick={() => openEditDialog(member)}
-                      sx={{ mr: 1 }}>
-                      <Edit />
-                    </IconButton>
-                    <IconButton
-                      size='small'
-                      color='error'
-                      onClick={() => handleDeleteMember(member.id)}>
-                      <Delete />
-                    </IconButton>
-                  </Box>
-                </Box>
-
-                <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                  <LocationOn sx={{ mr: 1, color: "text.secondary" }} />
-                  <Typography variant='body2' color='text.secondary'>
-                    {member.location}
-                  </Typography>
-                </Box>
-
-                <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                  <Psychology sx={{ mr: 1, color: "text.secondary" }} />
-                  <Chip
-                    label={member.vibe}
-                    size='small'
-                    sx={{
-                      backgroundColor: getVibeColor(member.vibe),
-                      color: "white",
-                    }}
-                  />
-                </Box>
-
-                <Box sx={{ mb: 2 }}>
-                  <Typography
-                    variant='body2'
-                    color='text.secondary'
-                    gutterBottom>
-                    Preferences:
-                  </Typography>
-                  <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                    {member.preferences.map((preference, index) => (
-                      <Chip
-                        key={index}
-                        label={preference}
-                        size='small'
-                        icon={<Favorite />}
-                        variant='outlined'
-                      />
-                    ))}
-                  </Box>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
+          <Card key={member.id} className="flex flex-col">
+            <CardHeader>
+              <div className="flex justify-between items-start">
+                <CardTitle>{member.name}</CardTitle>
+                <div className="flex space-x-1">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => openEditDialog(member)}
+                  >
+                    <Edit className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => handleDeleteMember(member.id)}
+                  >
+                    <Delete className="h-4 w-4 text-destructive" />
+                  </Button>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="flex-grow space-y-3">
+              <div className="flex items-center text-sm text-muted-foreground">
+                <LocationOn className="h-4 w-4 mr-2" />
+                {member.location}
+              </div>
+              <div className="flex items-center text-sm">
+                <Psychology className="h-4 w-4 mr-2 text-muted-foreground" />
+                <Badge variant={getVibeBadgeVariant(member.vibe)}>
+                  {member.vibe}
+                </Badge>
+              </div>
+              <div>
+                <h4 className="font-semibold text-sm mb-2">Preferences</h4>
+                <div className="flex flex-wrap gap-2">
+                  {member.preferences.map((pref, index) => (
+                    <Badge key={index} variant="outline">
+                      {pref}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         ))}
-      </Grid>
+      </div>
 
-      {/* Add/Edit Dialog */}
-      <Dialog
-        open={dialogOpen}
-        onClose={() => setDialogOpen(false)}
-        maxWidth='sm'
-        fullWidth>
-        <DialogTitle>
-          {editingMember ? "Edit Team Member" : "Add New Team Member"}
-        </DialogTitle>
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent>
-          <Box sx={{ pt: 1 }}>
-            <TextField
-              fullWidth
-              label='Name'
-              value={newMember.name}
-              onChange={(e) =>
-                setNewMember({ ...newMember, name: e.target.value })
-              }
-              sx={{ mb: 2 }}
-            />
-
-            <TextField
-              fullWidth
-              label='Location'
-              value={newMember.location}
-              onChange={(e) =>
-                setNewMember({ ...newMember, location: e.target.value })
-              }
-              sx={{ mb: 2 }}
-            />
-
-            <FormControl fullWidth sx={{ mb: 2 }}>
-              <InputLabel>Vibe</InputLabel>
+          <DialogHeader>
+            <DialogTitle>
+              {editingMember ? "Edit Team Member" : "Add New Team Member"}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="py-4 space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="name">Name</Label>
+              <Input
+                id="name"
+                value={newMember.name}
+                onChange={(e) =>
+                  setNewMember({ ...newMember, name: e.target.value })
+                }
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="location">Location</Label>
+              <Input
+                id="location"
+                value={newMember.location}
+                onChange={(e) =>
+                  setNewMember({ ...newMember, location: e.target.value })
+                }
+              />
+            </div>
+            <div className="space-y-2">
+              <Label>Vibe</Label>
               <Select
                 value={newMember.vibe}
-                label='Vibe'
-                onChange={(e) =>
-                  setNewMember({ ...newMember, vibe: e.target.value })
-                }>
-                {vibeOptions.map((vibe) => (
-                  <MenuItem key={vibe} value={vibe}>
-                    {vibe}
-                  </MenuItem>
-                ))}
+                onValueChange={(value) =>
+                  setNewMember({ ...newMember, vibe: value })
+                }
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a vibe" />
+                </SelectTrigger>
+                <SelectContent>
+                  {vibeOptions.map((vibe) => (
+                    <SelectItem key={vibe} value={vibe}>
+                      {vibe}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
               </Select>
-            </FormControl>
-
-            <Typography variant='body2' color='text.secondary' gutterBottom>
-              Preferences:
-            </Typography>
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, mb: 2 }}>
-              {preferenceOptions.map((preference) => (
-                <Chip
-                  key={preference}
-                  label={preference}
-                  size='small'
-                  onClick={() => handlePreferenceToggle(preference)}
-                  color={
-                    newMember.preferences.includes(preference)
-                      ? "primary"
-                      : "default"
-                  }
-                  variant={
-                    newMember.preferences.includes(preference)
-                      ? "filled"
-                      : "outlined"
-                  }
-                />
-              ))}
-            </Box>
-          </Box>
+            </div>
+            <div className="space-y-2">
+              <Label>Preferences</Label>
+              <div className="flex flex-wrap gap-2 p-2 border rounded-md min-h-[40px]">
+                {preferenceOptions.map((pref) => (
+                  <Button
+                    key={pref}
+                    variant={
+                      newMember.preferences.includes(pref)
+                        ? "default"
+                        : "outline"
+                    }
+                    size="sm"
+                    onClick={() => handlePreferenceToggle(pref)}
+                    className="h-auto py-1 px-2 text-xs"
+                  >
+                    {pref}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setDialogOpen(false)}>
+              Cancel
+            </Button>
+            <Button onClick={handleSaveMember} disabled={loading}>
+              {loading && <CircularProgress size={20} className="mr-2" />}
+              {editingMember ? "Save Changes" : "Add Member"}
+            </Button>
+          </DialogFooter>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setDialogOpen(false)}>Cancel</Button>
-          <Button
-            variant='contained'
-            onClick={editingMember ? handleUpdateMember : handleAddMember}
-            disabled={loading || !newMember.name || !newMember.location}>
-            {editingMember ? "Update" : "Add"}
-          </Button>
-        </DialogActions>
       </Dialog>
-    </Container>
+    </div>
   );
 }
 
