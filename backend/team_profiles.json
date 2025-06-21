@@ -71,5 +71,47 @@
       "Karaoke"
     ],
     "vibe": "Mixed"
+  },
+  {
+    "id": "8bd2f192-b0ed-47b6-9003-204fa8196501",
+    "name": "Khang",
+    "location": "53 Đ. Võ Văn Ngân, Linh Chiểu, Thủ Đức, Hồ Chí Minh, Vietnam",
+    "preferences": [
+      "Asian food",
+      "Office snacks",
+      "BBQ",
+      "Hotpot",
+      "Cafe-hopping",
+      "Dinner & chat",
+      "Outdoor walks"
+    ],
+    "vibe": "Chill"
+  },
+  {
+    "id": "73936ab6-76da-44b1-b768-17f491931625",
+    "name": "Huy",
+    "location": "269 Đ. Tân Quý, Tân Quý, Tân Phú, Hồ Chí Minh 700000, Vietnam",
+    "preferences": [
+      "Office snacks",
+      "Dinner & chat",
+      "Games",
+      "Outdoor walks"
+    ],
+    "vibe": "Mixed"
+  },
+  {
+    "id": "01beb50a-2d3d-44db-b51a-7379a1bb0d54",
+    "name": "Hoa",
+    "location": "201/2A, Đ. Nguyễn Xí, Phường 26, Bình Thạnh, Hồ Chí Minh, Vietnam",
+    "preferences": [
+      "Meat-lover",
+      "BBQ",
+      "Hotpot",
+      "Karaoke",
+      "Bar",
+      "Asian food",
+      "Rooftop bar"
+    ],
+    "vibe": "Mixed"
   }
 ]

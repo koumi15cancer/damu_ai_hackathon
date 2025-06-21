@@ -117,7 +117,7 @@ function App() {
   const [historySummary, setHistorySummary] = useState<string>("");
 
   const [userPreferences, setUserPreferences] = useState<UserPreferences>({
-    theme: "fun 🎉",
+    theme: "none",
     budget_contribution: "No",
     available_members: [],
     date_time: "",
@@ -241,6 +241,7 @@ function App() {
     try {
       const requestData = {
         ...userPreferences,
+        theme: userPreferences.theme === "none" ? "" : userPreferences.theme,
         ai_model: userPreferences.ai_model,
         plan_generation_mode: userPreferences.plan_generation_mode,
       };
@@ -298,7 +299,7 @@ function App() {
       const planData = {
         date:
           userPreferences.date_time || new Date().toISOString().split("T")[0],
-        theme: userPreferences.theme,
+        theme: userPreferences.theme === "none" ? "" : userPreferences.theme,
         location: userPreferences.location_zone || "Ho Chi Minh City",
         participants: userPreferences.available_members,
         activities: selectedPlan.phases.map((phase) => phase.activity),
@@ -385,6 +386,8 @@ function App() {
         return <Nature />;
       case "outdoor 🌤":
         return <SportsEsports />;
+      case "none":
+        return <Group />;
       default:
         return <Group />;
     }
@@ -418,6 +421,7 @@ function App() {
                   <SelectValue placeholder='Select a theme' />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value='none'>No specific theme</SelectItem>
                   <SelectItem value='fun 🎉'>Fun 🎉</SelectItem>
                   <SelectItem value='chill 🧘'>Chill 🧘</SelectItem>
                   <SelectItem value='outdoor 🌤'>Outdoor 🌤</SelectItem>
