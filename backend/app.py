@@ -5,14 +5,25 @@ import uuid
 from datetime import datetime
 from services.ai_service import AIService
 from services.maps_service import MapsService
+from services.location_service import LocationService
+from services.calendar_service import CalendarService
+from config import AI_CONFIG
 import re
+import os
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 CORS(app)
 
 # Initialize services
-ai_service = AIService(provider='auto')
+ai_service = AIService()
 maps_service = MapsService()
+location_service = LocationService()
+calendar_service = CalendarService()
 
 # Data storage (in production, use a proper database)
 TEAM_MEMBERS_FILE = 'team_profiles.json'
@@ -124,8 +135,16 @@ def process_plan(plan, team_members, contribution_amount):
             location = phase_data.get('location', phase_data.get('address', 'Unknown Location'))
             cost = phase_data.get('cost', 0)
             
-            # Generate Google Maps link
-            map_link = generate_map_link(location)
+            # Use LocationService to enhance the phase with location data
+            enhanced_phase = location_service.enhance_event_phase({
+                'activity': activity,
+                'location': location,
+                'cost': cost,
+                'isIndoor': phase_data.get('isIndoor', True),
+                'isOutdoor': phase_data.get('isOutdoor', False),
+                'isVegetarianFriendly': phase_data.get('isVegetarianFriendly', False),
+                'isAlcoholFriendly': phase_data.get('isAlcoholFriendly', False)
+            })
             
             # Determine indicators
             indicators = []
@@ -138,16 +157,15 @@ def process_plan(plan, team_members, contribution_amount):
             if phase_data.get('isAlcoholFriendly', False):
                 indicators.append('alcohol-friendly')
             
-            phase = {
-                'activity': activity,
-                'location': location,
-                'map_link': map_link,
-                'cost': cost,
-                'indicators': indicators
-            }
+            # Add indicators to enhanced phase
+            enhanced_phase['indicators'] = indicators
             
-            phases.append(phase)
+            phases.append(enhanced_phase)
             total_cost += cost
+        
+        # Validate locations and get travel information
+        location_validation = location_service.validate_event_locations(phases)
+        travel_summary = location_service.get_travel_summary(phases)
         
         # Calculate contribution needed
         contribution_needed = max(0, total_cost - 300000)
@@ -163,29 +181,25 @@ def process_plan(plan, team_members, contribution_amount):
             'total_cost': total_cost,
             'contribution_needed': contribution_needed,
             'fit_analysis': fit_analysis,
-            'rating': rating
+            'rating': rating,
+            'location_validation': location_validation,
+            'travel_summary': travel_summary
         }
         
     except Exception as e:
-        print(f"Error processing plan: {e}")
+        logger.error(f"Error processing plan: {e}")
         return None
 
 def generate_map_link(location):
     """Generate Google Maps link for a location."""
     try:
-        # Use maps service to get coordinates and generate link
-        geocode_result = maps_service.geocode_address(location)
-        if geocode_result and geocode_result.get('location'):
-            lat, lng = geocode_result['location']['lat'], geocode_result['location']['lng']
-            return f"https://maps.google.com/?q={lat},{lng}"
-        else:
-            # Fallback to search query
-            encoded_location = location.replace(' ', '+')
-            return f"https://maps.google.com/?q={encoded_location}"
-    except:
+        # Use the enhanced maps service to generate map link
+        return maps_service.generate_map_link(location)
+    except Exception as e:
+        print(f"Error generating map link for '{location}': {e}")
         # Fallback to search query
         encoded_location = location.replace(' ', '+')
-        return f"https://maps.google.com/?q={encoded_location}"
+        return f"https://www.google.com/maps/search/{encoded_location}"
 
 def generate_fit_analysis(plan, team_members):
     """Generate fit analysis for the plan."""
