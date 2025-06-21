@@ -55,7 +55,7 @@ import {
   Settings,
 } from "@mui/icons-material";
 import axios from "axios";
-import AIManagement from "./AIManagement";
+import History from "./History";
 import TeamMemberManagement from "./TeamMemberManagement";
 
 interface TeamMember {
@@ -98,6 +98,9 @@ function App() {
   const [selectedPlan, setSelectedPlan] = useState<EventPlan | null>(null);
   const [planDialogOpen, setPlanDialogOpen] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<number>(0);
+  const [saveSuccessDialogOpen, setSaveSuccessDialogOpen] = useState<boolean>(false);
+  const [savingPlan, setSavingPlan] = useState<boolean>(false);
+  const [duplicateDialogOpen, setDuplicateDialogOpen] = useState<boolean>(false);
 
   const [userPreferences, setUserPreferences] = useState<UserPreferences>({
     theme: "fun 🎉",
@@ -167,6 +170,48 @@ function App() {
   const handlePlanClick = (plan: EventPlan) => {
     setSelectedPlan(plan);
     setPlanDialogOpen(true);
+  };
+
+  const handleSavePlan = async () => {
+    if (!selectedPlan) return;
+
+    try {
+      setSavingPlan(true);
+      
+      // Prepare the plan data for saving
+      const planData = {
+        date: userPreferences.date_time || new Date().toISOString().split('T')[0],
+        theme: userPreferences.theme,
+        location: userPreferences.location_zone || "Ho Chi Minh City",
+        participants: userPreferences.available_members,
+        activities: selectedPlan.phases.map(phase => phase.activity),
+        total_cost: selectedPlan.total_cost,
+        phases: selectedPlan.phases,
+        fit_analysis: selectedPlan.fit_analysis,
+        rating: selectedPlan.rating,
+        contribution_needed: selectedPlan.contribution_needed
+      };
+
+      // Save the plan to the backend
+      const response = await axios.post("http://localhost:5000/event-history", planData);
+      
+      // Close the dialog and show success message
+      setPlanDialogOpen(false);
+      setSelectedPlan(null);
+      setSaveSuccessDialogOpen(true);
+      
+    } catch (error: any) {
+      console.error("Failed to save plan:", error);
+      
+      // Handle duplicate detection from backend
+      if (error.response && error.response.status === 409) {
+        setDuplicateDialogOpen(true);
+      } else {
+        alert("Failed to save plan. Please try again.");
+      }
+    } finally {
+      setSavingPlan(false);
+    }
   };
 
   const getThemeIcon = (theme: string) => {
@@ -444,14 +489,14 @@ function App() {
             onChange={(e, newValue) => setActiveTab(newValue)}>
             <Tab label='🎉 Event Planner' />
             <Tab label='👥 Team Members' />
-            <Tab label='🤖 AI Management' />
+            <Tab label='📅 History' />
           </Tabs>
         </Box>
 
         {/* Tab Content */}
         {activeTab === 0 && renderEventPlanner()}
         {activeTab === 1 && <TeamMemberManagement />}
-        {activeTab === 2 && <AIManagement />}
+        {activeTab === 2 && <History />}
       </Box>
 
       {/* Plan Detail Dialog */}
@@ -614,17 +659,122 @@ function App() {
               <Button
                 variant='contained'
                 color='primary'
-                onClick={() => {
-                  // Here you could add functionality to save/export the plan
-                  alert(
-                    "Plan saved! (This would integrate with calendar/export features)"
-                  );
-                }}>
-                Save Plan
+                onClick={handleSavePlan}
+                disabled={savingPlan}
+                startIcon={savingPlan ? <CircularProgress size={20} /> : null}>
+                {savingPlan ? 'Saving...' : 'Save Plan'}
               </Button>
             </DialogActions>
           </>
         )}
+      </Dialog>
+
+      {/* Save Success Dialog */}
+      <Dialog
+        open={saveSuccessDialogOpen}
+        onClose={() => setSaveSuccessDialogOpen(false)}
+        maxWidth='sm'
+        fullWidth>
+        <DialogTitle>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box
+              sx={{
+                backgroundColor: "#4caf50",
+                borderRadius: "50%",
+                p: 1,
+                mr: 2,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 40,
+                height: 40
+              }}>
+              <Typography variant="h6" sx={{ color: "white" }}>✓</Typography>
+            </Box>
+            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+              Plan Saved Successfully!
+            </Typography>
+          </Box>
+        </DialogTitle>
+        <DialogContent>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            Your team bonding plan has been saved to the event history.
+          </Typography>
+          <Alert severity="info" sx={{ mb: 2 }}>
+            <Typography variant="body2">
+              You can now view, edit, or delete this plan from the <strong>History tab</strong>.
+            </Typography>
+          </Alert>
+          <Typography variant="body2" color="text.secondary">
+            The plan includes all phases, costs, and team fit analysis for future reference.
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setSaveSuccessDialogOpen(false)}>Close</Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              setSaveSuccessDialogOpen(false);
+              setActiveTab(2); // Switch to History tab
+            }}>
+            View in History
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Duplicate Detection Dialog */}
+      <Dialog
+        open={duplicateDialogOpen}
+        onClose={() => setDuplicateDialogOpen(false)}
+        maxWidth='sm'
+        fullWidth>
+        <DialogTitle>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box
+              sx={{
+                backgroundColor: "#ff9800",
+                borderRadius: "50%",
+                p: 1,
+                mr: 2,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 40,
+                height: 40
+              }}>
+              <Typography variant="h6" sx={{ color: "white" }}>⚠</Typography>
+            </Box>
+            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+              Plan Already Exists
+            </Typography>
+          </Box>
+        </DialogTitle>
+        <DialogContent>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            A similar plan has already been saved to the event history.
+          </Typography>
+          <Alert severity="warning" sx={{ mb: 2 }}>
+            <Typography variant="body2">
+              This prevents duplicate entries in your history. You can view the existing plan in the <strong>History tab</strong>.
+            </Typography>
+          </Alert>
+          <Typography variant="body2" color="text.secondary">
+            If you want to save a different version, try modifying the plan details first.
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setDuplicateDialogOpen(false)}>Close</Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              setDuplicateDialogOpen(false);
+              setActiveTab(2); // Switch to History tab
+            }}>
+            View in History
+          </Button>
+        </DialogActions>
       </Dialog>
     </Container>
   );

@@ -4,8 +4,16 @@
     "date": "2024-01-15",
     "theme": "fun",
     "location": "District 1",
-    "participants": ["Ben", "Sarah", "Mike", "Lisa"],
-    "activities": ["Korean BBQ", "Karaoke"],
+    "participants": [
+      "Ben",
+      "Sarah",
+      "Mike",
+      "Lisa"
+    ],
+    "activities": [
+      "Korean BBQ",
+      "Karaoke"
+    ],
     "total_cost": 1200000
   },
   {
@@ -13,8 +21,16 @@
     "date": "2024-02-20",
     "theme": "chill",
     "location": "District 3",
-    "participants": ["Ben", "Lisa", "Emma", "Sophie"],
-    "activities": ["Cafe hopping", "Board games"],
+    "participants": [
+      "Ben",
+      "Lisa",
+      "Emma",
+      "Sophie"
+    ],
+    "activities": [
+      "Cafe hopping",
+      "Board games"
+    ],
     "total_cost": 800000
   },
   {
@@ -22,8 +38,16 @@
     "date": "2024-03-10",
     "theme": "outdoor",
     "location": "District 7",
-    "participants": ["Mike", "David", "Emma", "Alex"],
-    "activities": ["Park walk", "Street food"],
+    "participants": [
+      "Mike",
+      "David",
+      "Emma",
+      "Alex"
+    ],
+    "activities": [
+      "Park walk",
+      "Street food"
+    ],
     "total_cost": 600000
   },
   {
@@ -31,17 +55,49 @@
     "date": "2024-04-05",
     "theme": "fun",
     "location": "Binh Thanh",
-    "participants": ["Sarah", "David", "Alex", "Sophie"],
-    "activities": ["Escape room", "Bowling"],
-    "total_cost": 1000000
+    "participants": [
+      "Sarah",
+      "David",
+      "Alex",
+      "Sophie"
+    ],
+    "activities": [
+      "Escape room",
+      "Bowling"
+    ],
+    "total_cost": 1000000,
+    "member_ratings": [
+      {
+        "member_name": "David",
+        "rating": 3,
+        "feedback": "",
+        "categories": {
+          "fun": 4,
+          "organization": 2,
+          "value": 3,
+          "overall": 3
+        },
+        "submitted_at": "2025-06-21T03:39:02.486Z"
+      }
+    ],
+    "ai_rating": 3,
+    "rating": 3.0
   },
   {
     "id": 5,
     "date": "2024-05-12",
     "theme": "chill",
     "location": "District 2",
-    "participants": ["Ben", "Emma", "Sophie", "Lisa"],
-    "activities": ["Yoga class", "Healthy dinner"],
+    "participants": [
+      "Ben",
+      "Emma",
+      "Sophie",
+      "Lisa"
+    ],
+    "activities": [
+      "Yoga class",
+      "Healthy dinner"
+    ],
     "total_cost": 900000
   }
 ]
