@@ -967,8 +967,9 @@ def get_cached_analytics(
 ) -> Optional[dict]:
     """Get cached analytics data if available and fresh."""
     try:
+        tmp_dir = "tmp"
         cache_key = f"analytics_{limit}_{theme_filter or 'all'}"
-        cache_file = f"cache_{cache_key}.json"
+        cache_file = os.path.join(tmp_dir, f"cache_{cache_key}.json")
 
         logger.debug(f"🔍 Checking cache file: {cache_file}")
 
@@ -1000,8 +1001,12 @@ def cache_analytics_result(
 ):
     """Cache analytics result for future use."""
     try:
+        # Ensure tmp directory exists
+        tmp_dir = "tmp"
+        os.makedirs(tmp_dir, exist_ok=True)
+
         cache_key = f"analytics_{limit}_{theme_filter or 'all'}"
-        cache_file = f"cache_{cache_key}.json"
+        cache_file = os.path.join(tmp_dir, f"cache_{cache_key}.json")
 
         logger.debug(f"💾 Caching analytics result: {cache_file}")
 
@@ -1018,20 +1023,28 @@ def clear_analytics_cache(
 ):
     """Clear analytics cache for specific parameters or all."""
     try:
+        tmp_dir = "tmp"
+        if not os.path.exists(tmp_dir):
+            logger.debug(
+                f"📁 Cache directory {tmp_dir} does not exist, nothing to clear"
+            )
+            return
+
         if limit is None and theme_filter is None:
             # Clear all cache files
             logger.info("🧹 Clearing all analytics cache files")
             cleared_count = 0
-            for file in os.listdir("."):
+            for file in os.listdir(tmp_dir):
                 if file.startswith("cache_analytics_") and file.endswith(".json"):
-                    os.remove(file)
+                    file_path = os.path.join(tmp_dir, file)
+                    os.remove(file_path)
                     cleared_count += 1
                     logger.debug(f"🗑️ Cleared cache file: {file}")
             logger.info(f"✅ Cleared {cleared_count} analytics cache files")
         else:
             # Clear specific cache
             cache_key = f"analytics_{limit or 'all'}_{theme_filter or 'all'}"
-            cache_file = f"cache_{cache_key}.json"
+            cache_file = os.path.join(tmp_dir, f"cache_{cache_key}.json")
             if os.path.exists(cache_file):
                 os.remove(cache_file)
                 logger.info(f"✅ Cleared specific cache file: {cache_file}")

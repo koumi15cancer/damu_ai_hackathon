@@ -19,9 +19,11 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 venv/
 .env
+
+# Cache files
+backend/tmp/
 
 # Node
 node_modules/

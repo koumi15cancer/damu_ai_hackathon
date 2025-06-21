@@ -83,19 +83,23 @@ def test_analytics_trigger_flow():
 
         # Test 6: Cache files
         print("\n💾 Test 6: Cache Files")
-        cache_files = [
-            f
-            for f in os.listdir(".")
-            if f.startswith("cache_analytics_") and f.endswith(".json")
-        ]
-        if cache_files:
-            print(f"   ✅ Found {len(cache_files)} cache files:")
-            for file in cache_files[:3]:  # Show first 3
-                print(f"      📄 {file}")
-            if len(cache_files) > 3:
-                print(f"      ... and {len(cache_files) - 3} more")
+        tmp_dir = "tmp"
+        if os.path.exists(tmp_dir):
+            cache_files = [
+                f
+                for f in os.listdir(tmp_dir)
+                if f.startswith("cache_analytics_") and f.endswith(".json")
+            ]
+            if cache_files:
+                print(f"   ✅ Found {len(cache_files)} cache files in {tmp_dir}/:")
+                for file in cache_files[:3]:  # Show first 3
+                    print(f"      📄 {file}")
+                if len(cache_files) > 3:
+                    print(f"      ... and {len(cache_files) - 3} more")
+            else:
+                print(f"   ⚠️  No cache files found in {tmp_dir}/")
         else:
-            print("   ⚠️  No cache files found")
+            print(f"   ⚠️  Cache directory {tmp_dir}/ does not exist")
 
         # Test 7: Event history integration
         print("\n📅 Test 7: Event History Integration")
