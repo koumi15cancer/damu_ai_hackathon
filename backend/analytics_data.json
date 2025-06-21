@@ -1,0 +1,2045 @@
+{
+  "analytics_history": [
+    {
+      "timestamp": "2025-06-21T11:01:45.276751",
+      "analytics_data": {
+        "events": [
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "fun"
+        ],
+        "activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Korean BBQ",
+          "Karaoke"
+        ],
+        "costs": [
+          900000,
+          1000000,
+          600000,
+          800000,
+          1200000
+        ],
+        "ratings": [
+          3.0
+        ],
+        "locations": [
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 1"
+        ],
+        "participant_counts": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Popular Theme: chill",
+          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "category": "theme"
+        },
+        {
+          "type": "activity_suggestion",
+          "title": "Successful Activity: Yoga class",
+          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
+          "confidence": 0.75,
+          "data_points": 10,
+          "category": "activity"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Cost Optimization Opportunity",
+          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
+          "confidence": 0.7,
+          "data_points": 5,
+          "category": "cost"
+        },
+        {
+          "type": "rating_insight",
+          "title": "Improve Event Satisfaction",
+          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
+          "confidence": 0.6,
+          "data_points": 1,
+          "category": "rating"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "chill",
+        "average_cost": 900000.0,
+        "common_activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk"
+        ],
+        "rating_trends": "Good - Generally positive feedback",
+        "theme_distribution": {
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T11:01:45.279548",
+      "analytics_data": {
+        "events": [
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "fun"
+        ],
+        "activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Korean BBQ",
+          "Karaoke"
+        ],
+        "costs": [
+          900000,
+          1000000,
+          600000,
+          800000,
+          1200000
+        ],
+        "ratings": [
+          3.0
+        ],
+        "locations": [
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 1"
+        ],
+        "participant_counts": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Popular Theme: chill",
+          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "category": "theme"
+        },
+        {
+          "type": "activity_suggestion",
+          "title": "Successful Activity: Yoga class",
+          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
+          "confidence": 0.75,
+          "data_points": 10,
+          "category": "activity"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Cost Optimization Opportunity",
+          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
+          "confidence": 0.7,
+          "data_points": 5,
+          "category": "cost"
+        },
+        {
+          "type": "rating_insight",
+          "title": "Improve Event Satisfaction",
+          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
+          "confidence": 0.6,
+          "data_points": 1,
+          "category": "rating"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "chill",
+        "average_cost": 900000.0,
+        "common_activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk"
+        ],
+        "rating_trends": "Good - Generally positive feedback",
+        "theme_distribution": {
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T11:01:45.281924",
+      "analytics_data": {
+        "events": [
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "fun"
+        ],
+        "activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Korean BBQ",
+          "Karaoke"
+        ],
+        "costs": [
+          900000,
+          1000000,
+          600000,
+          800000,
+          1200000
+        ],
+        "ratings": [
+          3.0
+        ],
+        "locations": [
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 1"
+        ],
+        "participant_counts": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Popular Theme: chill",
+          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "category": "theme"
+        },
+        {
+          "type": "activity_suggestion",
+          "title": "Successful Activity: Yoga class",
+          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
+          "confidence": 0.75,
+          "data_points": 10,
+          "category": "activity"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Cost Optimization Opportunity",
+          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
+          "confidence": 0.7,
+          "data_points": 5,
+          "category": "cost"
+        },
+        {
+          "type": "rating_insight",
+          "title": "Improve Event Satisfaction",
+          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
+          "confidence": 0.6,
+          "data_points": 1,
+          "category": "rating"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "chill",
+        "average_cost": 900000.0,
+        "common_activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk"
+        ],
+        "rating_trends": "Good - Generally positive feedback",
+        "theme_distribution": {
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T11:01:45.284613",
+      "analytics_data": {
+        "events": [
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "fun"
+        ],
+        "activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Korean BBQ",
+          "Karaoke"
+        ],
+        "costs": [
+          900000,
+          1000000,
+          600000,
+          800000,
+          1200000
+        ],
+        "ratings": [
+          3.0
+        ],
+        "locations": [
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 1"
+        ],
+        "participant_counts": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Popular Theme: chill",
+          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "category": "theme"
+        },
+        {
+          "type": "activity_suggestion",
+          "title": "Successful Activity: Yoga class",
+          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
+          "confidence": 0.75,
+          "data_points": 10,
+          "category": "activity"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Cost Optimization Opportunity",
+          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
+          "confidence": 0.7,
+          "data_points": 5,
+          "category": "cost"
+        },
+        {
+          "type": "rating_insight",
+          "title": "Improve Event Satisfaction",
+          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
+          "confidence": 0.6,
+          "data_points": 1,
+          "category": "rating"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "chill",
+        "average_cost": 900000.0,
+        "common_activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk"
+        ],
+        "rating_trends": "Good - Generally positive feedback",
+        "theme_distribution": {
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T11:03:08.387644",
+      "analytics_data": {
+        "events": [
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "fun"
+        ],
+        "activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Korean BBQ",
+          "Karaoke"
+        ],
+        "costs": [
+          900000,
+          1000000,
+          600000,
+          800000,
+          1200000
+        ],
+        "ratings": [
+          3.0
+        ],
+        "locations": [
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 1"
+        ],
+        "participant_counts": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Popular Theme: chill",
+          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "category": "theme"
+        },
+        {
+          "type": "activity_suggestion",
+          "title": "Successful Activity: Yoga class",
+          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
+          "confidence": 0.75,
+          "data_points": 10,
+          "category": "activity"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Cost Optimization Opportunity",
+          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
+          "confidence": 0.7,
+          "data_points": 5,
+          "category": "cost"
+        },
+        {
+          "type": "rating_insight",
+          "title": "Improve Event Satisfaction",
+          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
+          "confidence": 0.6,
+          "data_points": 1,
+          "category": "rating"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "chill",
+        "average_cost": 900000.0,
+        "common_activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk"
+        ],
+        "rating_trends": "Good - Generally positive feedback",
+        "theme_distribution": {
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T11:03:08.398348",
+      "analytics_data": {
+        "events": [
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "fun"
+        ],
+        "activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Korean BBQ",
+          "Karaoke"
+        ],
+        "costs": [
+          900000,
+          1000000,
+          600000,
+          800000,
+          1200000
+        ],
+        "ratings": [
+          3.0
+        ],
+        "locations": [
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 1"
+        ],
+        "participant_counts": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Popular Theme: chill",
+          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "category": "theme"
+        },
+        {
+          "type": "activity_suggestion",
+          "title": "Successful Activity: Yoga class",
+          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
+          "confidence": 0.75,
+          "data_points": 10,
+          "category": "activity"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Cost Optimization Opportunity",
+          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
+          "confidence": 0.7,
+          "data_points": 5,
+          "category": "cost"
+        },
+        {
+          "type": "rating_insight",
+          "title": "Improve Event Satisfaction",
+          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
+          "confidence": 0.6,
+          "data_points": 1,
+          "category": "rating"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "chill",
+        "average_cost": 900000.0,
+        "common_activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk"
+        ],
+        "rating_trends": "Good - Generally positive feedback",
+        "theme_distribution": {
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T11:03:45.570171",
+      "analytics_data": {
+        "events": [
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "fun"
+        ],
+        "activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Korean BBQ",
+          "Karaoke"
+        ],
+        "costs": [
+          900000,
+          1000000,
+          600000,
+          800000,
+          1200000
+        ],
+        "ratings": [
+          3.0
+        ],
+        "locations": [
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 1"
+        ],
+        "participant_counts": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Popular Theme: chill",
+          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "category": "theme"
+        },
+        {
+          "type": "activity_suggestion",
+          "title": "Successful Activity: Yoga class",
+          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
+          "confidence": 0.75,
+          "data_points": 10,
+          "category": "activity"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Cost Optimization Opportunity",
+          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
+          "confidence": 0.7,
+          "data_points": 5,
+          "category": "cost"
+        },
+        {
+          "type": "rating_insight",
+          "title": "Improve Event Satisfaction",
+          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
+          "confidence": 0.6,
+          "data_points": 1,
+          "category": "rating"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "chill",
+        "average_cost": 900000.0,
+        "common_activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk"
+        ],
+        "rating_trends": "Good - Generally positive feedback",
+        "theme_distribution": {
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T11:03:45.576375",
+      "analytics_data": {
+        "events": [
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "fun"
+        ],
+        "activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Korean BBQ",
+          "Karaoke"
+        ],
+        "costs": [
+          900000,
+          1000000,
+          600000,
+          800000,
+          1200000
+        ],
+        "ratings": [
+          3.0
+        ],
+        "locations": [
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 1"
+        ],
+        "participant_counts": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Popular Theme: chill",
+          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "category": "theme"
+        },
+        {
+          "type": "activity_suggestion",
+          "title": "Successful Activity: Yoga class",
+          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
+          "confidence": 0.75,
+          "data_points": 10,
+          "category": "activity"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Cost Optimization Opportunity",
+          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
+          "confidence": 0.7,
+          "data_points": 5,
+          "category": "cost"
+        },
+        {
+          "type": "rating_insight",
+          "title": "Improve Event Satisfaction",
+          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
+          "confidence": 0.6,
+          "data_points": 1,
+          "category": "rating"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "chill",
+        "average_cost": 900000.0,
+        "common_activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk"
+        ],
+        "rating_trends": "Good - Generally positive feedback",
+        "theme_distribution": {
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T11:05:26.191507",
+      "analytics_data": {
+        "events": [
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "fun"
+        ],
+        "activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Korean BBQ",
+          "Karaoke"
+        ],
+        "costs": [
+          900000,
+          1000000,
+          600000,
+          800000,
+          1200000
+        ],
+        "ratings": [
+          3.0
+        ],
+        "locations": [
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 1"
+        ],
+        "participant_counts": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Popular Theme: chill",
+          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "category": "theme"
+        },
+        {
+          "type": "activity_suggestion",
+          "title": "Successful Activity: Yoga class",
+          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
+          "confidence": 0.75,
+          "data_points": 10,
+          "category": "activity"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Cost Optimization Opportunity",
+          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
+          "confidence": 0.7,
+          "data_points": 5,
+          "category": "cost"
+        },
+        {
+          "type": "rating_insight",
+          "title": "Improve Event Satisfaction",
+          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
+          "confidence": 0.6,
+          "data_points": 1,
+          "category": "rating"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "chill",
+        "average_cost": 900000.0,
+        "common_activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk"
+        ],
+        "rating_trends": "Good - Generally positive feedback",
+        "theme_distribution": {
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T11:05:26.196298",
+      "analytics_data": {
+        "events": [
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "fun"
+        ],
+        "activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Korean BBQ",
+          "Karaoke"
+        ],
+        "costs": [
+          900000,
+          1000000,
+          600000,
+          800000,
+          1200000
+        ],
+        "ratings": [
+          3.0
+        ],
+        "locations": [
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 1"
+        ],
+        "participant_counts": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Popular Theme: chill",
+          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "category": "theme"
+        },
+        {
+          "type": "activity_suggestion",
+          "title": "Successful Activity: Yoga class",
+          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
+          "confidence": 0.75,
+          "data_points": 10,
+          "category": "activity"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Cost Optimization Opportunity",
+          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
+          "confidence": 0.7,
+          "data_points": 5,
+          "category": "cost"
+        },
+        {
+          "type": "rating_insight",
+          "title": "Improve Event Satisfaction",
+          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
+          "confidence": 0.6,
+          "data_points": 1,
+          "category": "rating"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "chill",
+        "average_cost": 900000.0,
+        "common_activities": [
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk"
+        ],
+        "rating_trends": "Good - Generally positive feedback",
+        "theme_distribution": {
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1
+        }
+      }
+    }
+  ],
+  "suggestions_history": []
+}
