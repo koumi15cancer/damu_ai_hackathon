@@ -62,6 +62,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Badge } from "./components/ui/badge";
 import { Alert, AlertDescription, AlertTitle } from "./components/ui/alert";
+import RobotLoadingIndicator from "./RobotLoadingIndicator";
 
 interface TeamMember {
   id: string;
@@ -617,63 +618,69 @@ function App() {
         </CardContent>
       </Card>
 
-      {error && (
-        <Alert variant='destructive'>
-          <AlertTitle>Error</AlertTitle>
-          <AlertDescription>{error}</AlertDescription>
-        </Alert>
-      )}
+      {loading ? (
+        <RobotLoadingIndicator />
+      ) : (
+        <>
+          {error && (
+            <Alert variant='destructive'>
+              <AlertTitle>Error</AlertTitle>
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
 
-      {plans.length > 0 && (
-        <div>
-          <h2 className='text-2xl font-bold text-foreground mb-4'>
-            Generated Plans ({plans.length})
-          </h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-            {plans.map((plan, index) => (
-              <Card
-                key={index}
-                className='cursor-pointer transition-transform hover:-translate-y-1'
-                onClick={() => handlePlanClick(plan)}>
-                <CardHeader>
-                  <CardTitle className='flex items-center'>
-                    <div className='p-2 mr-3 bg-primary/10 rounded-full text-primary'>
-                      {getThemeIcon(userPreferences.theme)}
-                    </div>
-                    Plan {index + 1}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className='space-y-3'>
-                  <p className='text-sm text-muted-foreground'>
-                    {plan.fit_analysis}
-                  </p>
-                  <div className='flex items-center'>
-                    <Rating value={plan.rating} readOnly size='small' />
-                    <span className='text-sm ml-2'>{plan.rating}/5</span>
-                  </div>
-                  <div className='flex items-center text-muted-foreground'>
-                    <AttachMoney fontSize='small' className='mr-1' />
-                    <span className='text-sm'>
-                      {plan.total_cost.toLocaleString()} VND
-                    </span>
-                  </div>
-                  {plan.contribution_needed > 0 && (
-                    <Alert variant='destructive' className='mt-2'>
-                      <AlertDescription>
-                        Additional contribution:{" "}
-                        {plan.contribution_needed.toLocaleString()} VND
-                      </AlertDescription>
-                    </Alert>
-                  )}
-                  <p className='text-sm text-muted-foreground'>
-                    {plan.phases.length} phase
-                    {plan.phases.length !== 1 ? "s" : ""}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+          {plans.length > 0 && (
+            <div>
+              <h2 className='text-2xl font-bold text-foreground mb-4'>
+                Generated Plans ({plans.length})
+              </h2>
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+                {plans.map((plan, index) => (
+                  <Card
+                    key={index}
+                    className='cursor-pointer transition-transform hover:-translate-y-1'
+                    onClick={() => handlePlanClick(plan)}>
+                    <CardHeader>
+                      <CardTitle className='flex items-center'>
+                        <div className='p-2 mr-3 bg-primary/10 rounded-full text-primary'>
+                          {getThemeIcon(userPreferences.theme)}
+                        </div>
+                        Plan {index + 1}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className='space-y-3'>
+                      <p className='text-sm text-muted-foreground'>
+                        {plan.fit_analysis}
+                      </p>
+                      <div className='flex items-center'>
+                        <Rating value={plan.rating} readOnly size='small' />
+                        <span className='text-sm ml-2'>{plan.rating}/5</span>
+                      </div>
+                      <div className='flex items-center text-muted-foreground'>
+                        <AttachMoney fontSize='small' className='mr-1' />
+                        <span className='text-sm'>
+                          {plan.total_cost.toLocaleString()} VND
+                        </span>
+                      </div>
+                      {plan.contribution_needed > 0 && (
+                        <Alert variant='warning' className='mt-2'>
+                          <AlertDescription>
+                            Additional contribution:{" "}
+                            {plan.contribution_needed.toLocaleString()} VND
+                          </AlertDescription>
+                        </Alert>
+                      )}
+                      <p className='text-sm text-muted-foreground'>
+                        {plan.phases.length} phase
+                        {plan.phases.length !== 1 ? "s" : ""}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
