@@ -292,5 +292,137 @@
     "fit_analysis": "Suits team members: Ben, Lil Thanh, Big Thanh, Cody, Mason",
     "rating": 4.5,
     "contribution_needed": 0
+  },
+  {
+    "id": "67136a57-3650-4f2d-bb6e-8aafc11e4473",
+    "created_at": "2025-06-21T14:52:03.754976",
+    "date": "2025-06-21",
+    "theme": "fun 🎉",
+    "location": "Ho Chi Minh City",
+    "participants": [
+      "Ben",
+      "Lil Thanh",
+      "Cody",
+      "Big Thanh",
+      "Mason"
+    ],
+    "activities": [
+      "Bowling at Paragon Game Center",
+      "BBQ Dinner at Quán Nướng Cô Út"
+    ],
+    "total_cost": 300000,
+    "phases": [
+      {
+        "activity": "Bowling at Paragon Game Center",
+        "coordinates": {
+          "lat": 10.7769,
+          "lng": 106.7009
+        },
+        "cost": 150000,
+        "indicators": [
+          "indoor",
+          "vegetarian-friendly",
+          "alcohol-friendly"
+        ],
+        "isAlcoholFriendly": true,
+        "isIndoor": true,
+        "isOutdoor": false,
+        "isVegetarianFriendly": true,
+        "location": "Crescent Mall, 101 Tôn Dật Tiên, Tân Phú, Quận 7, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+        "location_valid": true,
+        "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+        "zone": "D1"
+      },
+      {
+        "activity": "BBQ Dinner at Quán Nướng Cô Út",
+        "coordinates": {
+          "lat": 10.7769,
+          "lng": 106.7009
+        },
+        "cost": 150000,
+        "indicators": [
+          "indoor",
+          "vegetarian-friendly",
+          "alcohol-friendly"
+        ],
+        "isAlcoholFriendly": true,
+        "isIndoor": true,
+        "isOutdoor": false,
+        "isVegetarianFriendly": true,
+        "location": "302 Huỳnh Tấn Phát, Tân Thuận Đông, Quận 7, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+        "location_valid": true,
+        "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+        "zone": "D1"
+      }
+    ],
+    "fit_analysis": "Suits team members: Cody, Lil Thanh, Big Thanh, Mason",
+    "rating": 4,
+    "contribution_needed": 0
+  },
+  {
+    "id": "7a97704d-b961-4a13-9abd-508bc43e74b7",
+    "created_at": "2025-06-21T14:53:19.512538",
+    "date": "2025-06-21T14:52",
+    "theme": "chill 🧘",
+    "location": "Ho Chi Minh City",
+    "participants": [
+      "Ben",
+      "Lil Thanh",
+      "Cody",
+      "Big Thanh",
+      "Mason"
+    ],
+    "activities": [
+      "Dinner & Drinks at Shri Restaurant & Lounge",
+      "Rooftop Drinks at Broma: Not a Bar"
+    ],
+    "total_cost": 350000,
+    "phases": [
+      {
+        "activity": "Dinner & Drinks at Shri Restaurant & Lounge",
+        "coordinates": {
+          "lat": 10.7826,
+          "lng": 106.6881
+        },
+        "cost": 250000,
+        "indicators": [
+          "indoor",
+          "vegetarian-friendly",
+          "alcohol-friendly"
+        ],
+        "isAlcoholFriendly": true,
+        "isIndoor": true,
+        "isOutdoor": false,
+        "isVegetarianFriendly": true,
+        "location": "Centec Tower, 72-74 Nguyễn Thị Minh Khai, District 3, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+        "location_valid": true,
+        "map_link": "https://www.google.com/maps?q=10.7826,106.6881",
+        "zone": "D3"
+      },
+      {
+        "activity": "Rooftop Drinks at Broma: Not a Bar",
+        "coordinates": {
+          "lat": 10.7769,
+          "lng": 106.7009
+        },
+        "cost": 100000,
+        "indicators": [
+          "outdoor",
+          "vegetarian-friendly",
+          "alcohol-friendly"
+        ],
+        "isAlcoholFriendly": true,
+        "isIndoor": false,
+        "isOutdoor": true,
+        "isVegetarianFriendly": true,
+        "location": "41 Nguyễn Huệ, Bến Nghé, District 1, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+        "location_valid": true,
+        "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+        "zone": "D1"
+      }
+    ],
+    "fit_analysis": "Suits team members: Ben, Lil Thanh, Cody, Big Thanh, Mason",
+    "rating": 4,
+    "contribution_needed": 50000
   }
 ]

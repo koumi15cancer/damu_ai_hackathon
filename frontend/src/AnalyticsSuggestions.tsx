@@ -1,14 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import {
-  Container,
-  Typography,
-  Paper,
-  Grid,
-  Card,
-  CardContent,
-  Box,
-  Chip,
-  Button,
   CircularProgress,
   Alert,
   Divider,
@@ -21,6 +12,15 @@ import {
   IconButton,
   Tooltip,
   Snackbar,
+  Card,
+  CardContent,
+  Grid,
+  Chip,
+  Typography,
+  Box,
+  Button,
+  Container,
+  Paper,
 } from "@mui/material";
 import {
   TrendingUp,
@@ -28,7 +28,6 @@ import {
   Psychology,
   Refresh,
   Analytics,
-  Star,
   AttachMoney,
   Group,
   Schedule,
@@ -72,238 +71,62 @@ const AnalyticsSuggestions: React.FC = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [isTabVisible, setIsTabVisible] = useState(true);
 
-  // Cache management
-  const [cacheKey, setCacheKey] = useState<string>("");
-  const [shouldRefresh, setShouldRefresh] = useState(true);
-
-  // Debounce filter changes
-  const [debouncedLimit, setDebouncedLimit] = useState(limit);
-  const [debouncedThemeFilter, setDebouncedThemeFilter] = useState(themeFilter);
-
-  // Generate cache key based on current filters
-  useEffect(() => {
-    setCacheKey(`${limit}-${themeFilter}`);
-  }, [limit, themeFilter]);
-
-  // Debounce filter changes to avoid excessive API calls
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedLimit(limit);
-      setDebouncedThemeFilter(themeFilter);
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [limit, themeFilter]);
-
-  // Check if analytics should be refreshed
-  const shouldTriggerAnalytics = useCallback(() => {
-    const lastAnalysis = localStorage.getItem("lastAnalyticsUpdate");
-    const lastEventUpdate = localStorage.getItem("lastEventUpdate");
-    const currentCacheKey = localStorage.getItem("analyticsCacheKey");
-
-    console.log("🔍 Analytics Trigger Check:", {
-      lastAnalysis,
-      lastEventUpdate,
-      currentCacheKey,
-      newCacheKey: cacheKey,
-      isTabVisible,
-    });
-
-    // Always refresh if cache key changed (filters changed)
-    if (currentCacheKey !== cacheKey) {
-      console.log("🔄 Cache key changed, triggering refresh");
-      return true;
-    }
-
-    // Refresh if no last analysis or events were updated after last analysis
-    if (!lastAnalysis || (lastEventUpdate && lastEventUpdate > lastAnalysis)) {
-      console.log("🔄 Events updated after last analysis, triggering refresh");
-      return true;
-    }
-
-    // Refresh if last analysis was more than 30 minutes ago
-    const lastAnalysisTime = new Date(lastAnalysis);
-    const thirtyMinutesAgo = new Date(Date.now() - 30 * 60 * 1000);
-    const shouldRefresh = lastAnalysisTime < thirtyMinutesAgo;
-
-    if (shouldRefresh) {
-      console.log(
-        "🔄 Last analysis was more than 30 minutes ago, triggering refresh"
-      );
-    } else {
-      console.log("✅ Using cached analytics data");
-    }
-
-    return shouldRefresh;
-  }, [cacheKey]);
-
   // Handle visibility change
   useEffect(() => {
     const handleVisibilityChange = () => {
-      const newVisibility = !document.hidden;
-      console.log("👁️ Tab visibility changed:", {
-        from: isTabVisible,
-        to: newVisibility,
-      });
-      setIsTabVisible(newVisibility);
+      setIsTabVisible(!document.hidden);
     };
-
     document.addEventListener("visibilitychange", handleVisibilityChange);
     return () =>
       document.removeEventListener("visibilitychange", handleVisibilityChange);
   }, []);
 
-  // Periodic refresh when tab is visible
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (isTabVisible && shouldTriggerAnalytics()) {
-        console.log("⏰ Periodic refresh triggered (30-minute interval)");
-        loadAnalytics();
-      }
-    }, 30 * 60 * 1000); // 30 minutes
-
-    return () => clearInterval(interval);
-  }, [isTabVisible, shouldTriggerAnalytics]);
-
-  // Trigger analytics when filters change
-  useEffect(() => {
-    if (
-      shouldRefresh &&
-      (debouncedLimit !== limit || debouncedThemeFilter !== themeFilter)
-    ) {
-      console.log("🔧 Filter change detected, triggering analytics refresh:", {
-        oldLimit: debouncedLimit,
-        newLimit: limit,
-        oldTheme: debouncedThemeFilter,
-        newTheme: themeFilter,
-      });
-      loadAnalytics();
-    }
-  }, [debouncedLimit, debouncedThemeFilter, shouldRefresh]);
-
-  // Trigger analytics when tab becomes visible
-  useEffect(() => {
-    if (isTabVisible && shouldTriggerAnalytics()) {
-      console.log("👁️ Tab became visible, triggering analytics refresh");
-      loadAnalytics();
-    }
-  }, [isTabVisible, shouldTriggerAnalytics]);
-
-  // Listen for custom refresh event (from tab switch)
-  useEffect(() => {
-    const handleRefreshEvent = () => {
-      console.log("🔄 Custom refresh event received (tab switch)");
-      if (shouldTriggerAnalytics()) {
-        loadAnalytics();
-      } else {
-        console.log("✅ No refresh needed, using cached data");
-      }
-    };
-
-    window.addEventListener("refreshAnalytics", handleRefreshEvent);
-    return () =>
-      window.removeEventListener("refreshAnalytics", handleRefreshEvent);
-  }, [shouldTriggerAnalytics]);
-
+  // Load analytics data
   const loadAnalytics = async (forceRefresh = false) => {
-    if (loading) {
-      console.log("⏳ Analytics already loading, skipping request");
-      return;
-    }
-
-    console.log("🚀 Starting analytics load:", {
-      forceRefresh,
-      limit,
-      themeFilter,
-      cacheKey,
-    });
-
-    // Check if we need to refresh
-    if (!forceRefresh && !shouldTriggerAnalytics()) {
-      console.log("✅ Using cached analytics data, no refresh needed");
-      return;
-    }
-
+    if (loading) return;
     setLoading(true);
     setError(null);
-
     try {
       const params = new URLSearchParams();
       params.append("limit", limit.toString());
-      if (themeFilter) {
-        params.append("theme", themeFilter);
-      }
-      if (forceRefresh) {
-        params.append("force_refresh", "true");
-      }
+      if (themeFilter) params.append("theme", themeFilter);
+      if (forceRefresh) params.append("force_refresh", "true");
 
-      console.log("📡 Making analytics API request:", {
-        url: `http://localhost:5000/analytics/suggestions?${params}`,
-        params: Object.fromEntries(params),
-      });
-
-      const startTime = Date.now();
       const response = await axios.get(
         `http://localhost:5000/analytics/suggestions?${params}`
       );
-      const responseTime = Date.now() - startTime;
-
-      console.log("✅ Analytics API response received:", {
-        status: response.status,
-        responseTime: `${responseTime}ms`,
-        suggestionsCount: response.data.suggestions?.length || 0,
-        eventsAnalyzed: response.data.analytics_summary?.total_events || 0,
-      });
-
       setAnalyticsData(response.data);
-
-      // Update cache and timestamps
-      const now = new Date();
-      setLastUpdate(now);
-      localStorage.setItem("lastAnalyticsUpdate", now.toISOString());
-      localStorage.setItem("analyticsCacheKey", cacheKey);
-
-      console.log("💾 Analytics cache updated:", {
-        timestamp: now.toISOString(),
-        cacheKey,
-        forceRefresh,
-      });
-
-      // Show success message for manual refresh
-      if (forceRefresh) {
-        setShowSuccessMessage(true);
-        console.log("🎉 Manual refresh completed successfully");
-      }
-
-      setShouldRefresh(false);
+      setLastUpdate(new Date());
+      if (forceRefresh) setShowSuccessMessage(true);
     } catch (err: any) {
-      const errorMessage =
-        err.response?.data?.error || "Failed to load analytics";
-      console.error("❌ Analytics load failed:", {
-        error: errorMessage,
-        status: err.response?.status,
-        url: err.config?.url,
-      });
-      setError(errorMessage);
+      setError(err.response?.data?.error || "Failed to load analytics");
     } finally {
       setLoading(false);
-      console.log("🏁 Analytics load completed");
     }
   };
 
-  // Initial load
+  // Initial load and reload on filter change
   useEffect(() => {
-    console.log(
-      "🚀 AnalyticsSuggestions component mounted, loading initial data"
-    );
     loadAnalytics();
+  }, [limit, themeFilter]);
+
+  // Periodic refresh when tab is visible
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (isTabVisible) loadAnalytics();
+    }, 30 * 60 * 1000); // 30 minutes
+    return () => clearInterval(interval);
+  }, [isTabVisible]);
+
+  // Listen for custom refresh event (from tab switch)
+  useEffect(() => {
+    const handleRefreshEvent = () => loadAnalytics(true);
+    window.addEventListener("refreshAnalytics", handleRefreshEvent);
+    return () =>
+      window.removeEventListener("refreshAnalytics", handleRefreshEvent);
   }, []);
 
-  // Manual refresh handler
-  const handleManualRefresh = () => {
-    console.log("👆 Manual refresh triggered by user");
-    loadAnalytics(true);
-  };
+  const handleManualRefresh = () => loadAnalytics(true);
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -551,14 +374,12 @@ const AnalyticsSuggestions: React.FC = () => {
                           variant='outlined'
                         />
                       </Box>
-
                       <Typography
                         variant='body2'
                         color='text.secondary'
                         sx={{ mb: 2 }}>
                         {suggestion.description}
                       </Typography>
-
                       <Box
                         sx={{
                           display: "flex",

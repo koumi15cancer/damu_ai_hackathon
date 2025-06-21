@@ -1,0 +1,65 @@
+{
+  "suggestions": [
+    {
+      "type": "theme_preference",
+      "title": "Focus on 'Fun' and 'Chill' Themes with Variation",
+      "description": "Data shows a strong preference for 'Fun' and 'Chill' themes.  To maximize engagement, alternate between these two themes and introduce variations within them.  For 'Fun', consider themes like 'Games Night', 'Outdoor Adventure', or 'Themed Party'. For 'Chill', explore options like 'Cooking Class', 'Pottery Workshop', or 'Board Game Cafe'. This caters to existing preferences while adding novelty.",
+      "confidence": 0.9,
+      "data_points": 7,
+      "impact": "high"
+    },
+    {
+      "type": "cost_optimization",
+      "title": "Optimize Costs by Exploring Free/Low-Cost Activities and Negotiating Group Discounts",
+      "description": "The average cost of 520,000 VND per event can be optimized. Explore free activities like picnics in parks, hiking, or team sports. For paid activities, negotiate group discounts with venues or consider less expensive options like happy hour deals or local restaurants instead of high-end lounges.  Set a budget range for events and explore options within that range before committing.",
+      "confidence": 0.85,
+      "data_points": 10,
+      "impact": "medium"
+    },
+    {
+      "type": "activity_variety",
+      "title": "Increase Activity Variety based on Theme",
+      "description": "While some events had multiple activities, data suggests a lack of consistent variety.  Link activities directly to the chosen theme. For 'Fun' themes, incorporate interactive games, friendly competitions, or creative challenges. 'Chill' themes could include relaxing activities like yoga, meditation, or a movie night.  Solicit team feedback on activity preferences before planning.",
+      "confidence": 0.8,
+      "data_points": 5,
+      "impact": "medium"
+    },
+    {
+      "type": "timing",
+      "title": "Gather Feedback on Preferred Timing and Frequency",
+      "description": "All recent events occurred on the same date, suggesting a potential scheduling bottleneck.  Survey the team to understand preferred days of the week and times for events.  Consider alternating between weekday evenings and weekend activities to accommodate different schedules. Also, gauge preferred frequency of events (e.g., monthly, bi-monthly) to avoid event fatigue.",
+      "confidence": 0.75,
+      "data_points": 4,
+      "impact": "low"
+    },
+    {
+      "type": "location",
+      "title": "Diversify Locations and Consider Accessibility",
+      "description": "The data shows a concentration of events at restaurants and bars. Explore different locations like parks, museums, art galleries, or even team members' homes for a more diverse experience.  Consider the accessibility of locations for all team members, including those with disabilities or those relying on public transport. Rotating locations also allows for exploring different parts of the city and catering to diverse interests.",
+      "confidence": 0.7,
+      "data_points": 3,
+      "impact": "low"
+    }
+  ],
+  "analytics_summary": {
+    "total_events": 10,
+    "most_popular_theme": "fun 🎉",
+    "average_cost": 520000.0,
+    "common_activities": [
+      "Dinner & Drinks at Shri Restaurant & Lounge",
+      "Rooftop Drinks at Broma: Not a Bar",
+      "Team Dinner",
+      "Karaoke Night",
+      "Bar Hopping"
+    ],
+    "rating_trends": "Excellent - High satisfaction with recent events",
+    "theme_distribution": {
+      "chill 🧘": 2,
+      "fun 🎉": 3,
+      "chill": 2,
+      "fun": 1,
+      "outdoor": 1,
+      "outdoor 🌤": 1
+    }
+  }
+}

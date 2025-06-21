@@ -1,618 +1,6 @@
 {
   "analytics_history": [
     {
-      "timestamp": "2025-06-21T11:01:45.276751",
-      "analytics_data": {
-        "events": [
-          {
-            "id": 5,
-            "date": "2024-05-12",
-            "theme": "chill",
-            "location": "District 2",
-            "participants": [
-              "Ben",
-              "Emma",
-              "Sophie",
-              "Lisa"
-            ],
-            "activities": [
-              "Yoga class",
-              "Healthy dinner"
-            ],
-            "total_cost": 900000
-          },
-          {
-            "id": 4,
-            "date": "2024-04-05",
-            "theme": "fun",
-            "location": "Binh Thanh",
-            "participants": [
-              "Sarah",
-              "David",
-              "Alex",
-              "Sophie"
-            ],
-            "activities": [
-              "Escape room",
-              "Bowling"
-            ],
-            "total_cost": 1000000,
-            "member_ratings": [
-              {
-                "member_name": "David",
-                "rating": 3,
-                "feedback": "",
-                "categories": {
-                  "fun": 4,
-                  "organization": 2,
-                  "value": 3,
-                  "overall": 3
-                },
-                "submitted_at": "2025-06-21T03:39:02.486Z"
-              }
-            ],
-            "ai_rating": 3,
-            "rating": 3.0
-          },
-          {
-            "id": 3,
-            "date": "2024-03-10",
-            "theme": "outdoor",
-            "location": "District 7",
-            "participants": [
-              "Mike",
-              "David",
-              "Emma",
-              "Alex"
-            ],
-            "activities": [
-              "Park walk",
-              "Street food"
-            ],
-            "total_cost": 600000
-          },
-          {
-            "id": 2,
-            "date": "2024-02-20",
-            "theme": "chill",
-            "location": "District 3",
-            "participants": [
-              "Ben",
-              "Lisa",
-              "Emma",
-              "Sophie"
-            ],
-            "activities": [
-              "Cafe hopping",
-              "Board games"
-            ],
-            "total_cost": 800000
-          },
-          {
-            "id": 1,
-            "date": "2024-01-15",
-            "theme": "fun",
-            "location": "District 1",
-            "participants": [
-              "Ben",
-              "Sarah",
-              "Mike",
-              "Lisa"
-            ],
-            "activities": [
-              "Korean BBQ",
-              "Karaoke"
-            ],
-            "total_cost": 1200000
-          }
-        ],
-        "total_events": 5,
-        "themes": [
-          "chill",
-          "fun",
-          "outdoor",
-          "chill",
-          "fun"
-        ],
-        "activities": [
-          "Yoga class",
-          "Healthy dinner",
-          "Escape room",
-          "Bowling",
-          "Park walk",
-          "Street food",
-          "Cafe hopping",
-          "Board games",
-          "Korean BBQ",
-          "Karaoke"
-        ],
-        "costs": [
-          900000,
-          1000000,
-          600000,
-          800000,
-          1200000
-        ],
-        "ratings": [
-          3.0
-        ],
-        "locations": [
-          "District 2",
-          "Binh Thanh",
-          "District 7",
-          "District 3",
-          "District 1"
-        ],
-        "participant_counts": [
-          4,
-          4,
-          4,
-          4,
-          4
-        ]
-      },
-      "suggestions": [
-        {
-          "type": "theme_preference",
-          "title": "Popular Theme: chill",
-          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
-          "confidence": 0.8,
-          "data_points": 5,
-          "category": "theme"
-        },
-        {
-          "type": "activity_suggestion",
-          "title": "Successful Activity: Yoga class",
-          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
-          "confidence": 0.75,
-          "data_points": 10,
-          "category": "activity"
-        },
-        {
-          "type": "cost_optimization",
-          "title": "Cost Optimization Opportunity",
-          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
-          "confidence": 0.7,
-          "data_points": 5,
-          "category": "cost"
-        },
-        {
-          "type": "rating_insight",
-          "title": "Improve Event Satisfaction",
-          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
-          "confidence": 0.6,
-          "data_points": 1,
-          "category": "rating"
-        }
-      ],
-      "analytics_summary": {
-        "total_events": 5,
-        "most_popular_theme": "chill",
-        "average_cost": 900000.0,
-        "common_activities": [
-          "Yoga class",
-          "Healthy dinner",
-          "Escape room",
-          "Bowling",
-          "Park walk"
-        ],
-        "rating_trends": "Good - Generally positive feedback",
-        "theme_distribution": {
-          "chill": 2,
-          "fun": 2,
-          "outdoor": 1
-        }
-      }
-    },
-    {
-      "timestamp": "2025-06-21T11:01:45.279548",
-      "analytics_data": {
-        "events": [
-          {
-            "id": 5,
-            "date": "2024-05-12",
-            "theme": "chill",
-            "location": "District 2",
-            "participants": [
-              "Ben",
-              "Emma",
-              "Sophie",
-              "Lisa"
-            ],
-            "activities": [
-              "Yoga class",
-              "Healthy dinner"
-            ],
-            "total_cost": 900000
-          },
-          {
-            "id": 4,
-            "date": "2024-04-05",
-            "theme": "fun",
-            "location": "Binh Thanh",
-            "participants": [
-              "Sarah",
-              "David",
-              "Alex",
-              "Sophie"
-            ],
-            "activities": [
-              "Escape room",
-              "Bowling"
-            ],
-            "total_cost": 1000000,
-            "member_ratings": [
-              {
-                "member_name": "David",
-                "rating": 3,
-                "feedback": "",
-                "categories": {
-                  "fun": 4,
-                  "organization": 2,
-                  "value": 3,
-                  "overall": 3
-                },
-                "submitted_at": "2025-06-21T03:39:02.486Z"
-              }
-            ],
-            "ai_rating": 3,
-            "rating": 3.0
-          },
-          {
-            "id": 3,
-            "date": "2024-03-10",
-            "theme": "outdoor",
-            "location": "District 7",
-            "participants": [
-              "Mike",
-              "David",
-              "Emma",
-              "Alex"
-            ],
-            "activities": [
-              "Park walk",
-              "Street food"
-            ],
-            "total_cost": 600000
-          },
-          {
-            "id": 2,
-            "date": "2024-02-20",
-            "theme": "chill",
-            "location": "District 3",
-            "participants": [
-              "Ben",
-              "Lisa",
-              "Emma",
-              "Sophie"
-            ],
-            "activities": [
-              "Cafe hopping",
-              "Board games"
-            ],
-            "total_cost": 800000
-          },
-          {
-            "id": 1,
-            "date": "2024-01-15",
-            "theme": "fun",
-            "location": "District 1",
-            "participants": [
-              "Ben",
-              "Sarah",
-              "Mike",
-              "Lisa"
-            ],
-            "activities": [
-              "Korean BBQ",
-              "Karaoke"
-            ],
-            "total_cost": 1200000
-          }
-        ],
-        "total_events": 5,
-        "themes": [
-          "chill",
-          "fun",
-          "outdoor",
-          "chill",
-          "fun"
-        ],
-        "activities": [
-          "Yoga class",
-          "Healthy dinner",
-          "Escape room",
-          "Bowling",
-          "Park walk",
-          "Street food",
-          "Cafe hopping",
-          "Board games",
-          "Korean BBQ",
-          "Karaoke"
-        ],
-        "costs": [
-          900000,
-          1000000,
-          600000,
-          800000,
-          1200000
-        ],
-        "ratings": [
-          3.0
-        ],
-        "locations": [
-          "District 2",
-          "Binh Thanh",
-          "District 7",
-          "District 3",
-          "District 1"
-        ],
-        "participant_counts": [
-          4,
-          4,
-          4,
-          4,
-          4
-        ]
-      },
-      "suggestions": [
-        {
-          "type": "theme_preference",
-          "title": "Popular Theme: chill",
-          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
-          "confidence": 0.8,
-          "data_points": 5,
-          "category": "theme"
-        },
-        {
-          "type": "activity_suggestion",
-          "title": "Successful Activity: Yoga class",
-          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
-          "confidence": 0.75,
-          "data_points": 10,
-          "category": "activity"
-        },
-        {
-          "type": "cost_optimization",
-          "title": "Cost Optimization Opportunity",
-          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
-          "confidence": 0.7,
-          "data_points": 5,
-          "category": "cost"
-        },
-        {
-          "type": "rating_insight",
-          "title": "Improve Event Satisfaction",
-          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
-          "confidence": 0.6,
-          "data_points": 1,
-          "category": "rating"
-        }
-      ],
-      "analytics_summary": {
-        "total_events": 5,
-        "most_popular_theme": "chill",
-        "average_cost": 900000.0,
-        "common_activities": [
-          "Yoga class",
-          "Healthy dinner",
-          "Escape room",
-          "Bowling",
-          "Park walk"
-        ],
-        "rating_trends": "Good - Generally positive feedback",
-        "theme_distribution": {
-          "chill": 2,
-          "fun": 2,
-          "outdoor": 1
-        }
-      }
-    },
-    {
-      "timestamp": "2025-06-21T11:01:45.281924",
-      "analytics_data": {
-        "events": [
-          {
-            "id": 5,
-            "date": "2024-05-12",
-            "theme": "chill",
-            "location": "District 2",
-            "participants": [
-              "Ben",
-              "Emma",
-              "Sophie",
-              "Lisa"
-            ],
-            "activities": [
-              "Yoga class",
-              "Healthy dinner"
-            ],
-            "total_cost": 900000
-          },
-          {
-            "id": 4,
-            "date": "2024-04-05",
-            "theme": "fun",
-            "location": "Binh Thanh",
-            "participants": [
-              "Sarah",
-              "David",
-              "Alex",
-              "Sophie"
-            ],
-            "activities": [
-              "Escape room",
-              "Bowling"
-            ],
-            "total_cost": 1000000,
-            "member_ratings": [
-              {
-                "member_name": "David",
-                "rating": 3,
-                "feedback": "",
-                "categories": {
-                  "fun": 4,
-                  "organization": 2,
-                  "value": 3,
-                  "overall": 3
-                },
-                "submitted_at": "2025-06-21T03:39:02.486Z"
-              }
-            ],
-            "ai_rating": 3,
-            "rating": 3.0
-          },
-          {
-            "id": 3,
-            "date": "2024-03-10",
-            "theme": "outdoor",
-            "location": "District 7",
-            "participants": [
-              "Mike",
-              "David",
-              "Emma",
-              "Alex"
-            ],
-            "activities": [
-              "Park walk",
-              "Street food"
-            ],
-            "total_cost": 600000
-          },
-          {
-            "id": 2,
-            "date": "2024-02-20",
-            "theme": "chill",
-            "location": "District 3",
-            "participants": [
-              "Ben",
-              "Lisa",
-              "Emma",
-              "Sophie"
-            ],
-            "activities": [
-              "Cafe hopping",
-              "Board games"
-            ],
-            "total_cost": 800000
-          },
-          {
-            "id": 1,
-            "date": "2024-01-15",
-            "theme": "fun",
-            "location": "District 1",
-            "participants": [
-              "Ben",
-              "Sarah",
-              "Mike",
-              "Lisa"
-            ],
-            "activities": [
-              "Korean BBQ",
-              "Karaoke"
-            ],
-            "total_cost": 1200000
-          }
-        ],
-        "total_events": 5,
-        "themes": [
-          "chill",
-          "fun",
-          "outdoor",
-          "chill",
-          "fun"
-        ],
-        "activities": [
-          "Yoga class",
-          "Healthy dinner",
-          "Escape room",
-          "Bowling",
-          "Park walk",
-          "Street food",
-          "Cafe hopping",
-          "Board games",
-          "Korean BBQ",
-          "Karaoke"
-        ],
-        "costs": [
-          900000,
-          1000000,
-          600000,
-          800000,
-          1200000
-        ],
-        "ratings": [
-          3.0
-        ],
-        "locations": [
-          "District 2",
-          "Binh Thanh",
-          "District 7",
-          "District 3",
-          "District 1"
-        ],
-        "participant_counts": [
-          4,
-          4,
-          4,
-          4,
-          4
-        ]
-      },
-      "suggestions": [
-        {
-          "type": "theme_preference",
-          "title": "Popular Theme: chill",
-          "description": "Your team shows a strong preference for chill events (2 times). Consider exploring variations of this theme.",
-          "confidence": 0.8,
-          "data_points": 5,
-          "category": "theme"
-        },
-        {
-          "type": "activity_suggestion",
-          "title": "Successful Activity: Yoga class",
-          "description": "\"Yoga class\" appears 1 times in your events. This activity seems to work well for your team.",
-          "confidence": 0.75,
-          "data_points": 10,
-          "category": "activity"
-        },
-        {
-          "type": "cost_optimization",
-          "title": "Cost Optimization Opportunity",
-          "description": "Average event cost is 900,000 VND. Consider mixing high and low-cost activities to balance budget.",
-          "confidence": 0.7,
-          "data_points": 5,
-          "category": "cost"
-        },
-        {
-          "type": "rating_insight",
-          "title": "Improve Event Satisfaction",
-          "description": "Average rating is 3.0/5. Consider gathering more feedback to understand preferences better.",
-          "confidence": 0.6,
-          "data_points": 1,
-          "category": "rating"
-        }
-      ],
-      "analytics_summary": {
-        "total_events": 5,
-        "most_popular_theme": "chill",
-        "average_cost": 900000.0,
-        "common_activities": [
-          "Yoga class",
-          "Healthy dinner",
-          "Escape room",
-          "Bowling",
-          "Park walk"
-        ],
-        "rating_trends": "Good - Generally positive feedback",
-        "theme_distribution": {
-          "chill": 2,
-          "fun": 2,
-          "outdoor": 1
-        }
-      }
-    },
-    {
       "timestamp": "2025-06-21T11:01:45.284613",
       "analytics_data": {
         "events": [
@@ -10003,6 +9391,2571 @@
           "chill": 1,
           "fun": 1,
           "outdoor": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T14:40:43.057056",
+      "analytics_data": {
+        "events": [
+          {
+            "id": "92520bc9-2fc9-49e4-b862-e03b1b1535e9",
+            "created_at": "2025-06-21T13:16:52.659174",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "District 1, Ho Chi Minh City",
+            "participants": [
+              "Alice",
+              "Bob",
+              "Charlie"
+            ],
+            "activities": [
+              "Team Dinner",
+              "Karaoke Night",
+              "Bar Hopping"
+            ],
+            "total_cost": 450000,
+            "phases": [
+              {
+                "activity": "Team Dinner",
+                "location": "Pho 24, District 1",
+                "cost": 250000
+              },
+              {
+                "activity": "Karaoke Night",
+                "location": "Karaoke Bar, District 1",
+                "cost": 150000
+              },
+              {
+                "activity": "Bar Hopping",
+                "location": "Bui Vien Street, District 1",
+                "cost": 50000
+              }
+            ],
+            "fit_analysis": "Perfect for energetic team members who enjoy social activities",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": "9da83a84-b28e-42b1-b106-4dcddd10544b",
+            "created_at": "2025-06-21T13:46:24.789986",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "Ho Chi Minh City",
+            "participants": [
+              "Ben",
+              "Lil Thanh",
+              "Cody",
+              "Big Thanh",
+              "Mason"
+            ],
+            "activities": [
+              "Street Food Tour in Phu Nhuan",
+              "Board Games at The Workshop"
+            ],
+            "total_cost": 300000,
+            "phases": [
+              {
+                "activity": "Street Food Tour in Phu Nhuan",
+                "coordinates": {
+                  "lat": 10.7948,
+                  "lng": 106.6754
+                },
+                "cost": 150000,
+                "indicators": [
+                  "outdoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": false,
+                "isOutdoor": true,
+                "isVegetarianFriendly": true,
+                "location": "Phan Xích Long Street, Phu Nhuan District, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7948,106.6754",
+                "zone": "Phu Nhuan"
+              },
+              {
+                "activity": "Board Games at The Workshop",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "27 Ngô Đức Kế, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              }
+            ],
+            "fit_analysis": "Suits team members: Ben, Lil Thanh, Big Thanh, Cody, Mason",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "fun 🎉",
+          "fun 🎉",
+          "chill",
+          "fun",
+          "outdoor"
+        ],
+        "activities": [
+          "Team Dinner",
+          "Karaoke Night",
+          "Bar Hopping",
+          "Street Food Tour in Phu Nhuan",
+          "Board Games at The Workshop",
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food"
+        ],
+        "costs": [
+          450000,
+          300000,
+          900000,
+          1000000,
+          600000
+        ],
+        "ratings": [
+          4.5,
+          4.5,
+          3.0
+        ],
+        "locations": [
+          "District 1, Ho Chi Minh City",
+          "Ho Chi Minh City",
+          "District 2",
+          "Binh Thanh",
+          "District 7"
+        ],
+        "participant_counts": [
+          3,
+          5,
+          4,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Focus on 'Fun' Themes with Variation",
+          "description": "Data shows a strong preference for 'Fun' themed events (3/5).  While this provides a good foundation, explore variations within 'Fun' to avoid repetition.  Consider themes like 'Fun & Games', 'Fun in the Sun', or 'Foodie Fun'.  This allows catering to the preferred theme while introducing novelty and preventing event fatigue.",
+          "confidence": 0.9,
+          "data_points": 3,
+          "impact": "medium"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Optimize Cost for Higher Frequency",
+          "description": "The average cost of 650,000 VND could be a barrier to more frequent events. Explore lower-cost activities like potlucks, picnics, or free outdoor events combined with higher-cost events strategically placed throughout the year. The two 'Fun' events on 2025-06-21 demonstrate that engaging events can be achieved with lower budgets (300,000 VND and 450,000 VND). Analyze these events further to understand their success factors and replicate them.",
+          "confidence": 0.85,
+          "data_points": 5,
+          "impact": "high"
+        },
+        {
+          "type": "activity_variety",
+          "title": "Introduce More Collaborative Activities",
+          "description": "While variety exists in past activities, introduce more collaborative activities that encourage teamwork and communication.  Consider escape rooms, team-building games, or volunteering events. This fosters stronger bonds compared to purely social activities like Karaoke or Bar Hopping.",
+          "confidence": 0.75,
+          "data_points": 5,
+          "impact": "medium"
+        },
+        {
+          "type": "timing",
+          "title": "Improve Rating Collection and Analyze Timing Impact",
+          "description": "Missing ratings for two events hinder analysis. Implement a systematic feedback collection process after each event, including questions about preferred timing (weekday vs. weekend, time of day). This data can be used to optimize future scheduling and improve participation rates.  Explore surveying team members on preferred frequency of events as well.",
+          "confidence": 0.8,
+          "data_points": 2,
+          "impact": "medium"
+        },
+        {
+          "type": "location",
+          "title": "Leverage Successful Locations and Explore New Ones",
+          "description": "The Street Food Tour in Phu Nhuan and Board Games at The Workshop provide specific locations that can be revisited or inspire similar events. Gather feedback on preferred locations and explore new options based on the chosen themes.  Consider factors like accessibility, atmosphere, and capacity.",
+          "confidence": 0.7,
+          "data_points": 2,
+          "impact": "low"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "fun 🎉",
+        "average_cost": 650000.0,
+        "common_activities": [
+          "Team Dinner",
+          "Karaoke Night",
+          "Bar Hopping",
+          "Street Food Tour in Phu Nhuan",
+          "Board Games at The Workshop"
+        ],
+        "rating_trends": "Excellent - High satisfaction with recent events",
+        "theme_distribution": {
+          "fun 🎉": 2,
+          "chill": 1,
+          "fun": 1,
+          "outdoor": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T14:41:41.277319",
+      "analytics_data": {
+        "events": [
+          {
+            "id": "92520bc9-2fc9-49e4-b862-e03b1b1535e9",
+            "created_at": "2025-06-21T13:16:52.659174",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "District 1, Ho Chi Minh City",
+            "participants": [
+              "Alice",
+              "Bob",
+              "Charlie"
+            ],
+            "activities": [
+              "Team Dinner",
+              "Karaoke Night",
+              "Bar Hopping"
+            ],
+            "total_cost": 450000,
+            "phases": [
+              {
+                "activity": "Team Dinner",
+                "location": "Pho 24, District 1",
+                "cost": 250000
+              },
+              {
+                "activity": "Karaoke Night",
+                "location": "Karaoke Bar, District 1",
+                "cost": 150000
+              },
+              {
+                "activity": "Bar Hopping",
+                "location": "Bui Vien Street, District 1",
+                "cost": 50000
+              }
+            ],
+            "fit_analysis": "Perfect for energetic team members who enjoy social activities",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": "9da83a84-b28e-42b1-b106-4dcddd10544b",
+            "created_at": "2025-06-21T13:46:24.789986",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "Ho Chi Minh City",
+            "participants": [
+              "Ben",
+              "Lil Thanh",
+              "Cody",
+              "Big Thanh",
+              "Mason"
+            ],
+            "activities": [
+              "Street Food Tour in Phu Nhuan",
+              "Board Games at The Workshop"
+            ],
+            "total_cost": 300000,
+            "phases": [
+              {
+                "activity": "Street Food Tour in Phu Nhuan",
+                "coordinates": {
+                  "lat": 10.7948,
+                  "lng": 106.6754
+                },
+                "cost": 150000,
+                "indicators": [
+                  "outdoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": false,
+                "isOutdoor": true,
+                "isVegetarianFriendly": true,
+                "location": "Phan Xích Long Street, Phu Nhuan District, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7948,106.6754",
+                "zone": "Phu Nhuan"
+              },
+              {
+                "activity": "Board Games at The Workshop",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "27 Ngô Đức Kế, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              }
+            ],
+            "fit_analysis": "Suits team members: Ben, Lil Thanh, Big Thanh, Cody, Mason",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": "d8d81da4-3acf-4969-8afb-9c769b313d06",
+            "created_at": "2025-06-21T13:36:51.995239",
+            "date": "2024-01-25",
+            "theme": "outdoor 🌤",
+            "location": "District 7",
+            "participants": [
+              "Alice",
+              "Charlie",
+              "Eve"
+            ],
+            "activities": [
+              "Park Walk",
+              "Outdoor Dining"
+            ],
+            "total_cost": 300000,
+            "rating": 4,
+            "phases": [
+              {
+                "activity": "Park Walk",
+                "cost": 0
+              },
+              {
+                "activity": "Outdoor Dining",
+                "cost": 300000
+              }
+            ]
+          },
+          {
+            "id": "b4f52568-4476-4794-a7da-d46276a4ee97",
+            "created_at": "2025-06-21T13:36:51.992221",
+            "date": "2024-01-20",
+            "theme": "chill 🧘",
+            "location": "District 2",
+            "participants": [
+              "Alice",
+              "Bob",
+              "David"
+            ],
+            "activities": [
+              "Cafe Meeting",
+              "Board Games"
+            ],
+            "total_cost": 200000,
+            "rating": 5,
+            "phases": [
+              {
+                "activity": "Cafe Meeting",
+                "cost": 150000
+              },
+              {
+                "activity": "Board Games",
+                "cost": 50000
+              }
+            ]
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          },
+          {
+            "id": "00c33fd1-a11c-4a24-ab8f-dd4de83b9b1d",
+            "created_at": "2025-06-21T13:36:51.989268",
+            "date": "2024-01-15",
+            "theme": "fun 🎉",
+            "location": "District 1",
+            "participants": [
+              "Alice",
+              "Bob",
+              "Charlie"
+            ],
+            "activities": [
+              "Hotpot Dinner",
+              "Karaoke",
+              "Bar Hopping"
+            ],
+            "total_cost": 450000,
+            "rating": 4,
+            "phases": [
+              {
+                "activity": "Hotpot Dinner",
+                "cost": 250000
+              },
+              {
+                "activity": "Karaoke",
+                "cost": 100000
+              },
+              {
+                "activity": "Bar Hopping",
+                "cost": 100000
+              }
+            ]
+          }
+        ],
+        "total_events": 10,
+        "themes": [
+          "fun 🎉",
+          "fun 🎉",
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "outdoor 🌤",
+          "chill 🧘",
+          "fun",
+          "fun 🎉"
+        ],
+        "activities": [
+          "Team Dinner",
+          "Karaoke Night",
+          "Bar Hopping",
+          "Street Food Tour in Phu Nhuan",
+          "Board Games at The Workshop",
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Park Walk",
+          "Outdoor Dining",
+          "Cafe Meeting",
+          "Board Games",
+          "Korean BBQ",
+          "Karaoke",
+          "Hotpot Dinner",
+          "Karaoke",
+          "Bar Hopping"
+        ],
+        "costs": [
+          450000,
+          300000,
+          900000,
+          1000000,
+          600000,
+          800000,
+          300000,
+          200000,
+          1200000,
+          450000
+        ],
+        "ratings": [
+          4.5,
+          4.5,
+          3.0,
+          4,
+          5,
+          4
+        ],
+        "locations": [
+          "District 1, Ho Chi Minh City",
+          "Ho Chi Minh City",
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 7",
+          "District 2",
+          "District 1",
+          "District 1"
+        ],
+        "participant_counts": [
+          3,
+          5,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          4,
+          3
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Prioritize 'Fun' Themes with Variation",
+          "description": "Data shows a strong preference for 'Fun' themed events (5/10 events).  However, the generic 'Fun' label lacks specificity.  Future events should maintain the 'Fun' element but introduce specific themes within that category, like 'Retro Game Night,' 'Funfair Outing,' or 'Themed Costume Party.' This adds novelty and caters to wider interests within the team.",
+          "confidence": 0.9,
+          "data_points": 5,
+          "impact": "high"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Introduce Budget Tiers and Explore Free/Low-Cost Activities",
+          "description": "The average cost of 620,000 VND could be a barrier for some. Offer different budget tiers for events (e.g., budget-friendly, mid-range, premium) with transparent cost breakdowns. Explore free or low-cost activities like potlucks, park picnics, board game nights, or volunteering to complement higher-cost outings. This increases accessibility and participation.",
+          "confidence": 0.85,
+          "data_points": 10,
+          "impact": "medium"
+        },
+        {
+          "type": "activity_variety",
+          "title": "Diversify Activities Beyond Bar Hopping and Karaoke",
+          "description": "While Bar Hopping and Karaoke are popular, repeating them limits engagement over time. Survey the team to gauge activity preferences and introduce new options like escape rooms, cooking classes, hiking trips, or creative workshops.  Rotating activities ensures there's something for everyone and prevents event fatigue.",
+          "confidence": 0.8,
+          "data_points": 4,
+          "impact": "high"
+        },
+        {
+          "type": "timing",
+          "title": "Improve Data Collection for Missing Ratings and Leverage Timing Insights",
+          "description": "Two recent events lack ratings. Implement a consistent feedback mechanism (e.g., short online surveys) immediately following each event to capture all ratings. Analyze event dates and ratings to identify optimal days/times for future events. For instance, mid-week events might be preferable to Fridays if team members have other weekend commitments.",
+          "confidence": 0.7,
+          "data_points": 2,
+          "impact": "medium"
+        },
+        {
+          "type": "location",
+          "title": "Explore Different Locations and Consider Logistics",
+          "description": "The data shows a limited variety in locations.  Branch out beyond familiar venues and explore different districts or even nearby weekend getaways. Factor in travel time and accessibility for all team members when choosing a location.  For instance, consider providing transportation options or choosing centrally located venues.",
+          "confidence": 0.75,
+          "data_points": 5,
+          "impact": "low"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 10,
+        "most_popular_theme": "fun 🎉",
+        "average_cost": 620000.0,
+        "common_activities": [
+          "Bar Hopping",
+          "Karaoke",
+          "Team Dinner",
+          "Karaoke Night",
+          "Street Food Tour in Phu Nhuan"
+        ],
+        "rating_trends": "Excellent - High satisfaction with recent events",
+        "theme_distribution": {
+          "fun 🎉": 3,
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1,
+          "outdoor 🌤": 1,
+          "chill 🧘": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T14:47:09.766966",
+      "analytics_data": {
+        "events": [
+          {
+            "id": "92520bc9-2fc9-49e4-b862-e03b1b1535e9",
+            "created_at": "2025-06-21T13:16:52.659174",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "District 1, Ho Chi Minh City",
+            "participants": [
+              "Alice",
+              "Bob",
+              "Charlie"
+            ],
+            "activities": [
+              "Team Dinner",
+              "Karaoke Night",
+              "Bar Hopping"
+            ],
+            "total_cost": 450000,
+            "phases": [
+              {
+                "activity": "Team Dinner",
+                "location": "Pho 24, District 1",
+                "cost": 250000
+              },
+              {
+                "activity": "Karaoke Night",
+                "location": "Karaoke Bar, District 1",
+                "cost": 150000
+              },
+              {
+                "activity": "Bar Hopping",
+                "location": "Bui Vien Street, District 1",
+                "cost": 50000
+              }
+            ],
+            "fit_analysis": "Perfect for energetic team members who enjoy social activities",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": "9da83a84-b28e-42b1-b106-4dcddd10544b",
+            "created_at": "2025-06-21T13:46:24.789986",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "Ho Chi Minh City",
+            "participants": [
+              "Ben",
+              "Lil Thanh",
+              "Cody",
+              "Big Thanh",
+              "Mason"
+            ],
+            "activities": [
+              "Street Food Tour in Phu Nhuan",
+              "Board Games at The Workshop"
+            ],
+            "total_cost": 300000,
+            "phases": [
+              {
+                "activity": "Street Food Tour in Phu Nhuan",
+                "coordinates": {
+                  "lat": 10.7948,
+                  "lng": 106.6754
+                },
+                "cost": 150000,
+                "indicators": [
+                  "outdoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": false,
+                "isOutdoor": true,
+                "isVegetarianFriendly": true,
+                "location": "Phan Xích Long Street, Phu Nhuan District, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7948,106.6754",
+                "zone": "Phu Nhuan"
+              },
+              {
+                "activity": "Board Games at The Workshop",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "27 Ngô Đức Kế, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              }
+            ],
+            "fit_analysis": "Suits team members: Ben, Lil Thanh, Big Thanh, Cody, Mason",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": "d8d81da4-3acf-4969-8afb-9c769b313d06",
+            "created_at": "2025-06-21T13:36:51.995239",
+            "date": "2024-01-25",
+            "theme": "outdoor 🌤",
+            "location": "District 7",
+            "participants": [
+              "Alice",
+              "Charlie",
+              "Eve"
+            ],
+            "activities": [
+              "Park Walk",
+              "Outdoor Dining"
+            ],
+            "total_cost": 300000,
+            "rating": 4,
+            "phases": [
+              {
+                "activity": "Park Walk",
+                "cost": 0
+              },
+              {
+                "activity": "Outdoor Dining",
+                "cost": 300000
+              }
+            ]
+          },
+          {
+            "id": "b4f52568-4476-4794-a7da-d46276a4ee97",
+            "created_at": "2025-06-21T13:36:51.992221",
+            "date": "2024-01-20",
+            "theme": "chill 🧘",
+            "location": "District 2",
+            "participants": [
+              "Alice",
+              "Bob",
+              "David"
+            ],
+            "activities": [
+              "Cafe Meeting",
+              "Board Games"
+            ],
+            "total_cost": 200000,
+            "rating": 5,
+            "phases": [
+              {
+                "activity": "Cafe Meeting",
+                "cost": 150000
+              },
+              {
+                "activity": "Board Games",
+                "cost": 50000
+              }
+            ]
+          },
+          {
+            "id": 1,
+            "date": "2024-01-15",
+            "theme": "fun",
+            "location": "District 1",
+            "participants": [
+              "Ben",
+              "Sarah",
+              "Mike",
+              "Lisa"
+            ],
+            "activities": [
+              "Korean BBQ",
+              "Karaoke"
+            ],
+            "total_cost": 1200000
+          },
+          {
+            "id": "00c33fd1-a11c-4a24-ab8f-dd4de83b9b1d",
+            "created_at": "2025-06-21T13:36:51.989268",
+            "date": "2024-01-15",
+            "theme": "fun 🎉",
+            "location": "District 1",
+            "participants": [
+              "Alice",
+              "Bob",
+              "Charlie"
+            ],
+            "activities": [
+              "Hotpot Dinner",
+              "Karaoke",
+              "Bar Hopping"
+            ],
+            "total_cost": 450000,
+            "rating": 4,
+            "phases": [
+              {
+                "activity": "Hotpot Dinner",
+                "cost": 250000
+              },
+              {
+                "activity": "Karaoke",
+                "cost": 100000
+              },
+              {
+                "activity": "Bar Hopping",
+                "cost": 100000
+              }
+            ]
+          }
+        ],
+        "total_events": 10,
+        "themes": [
+          "fun 🎉",
+          "fun 🎉",
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "outdoor 🌤",
+          "chill 🧘",
+          "fun",
+          "fun 🎉"
+        ],
+        "activities": [
+          "Team Dinner",
+          "Karaoke Night",
+          "Bar Hopping",
+          "Street Food Tour in Phu Nhuan",
+          "Board Games at The Workshop",
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Park Walk",
+          "Outdoor Dining",
+          "Cafe Meeting",
+          "Board Games",
+          "Korean BBQ",
+          "Karaoke",
+          "Hotpot Dinner",
+          "Karaoke",
+          "Bar Hopping"
+        ],
+        "costs": [
+          450000,
+          300000,
+          900000,
+          1000000,
+          600000,
+          800000,
+          300000,
+          200000,
+          1200000,
+          450000
+        ],
+        "ratings": [
+          4.5,
+          4.5,
+          3.0,
+          4,
+          5,
+          4
+        ],
+        "locations": [
+          "District 1, Ho Chi Minh City",
+          "Ho Chi Minh City",
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 7",
+          "District 2",
+          "District 1",
+          "District 1"
+        ],
+        "participant_counts": [
+          3,
+          5,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3,
+          4,
+          3
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Leverage Popular Themes and Explore Variations",
+          "description": "The 'fun' theme is clearly popular, appearing in 5 out of 10 events.  To maintain enthusiasm, explore variations within this theme, such as 'Fun & Games Night,' 'Retro Fun,' or 'Fun in the Sun.' This keeps the core appeal while introducing novelty.  Consider surveying the team for specific 'fun' activity preferences.",
+          "confidence": 0.9,
+          "data_points": 5,
+          "impact": "medium"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Optimize Costs by Balancing High- and Low-Cost Activities",
+          "description": "The average cost is 620,000 VND. While some events exceeded this (e.g., the 1,000,000 VND 'fun' event rated 3.0), others were significantly lower (e.g., 300,000 VND 'fun' event rated 4.5). Analyze the cost breakdown of each event and identify areas for potential savings. For instance, alternate expensive outings with more budget-friendly options like potlucks, in-office game days, or volunteer activities.",
+          "confidence": 0.85,
+          "data_points": 5,
+          "impact": "high"
+        },
+        {
+          "type": "activity_variety",
+          "title": "Increase Activity Variety Based on Team Feedback",
+          "description": "While Bar Hopping and Karaoke are recurring activities, explore new options to cater to diverse interests. Conduct an anonymous survey to gauge team preferences and gather suggestions. Consider activities like escape rooms, cooking classes, hiking trips, or creative workshops. This expands the range of experiences and boosts engagement.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "impact": "medium"
+        },
+        {
+          "type": "timing",
+          "title": "Improve Event Timing and Scheduling",
+          "description": "Two events occurred on the same day (2025-06-21).  Analyze team availability and preferences for weekdays vs. weekends, daytime vs. evening, etc. Distribute a questionnaire or use a scheduling tool to determine optimal timing for future events. This maximizes participation and minimizes scheduling conflicts.",
+          "confidence": 0.75,
+          "data_points": 2,
+          "impact": "low"
+        },
+        {
+          "type": "location",
+          "title": "Explore Different Locations and Logistics",
+          "description": "Only one event specified a location ('Street Food Tour in Phu Nhuan').  Varying locations can add novelty and cater to different preferences. Consider exploring different districts, parks, or even nearby cities for outings. Also, streamline logistics by pre-booking transportation, venues, or activities to ensure smooth execution.",
+          "confidence": 0.7,
+          "data_points": 1,
+          "impact": "low"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 10,
+        "most_popular_theme": "fun 🎉",
+        "average_cost": 620000.0,
+        "common_activities": [
+          "Bar Hopping",
+          "Karaoke",
+          "Team Dinner",
+          "Karaoke Night",
+          "Street Food Tour in Phu Nhuan"
+        ],
+        "rating_trends": "Excellent - High satisfaction with recent events",
+        "theme_distribution": {
+          "fun 🎉": 3,
+          "chill": 2,
+          "fun": 2,
+          "outdoor": 1,
+          "outdoor 🌤": 1,
+          "chill 🧘": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T14:52:38.052858",
+      "analytics_data": {
+        "events": [
+          {
+            "id": "92520bc9-2fc9-49e4-b862-e03b1b1535e9",
+            "created_at": "2025-06-21T13:16:52.659174",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "District 1, Ho Chi Minh City",
+            "participants": [
+              "Alice",
+              "Bob",
+              "Charlie"
+            ],
+            "activities": [
+              "Team Dinner",
+              "Karaoke Night",
+              "Bar Hopping"
+            ],
+            "total_cost": 450000,
+            "phases": [
+              {
+                "activity": "Team Dinner",
+                "location": "Pho 24, District 1",
+                "cost": 250000
+              },
+              {
+                "activity": "Karaoke Night",
+                "location": "Karaoke Bar, District 1",
+                "cost": 150000
+              },
+              {
+                "activity": "Bar Hopping",
+                "location": "Bui Vien Street, District 1",
+                "cost": 50000
+              }
+            ],
+            "fit_analysis": "Perfect for energetic team members who enjoy social activities",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": "9da83a84-b28e-42b1-b106-4dcddd10544b",
+            "created_at": "2025-06-21T13:46:24.789986",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "Ho Chi Minh City",
+            "participants": [
+              "Ben",
+              "Lil Thanh",
+              "Cody",
+              "Big Thanh",
+              "Mason"
+            ],
+            "activities": [
+              "Street Food Tour in Phu Nhuan",
+              "Board Games at The Workshop"
+            ],
+            "total_cost": 300000,
+            "phases": [
+              {
+                "activity": "Street Food Tour in Phu Nhuan",
+                "coordinates": {
+                  "lat": 10.7948,
+                  "lng": 106.6754
+                },
+                "cost": 150000,
+                "indicators": [
+                  "outdoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": false,
+                "isOutdoor": true,
+                "isVegetarianFriendly": true,
+                "location": "Phan Xích Long Street, Phu Nhuan District, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7948,106.6754",
+                "zone": "Phu Nhuan"
+              },
+              {
+                "activity": "Board Games at The Workshop",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "27 Ngô Đức Kế, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              }
+            ],
+            "fit_analysis": "Suits team members: Ben, Lil Thanh, Big Thanh, Cody, Mason",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": "67136a57-3650-4f2d-bb6e-8aafc11e4473",
+            "created_at": "2025-06-21T14:52:03.754976",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "Ho Chi Minh City",
+            "participants": [
+              "Ben",
+              "Lil Thanh",
+              "Cody",
+              "Big Thanh",
+              "Mason"
+            ],
+            "activities": [
+              "Bowling at Paragon Game Center",
+              "BBQ Dinner at Quán Nướng Cô Út"
+            ],
+            "total_cost": 300000,
+            "phases": [
+              {
+                "activity": "Bowling at Paragon Game Center",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "Crescent Mall, 101 Tôn Dật Tiên, Tân Phú, Quận 7, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              },
+              {
+                "activity": "BBQ Dinner at Quán Nướng Cô Út",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "302 Huỳnh Tấn Phát, Tân Thuận Đông, Quận 7, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              }
+            ],
+            "fit_analysis": "Suits team members: Cody, Lil Thanh, Big Thanh, Mason",
+            "rating": 4,
+            "contribution_needed": 0
+          },
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          }
+        ],
+        "total_events": 5,
+        "themes": [
+          "fun 🎉",
+          "fun 🎉",
+          "fun 🎉",
+          "chill",
+          "fun"
+        ],
+        "activities": [
+          "Team Dinner",
+          "Karaoke Night",
+          "Bar Hopping",
+          "Street Food Tour in Phu Nhuan",
+          "Board Games at The Workshop",
+          "Bowling at Paragon Game Center",
+          "BBQ Dinner at Quán Nướng Cô Út",
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling"
+        ],
+        "costs": [
+          450000,
+          300000,
+          300000,
+          900000,
+          1000000
+        ],
+        "ratings": [
+          4.5,
+          4.5,
+          4,
+          3.0
+        ],
+        "locations": [
+          "District 1, Ho Chi Minh City",
+          "Ho Chi Minh City",
+          "Ho Chi Minh City",
+          "District 2",
+          "Binh Thanh"
+        ],
+        "participant_counts": [
+          3,
+          5,
+          5,
+          4,
+          4
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Leverage the Popularity of 'Fun' Themes",
+          "description": "The data clearly shows a strong preference for 'fun' themed events (4 out of 5 events).  Future events should continue to prioritize this theme, exploring variations within 'fun' such as 'active fun' (e.g., team sports, outdoor adventures), 'creative fun' (e.g., painting class, cooking competition), or 'retro fun' (e.g., arcade games, themed party).  Survey the team to gather specific interests within the 'fun' umbrella.",
+          "confidence": 0.9,
+          "data_points": 4,
+          "impact": "high"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Optimize Event Costs for Higher Value",
+          "description": "While the average cost is reasonable, the two most expensive events (900,000 VND and 1,000,000 VND) did not receive the highest ratings and one lacked a rating altogether.  Explore lower-cost alternatives for activities, negotiate group discounts, or consider self-catering options for some events to maintain a good balance between cost and enjoyment.  Setting a budget range beforehand and transparently communicating it with the team can also help manage expectations.",
+          "confidence": 0.8,
+          "data_points": 3,
+          "impact": "medium"
+        },
+        {
+          "type": "activity_variety",
+          "title": "Introduce More Variety in Activities",
+          "description": "All five events featured different activities, indicating a desire for novelty.  Continue this trend by brainstorming and offering a wider range of activities. Consider incorporating team-building exercises, volunteering opportunities, or skill-based workshops alongside purely social activities.  A pre-event survey can help gauge interest and ensure diverse preferences are catered to.",
+          "confidence": 0.85,
+          "data_points": 5,
+          "impact": "high"
+        },
+        {
+          "type": "timing",
+          "title": "Analyze Timing and Frequency",
+          "description": "Three events occurred on the same day (2025-06-21). This could indicate a specific occasion or a data entry error.  Investigate the reason for this clustering.  For future planning, consider spreading events more evenly throughout the year, perhaps establishing a regular cadence (e.g., monthly or quarterly) to maintain team morale and engagement.  Consider surveying team members about preferred days and times for events.",
+          "confidence": 0.7,
+          "data_points": 3,
+          "impact": "medium"
+        },
+        {
+          "type": "location",
+          "title": "Explore Different Locations",
+          "description": "The current data suggests a focus on local venues.  While this is good for convenience, consider occasionally venturing to new locations or incorporating outdoor activities to add variety and excitement. This could involve exploring different districts in the city, organizing a day trip outside of the city, or even a weekend retreat for a more immersive experience.  Factor in travel time and accessibility when choosing new locations.",
+          "confidence": 0.75,
+          "data_points": 4,
+          "impact": "medium"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 5,
+        "most_popular_theme": "fun 🎉",
+        "average_cost": 590000.0,
+        "common_activities": [
+          "Team Dinner",
+          "Karaoke Night",
+          "Bar Hopping",
+          "Street Food Tour in Phu Nhuan",
+          "Board Games at The Workshop"
+        ],
+        "rating_trends": "Excellent - High satisfaction with recent events",
+        "theme_distribution": {
+          "fun 🎉": 3,
+          "chill": 1,
+          "fun": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T14:53:37.759112",
+      "analytics_data": {
+        "events": [
+          {
+            "id": "7a97704d-b961-4a13-9abd-508bc43e74b7",
+            "created_at": "2025-06-21T14:53:19.512538",
+            "date": "2025-06-21T14:52",
+            "theme": "chill 🧘",
+            "location": "Ho Chi Minh City",
+            "participants": [
+              "Ben",
+              "Lil Thanh",
+              "Cody",
+              "Big Thanh",
+              "Mason"
+            ],
+            "activities": [
+              "Dinner & Drinks at Shri Restaurant & Lounge",
+              "Rooftop Drinks at Broma: Not a Bar"
+            ],
+            "total_cost": 350000,
+            "phases": [
+              {
+                "activity": "Dinner & Drinks at Shri Restaurant & Lounge",
+                "coordinates": {
+                  "lat": 10.7826,
+                  "lng": 106.6881
+                },
+                "cost": 250000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "Centec Tower, 72-74 Nguyễn Thị Minh Khai, District 3, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7826,106.6881",
+                "zone": "D3"
+              },
+              {
+                "activity": "Rooftop Drinks at Broma: Not a Bar",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 100000,
+                "indicators": [
+                  "outdoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": false,
+                "isOutdoor": true,
+                "isVegetarianFriendly": true,
+                "location": "41 Nguyễn Huệ, Bến Nghé, District 1, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              }
+            ],
+            "fit_analysis": "Suits team members: Ben, Lil Thanh, Cody, Big Thanh, Mason",
+            "rating": 4,
+            "contribution_needed": 50000
+          },
+          {
+            "id": "92520bc9-2fc9-49e4-b862-e03b1b1535e9",
+            "created_at": "2025-06-21T13:16:52.659174",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "District 1, Ho Chi Minh City",
+            "participants": [
+              "Alice",
+              "Bob",
+              "Charlie"
+            ],
+            "activities": [
+              "Team Dinner",
+              "Karaoke Night",
+              "Bar Hopping"
+            ],
+            "total_cost": 450000,
+            "phases": [
+              {
+                "activity": "Team Dinner",
+                "location": "Pho 24, District 1",
+                "cost": 250000
+              },
+              {
+                "activity": "Karaoke Night",
+                "location": "Karaoke Bar, District 1",
+                "cost": 150000
+              },
+              {
+                "activity": "Bar Hopping",
+                "location": "Bui Vien Street, District 1",
+                "cost": 50000
+              }
+            ],
+            "fit_analysis": "Perfect for energetic team members who enjoy social activities",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": "9da83a84-b28e-42b1-b106-4dcddd10544b",
+            "created_at": "2025-06-21T13:46:24.789986",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "Ho Chi Minh City",
+            "participants": [
+              "Ben",
+              "Lil Thanh",
+              "Cody",
+              "Big Thanh",
+              "Mason"
+            ],
+            "activities": [
+              "Street Food Tour in Phu Nhuan",
+              "Board Games at The Workshop"
+            ],
+            "total_cost": 300000,
+            "phases": [
+              {
+                "activity": "Street Food Tour in Phu Nhuan",
+                "coordinates": {
+                  "lat": 10.7948,
+                  "lng": 106.6754
+                },
+                "cost": 150000,
+                "indicators": [
+                  "outdoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": false,
+                "isOutdoor": true,
+                "isVegetarianFriendly": true,
+                "location": "Phan Xích Long Street, Phu Nhuan District, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7948,106.6754",
+                "zone": "Phu Nhuan"
+              },
+              {
+                "activity": "Board Games at The Workshop",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "27 Ngô Đức Kế, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              }
+            ],
+            "fit_analysis": "Suits team members: Ben, Lil Thanh, Big Thanh, Cody, Mason",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": "67136a57-3650-4f2d-bb6e-8aafc11e4473",
+            "created_at": "2025-06-21T14:52:03.754976",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "Ho Chi Minh City",
+            "participants": [
+              "Ben",
+              "Lil Thanh",
+              "Cody",
+              "Big Thanh",
+              "Mason"
+            ],
+            "activities": [
+              "Bowling at Paragon Game Center",
+              "BBQ Dinner at Quán Nướng Cô Út"
+            ],
+            "total_cost": 300000,
+            "phases": [
+              {
+                "activity": "Bowling at Paragon Game Center",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "Crescent Mall, 101 Tôn Dật Tiên, Tân Phú, Quận 7, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              },
+              {
+                "activity": "BBQ Dinner at Quán Nướng Cô Út",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "302 Huỳnh Tấn Phát, Tân Thuận Đông, Quận 7, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              }
+            ],
+            "fit_analysis": "Suits team members: Cody, Lil Thanh, Big Thanh, Mason",
+            "rating": 4,
+            "contribution_needed": 0
+          },
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": "d8d81da4-3acf-4969-8afb-9c769b313d06",
+            "created_at": "2025-06-21T13:36:51.995239",
+            "date": "2024-01-25",
+            "theme": "outdoor 🌤",
+            "location": "District 7",
+            "participants": [
+              "Alice",
+              "Charlie",
+              "Eve"
+            ],
+            "activities": [
+              "Park Walk",
+              "Outdoor Dining"
+            ],
+            "total_cost": 300000,
+            "rating": 4,
+            "phases": [
+              {
+                "activity": "Park Walk",
+                "cost": 0
+              },
+              {
+                "activity": "Outdoor Dining",
+                "cost": 300000
+              }
+            ]
+          },
+          {
+            "id": "b4f52568-4476-4794-a7da-d46276a4ee97",
+            "created_at": "2025-06-21T13:36:51.992221",
+            "date": "2024-01-20",
+            "theme": "chill 🧘",
+            "location": "District 2",
+            "participants": [
+              "Alice",
+              "Bob",
+              "David"
+            ],
+            "activities": [
+              "Cafe Meeting",
+              "Board Games"
+            ],
+            "total_cost": 200000,
+            "rating": 5,
+            "phases": [
+              {
+                "activity": "Cafe Meeting",
+                "cost": 150000
+              },
+              {
+                "activity": "Board Games",
+                "cost": 50000
+              }
+            ]
+          }
+        ],
+        "total_events": 10,
+        "themes": [
+          "chill 🧘",
+          "fun 🎉",
+          "fun 🎉",
+          "fun 🎉",
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "outdoor 🌤",
+          "chill 🧘"
+        ],
+        "activities": [
+          "Dinner & Drinks at Shri Restaurant & Lounge",
+          "Rooftop Drinks at Broma: Not a Bar",
+          "Team Dinner",
+          "Karaoke Night",
+          "Bar Hopping",
+          "Street Food Tour in Phu Nhuan",
+          "Board Games at The Workshop",
+          "Bowling at Paragon Game Center",
+          "BBQ Dinner at Quán Nướng Cô Út",
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Park Walk",
+          "Outdoor Dining",
+          "Cafe Meeting",
+          "Board Games"
+        ],
+        "costs": [
+          350000,
+          450000,
+          300000,
+          300000,
+          900000,
+          1000000,
+          600000,
+          800000,
+          300000,
+          200000
+        ],
+        "ratings": [
+          4,
+          4.5,
+          4.5,
+          4,
+          3.0,
+          4,
+          5
+        ],
+        "locations": [
+          "Ho Chi Minh City",
+          "District 1, Ho Chi Minh City",
+          "Ho Chi Minh City",
+          "Ho Chi Minh City",
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 7",
+          "District 2"
+        ],
+        "participant_counts": [
+          5,
+          3,
+          5,
+          5,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Focus on 'Fun' and 'Chill' Themes",
+          "description": "Data shows a strong preference for 'Fun 🎉' and 'Chill 🧘/chill' themes. Future events should prioritize these themes, potentially alternating between them to cater to different moods and preferences. Consider sub-themes within these categories (e.g., 'Retro Fun', 'Relaxing Chill') for added variety.",
+          "confidence": 0.9,
+          "data_points": 7,
+          "impact": "high"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Explore Cost-Effective 'Fun' Activities",
+          "description": "While 'Fun' themes are popular, some events have varying costs (300,000 VND to 450,000 VND). Analyze the specific activities within each event to identify cost drivers. Explore alternative, equally engaging 'Fun' activities that maintain a lower average cost, closer to the 300,000 VND mark.  Negotiate group discounts or explore venues with happy hour deals.",
+          "confidence": 0.8,
+          "data_points": 3,
+          "impact": "medium"
+        },
+        {
+          "type": "activity_variety",
+          "title": "Increase Activity Variety and Repeat Successful Activities",
+          "description": "The data reveals a lack of recurring activities. While exploring new experiences is positive, consider repeating popular activities from past events (if any were particularly well-received).  Gather feedback through post-event surveys to gauge preferences and inform future activity selection.  This balances variety with proven enjoyment.",
+          "confidence": 0.75,
+          "data_points": 5,
+          "impact": "medium"
+        },
+        {
+          "type": "timing",
+          "title": "Analyze Timing and Frequency",
+          "description": "All recent events occurred within a short timeframe. Analyze team availability and preferences for event frequency (e.g., monthly, bi-monthly).  Consider different days of the week or times to maximize participation. Survey the team to gather insights on preferred timing.",
+          "confidence": 0.65,
+          "data_points": 4,
+          "impact": "low"
+        },
+        {
+          "type": "location",
+          "title": "Leverage Successful Locations and Explore New Options",
+          "description": "While exploring diverse locations is good, consider revisiting venues like Shri Restaurant & Lounge or Broma: Not a Bar if they received positive feedback.  Gather location preferences from team members and research new venues that align with preferred themes and budget. Consider factors like accessibility, ambiance, and capacity.",
+          "confidence": 0.7,
+          "data_points": 2,
+          "impact": "medium"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 10,
+        "most_popular_theme": "fun 🎉",
+        "average_cost": 520000.0,
+        "common_activities": [
+          "Dinner & Drinks at Shri Restaurant & Lounge",
+          "Rooftop Drinks at Broma: Not a Bar",
+          "Team Dinner",
+          "Karaoke Night",
+          "Bar Hopping"
+        ],
+        "rating_trends": "Excellent - High satisfaction with recent events",
+        "theme_distribution": {
+          "chill 🧘": 2,
+          "fun 🎉": 3,
+          "chill": 2,
+          "fun": 1,
+          "outdoor": 1,
+          "outdoor 🌤": 1
+        }
+      }
+    },
+    {
+      "timestamp": "2025-06-21T14:53:55.165930",
+      "analytics_data": {
+        "events": [
+          {
+            "id": "7a97704d-b961-4a13-9abd-508bc43e74b7",
+            "created_at": "2025-06-21T14:53:19.512538",
+            "date": "2025-06-21T14:52",
+            "theme": "chill 🧘",
+            "location": "Ho Chi Minh City",
+            "participants": [
+              "Ben",
+              "Lil Thanh",
+              "Cody",
+              "Big Thanh",
+              "Mason"
+            ],
+            "activities": [
+              "Dinner & Drinks at Shri Restaurant & Lounge",
+              "Rooftop Drinks at Broma: Not a Bar"
+            ],
+            "total_cost": 350000,
+            "phases": [
+              {
+                "activity": "Dinner & Drinks at Shri Restaurant & Lounge",
+                "coordinates": {
+                  "lat": 10.7826,
+                  "lng": 106.6881
+                },
+                "cost": 250000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "Centec Tower, 72-74 Nguyễn Thị Minh Khai, District 3, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7826,106.6881",
+                "zone": "D3"
+              },
+              {
+                "activity": "Rooftop Drinks at Broma: Not a Bar",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 100000,
+                "indicators": [
+                  "outdoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": false,
+                "isOutdoor": true,
+                "isVegetarianFriendly": true,
+                "location": "41 Nguyễn Huệ, Bến Nghé, District 1, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              }
+            ],
+            "fit_analysis": "Suits team members: Ben, Lil Thanh, Cody, Big Thanh, Mason",
+            "rating": 4,
+            "contribution_needed": 50000
+          },
+          {
+            "id": "92520bc9-2fc9-49e4-b862-e03b1b1535e9",
+            "created_at": "2025-06-21T13:16:52.659174",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "District 1, Ho Chi Minh City",
+            "participants": [
+              "Alice",
+              "Bob",
+              "Charlie"
+            ],
+            "activities": [
+              "Team Dinner",
+              "Karaoke Night",
+              "Bar Hopping"
+            ],
+            "total_cost": 450000,
+            "phases": [
+              {
+                "activity": "Team Dinner",
+                "location": "Pho 24, District 1",
+                "cost": 250000
+              },
+              {
+                "activity": "Karaoke Night",
+                "location": "Karaoke Bar, District 1",
+                "cost": 150000
+              },
+              {
+                "activity": "Bar Hopping",
+                "location": "Bui Vien Street, District 1",
+                "cost": 50000
+              }
+            ],
+            "fit_analysis": "Perfect for energetic team members who enjoy social activities",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": "9da83a84-b28e-42b1-b106-4dcddd10544b",
+            "created_at": "2025-06-21T13:46:24.789986",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "Ho Chi Minh City",
+            "participants": [
+              "Ben",
+              "Lil Thanh",
+              "Cody",
+              "Big Thanh",
+              "Mason"
+            ],
+            "activities": [
+              "Street Food Tour in Phu Nhuan",
+              "Board Games at The Workshop"
+            ],
+            "total_cost": 300000,
+            "phases": [
+              {
+                "activity": "Street Food Tour in Phu Nhuan",
+                "coordinates": {
+                  "lat": 10.7948,
+                  "lng": 106.6754
+                },
+                "cost": 150000,
+                "indicators": [
+                  "outdoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": false,
+                "isOutdoor": true,
+                "isVegetarianFriendly": true,
+                "location": "Phan Xích Long Street, Phu Nhuan District, Ho Chi Minh City, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7948,106.6754",
+                "zone": "Phu Nhuan"
+              },
+              {
+                "activity": "Board Games at The Workshop",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "27 Ngô Đức Kế, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              }
+            ],
+            "fit_analysis": "Suits team members: Ben, Lil Thanh, Big Thanh, Cody, Mason",
+            "rating": 4.5,
+            "contribution_needed": 0
+          },
+          {
+            "id": "67136a57-3650-4f2d-bb6e-8aafc11e4473",
+            "created_at": "2025-06-21T14:52:03.754976",
+            "date": "2025-06-21",
+            "theme": "fun 🎉",
+            "location": "Ho Chi Minh City",
+            "participants": [
+              "Ben",
+              "Lil Thanh",
+              "Cody",
+              "Big Thanh",
+              "Mason"
+            ],
+            "activities": [
+              "Bowling at Paragon Game Center",
+              "BBQ Dinner at Quán Nướng Cô Út"
+            ],
+            "total_cost": 300000,
+            "phases": [
+              {
+                "activity": "Bowling at Paragon Game Center",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "Crescent Mall, 101 Tôn Dật Tiên, Tân Phú, Quận 7, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              },
+              {
+                "activity": "BBQ Dinner at Quán Nướng Cô Út",
+                "coordinates": {
+                  "lat": 10.7769,
+                  "lng": 106.7009
+                },
+                "cost": 150000,
+                "indicators": [
+                  "indoor",
+                  "vegetarian-friendly",
+                  "alcohol-friendly"
+                ],
+                "isAlcoholFriendly": true,
+                "isIndoor": true,
+                "isOutdoor": false,
+                "isVegetarianFriendly": true,
+                "location": "302 Huỳnh Tấn Phát, Tân Thuận Đông, Quận 7, Thành phố Hồ Chí Minh, District 1, Ho Chi Minh City, Vietnam",
+                "location_valid": true,
+                "map_link": "https://www.google.com/maps?q=10.7769,106.7009",
+                "zone": "D1"
+              }
+            ],
+            "fit_analysis": "Suits team members: Cody, Lil Thanh, Big Thanh, Mason",
+            "rating": 4,
+            "contribution_needed": 0
+          },
+          {
+            "id": 5,
+            "date": "2024-05-12",
+            "theme": "chill",
+            "location": "District 2",
+            "participants": [
+              "Ben",
+              "Emma",
+              "Sophie",
+              "Lisa"
+            ],
+            "activities": [
+              "Yoga class",
+              "Healthy dinner"
+            ],
+            "total_cost": 900000
+          },
+          {
+            "id": 4,
+            "date": "2024-04-05",
+            "theme": "fun",
+            "location": "Binh Thanh",
+            "participants": [
+              "Sarah",
+              "David",
+              "Alex",
+              "Sophie"
+            ],
+            "activities": [
+              "Escape room",
+              "Bowling"
+            ],
+            "total_cost": 1000000,
+            "member_ratings": [
+              {
+                "member_name": "David",
+                "rating": 3,
+                "feedback": "",
+                "categories": {
+                  "fun": 4,
+                  "organization": 2,
+                  "value": 3,
+                  "overall": 3
+                },
+                "submitted_at": "2025-06-21T03:39:02.486Z"
+              }
+            ],
+            "ai_rating": 3,
+            "rating": 3.0
+          },
+          {
+            "id": 3,
+            "date": "2024-03-10",
+            "theme": "outdoor",
+            "location": "District 7",
+            "participants": [
+              "Mike",
+              "David",
+              "Emma",
+              "Alex"
+            ],
+            "activities": [
+              "Park walk",
+              "Street food"
+            ],
+            "total_cost": 600000
+          },
+          {
+            "id": 2,
+            "date": "2024-02-20",
+            "theme": "chill",
+            "location": "District 3",
+            "participants": [
+              "Ben",
+              "Lisa",
+              "Emma",
+              "Sophie"
+            ],
+            "activities": [
+              "Cafe hopping",
+              "Board games"
+            ],
+            "total_cost": 800000
+          },
+          {
+            "id": "d8d81da4-3acf-4969-8afb-9c769b313d06",
+            "created_at": "2025-06-21T13:36:51.995239",
+            "date": "2024-01-25",
+            "theme": "outdoor 🌤",
+            "location": "District 7",
+            "participants": [
+              "Alice",
+              "Charlie",
+              "Eve"
+            ],
+            "activities": [
+              "Park Walk",
+              "Outdoor Dining"
+            ],
+            "total_cost": 300000,
+            "rating": 4,
+            "phases": [
+              {
+                "activity": "Park Walk",
+                "cost": 0
+              },
+              {
+                "activity": "Outdoor Dining",
+                "cost": 300000
+              }
+            ]
+          },
+          {
+            "id": "b4f52568-4476-4794-a7da-d46276a4ee97",
+            "created_at": "2025-06-21T13:36:51.992221",
+            "date": "2024-01-20",
+            "theme": "chill 🧘",
+            "location": "District 2",
+            "participants": [
+              "Alice",
+              "Bob",
+              "David"
+            ],
+            "activities": [
+              "Cafe Meeting",
+              "Board Games"
+            ],
+            "total_cost": 200000,
+            "rating": 5,
+            "phases": [
+              {
+                "activity": "Cafe Meeting",
+                "cost": 150000
+              },
+              {
+                "activity": "Board Games",
+                "cost": 50000
+              }
+            ]
+          }
+        ],
+        "total_events": 10,
+        "themes": [
+          "chill 🧘",
+          "fun 🎉",
+          "fun 🎉",
+          "fun 🎉",
+          "chill",
+          "fun",
+          "outdoor",
+          "chill",
+          "outdoor 🌤",
+          "chill 🧘"
+        ],
+        "activities": [
+          "Dinner & Drinks at Shri Restaurant & Lounge",
+          "Rooftop Drinks at Broma: Not a Bar",
+          "Team Dinner",
+          "Karaoke Night",
+          "Bar Hopping",
+          "Street Food Tour in Phu Nhuan",
+          "Board Games at The Workshop",
+          "Bowling at Paragon Game Center",
+          "BBQ Dinner at Quán Nướng Cô Út",
+          "Yoga class",
+          "Healthy dinner",
+          "Escape room",
+          "Bowling",
+          "Park walk",
+          "Street food",
+          "Cafe hopping",
+          "Board games",
+          "Park Walk",
+          "Outdoor Dining",
+          "Cafe Meeting",
+          "Board Games"
+        ],
+        "costs": [
+          350000,
+          450000,
+          300000,
+          300000,
+          900000,
+          1000000,
+          600000,
+          800000,
+          300000,
+          200000
+        ],
+        "ratings": [
+          4,
+          4.5,
+          4.5,
+          4,
+          3.0,
+          4,
+          5
+        ],
+        "locations": [
+          "Ho Chi Minh City",
+          "District 1, Ho Chi Minh City",
+          "Ho Chi Minh City",
+          "Ho Chi Minh City",
+          "District 2",
+          "Binh Thanh",
+          "District 7",
+          "District 3",
+          "District 7",
+          "District 2"
+        ],
+        "participant_counts": [
+          5,
+          3,
+          5,
+          5,
+          4,
+          4,
+          4,
+          4,
+          3,
+          3
+        ]
+      },
+      "suggestions": [
+        {
+          "type": "theme_preference",
+          "title": "Focus on 'Fun' and 'Chill' Themes with Variation",
+          "description": "Data shows a strong preference for 'Fun' and 'Chill' themes.  To maximize engagement, alternate between these two themes and introduce variations within them.  For 'Fun', consider themes like 'Games Night', 'Outdoor Adventure', or 'Themed Party'. For 'Chill', explore options like 'Cooking Class', 'Pottery Workshop', or 'Board Game Cafe'. This caters to existing preferences while adding novelty.",
+          "confidence": 0.9,
+          "data_points": 7,
+          "impact": "high"
+        },
+        {
+          "type": "cost_optimization",
+          "title": "Optimize Costs by Exploring Free/Low-Cost Activities and Negotiating Group Discounts",
+          "description": "The average cost of 520,000 VND per event can be optimized. Explore free activities like picnics in parks, hiking, or team sports. For paid activities, negotiate group discounts with venues or consider less expensive options like happy hour deals or local restaurants instead of high-end lounges.  Set a budget range for events and explore options within that range before committing.",
+          "confidence": 0.85,
+          "data_points": 10,
+          "impact": "medium"
+        },
+        {
+          "type": "activity_variety",
+          "title": "Increase Activity Variety based on Theme",
+          "description": "While some events had multiple activities, data suggests a lack of consistent variety.  Link activities directly to the chosen theme. For 'Fun' themes, incorporate interactive games, friendly competitions, or creative challenges. 'Chill' themes could include relaxing activities like yoga, meditation, or a movie night.  Solicit team feedback on activity preferences before planning.",
+          "confidence": 0.8,
+          "data_points": 5,
+          "impact": "medium"
+        },
+        {
+          "type": "timing",
+          "title": "Gather Feedback on Preferred Timing and Frequency",
+          "description": "All recent events occurred on the same date, suggesting a potential scheduling bottleneck.  Survey the team to understand preferred days of the week and times for events.  Consider alternating between weekday evenings and weekend activities to accommodate different schedules. Also, gauge preferred frequency of events (e.g., monthly, bi-monthly) to avoid event fatigue.",
+          "confidence": 0.75,
+          "data_points": 4,
+          "impact": "low"
+        },
+        {
+          "type": "location",
+          "title": "Diversify Locations and Consider Accessibility",
+          "description": "The data shows a concentration of events at restaurants and bars. Explore different locations like parks, museums, art galleries, or even team members' homes for a more diverse experience.  Consider the accessibility of locations for all team members, including those with disabilities or those relying on public transport. Rotating locations also allows for exploring different parts of the city and catering to diverse interests.",
+          "confidence": 0.7,
+          "data_points": 3,
+          "impact": "low"
+        }
+      ],
+      "analytics_summary": {
+        "total_events": 10,
+        "most_popular_theme": "fun 🎉",
+        "average_cost": 520000.0,
+        "common_activities": [
+          "Dinner & Drinks at Shri Restaurant & Lounge",
+          "Rooftop Drinks at Broma: Not a Bar",
+          "Team Dinner",
+          "Karaoke Night",
+          "Bar Hopping"
+        ],
+        "rating_trends": "Excellent - High satisfaction with recent events",
+        "theme_distribution": {
+          "chill 🧘": 2,
+          "fun 🎉": 3,
+          "chill": 2,
+          "fun": 1,
+          "outdoor": 1,
+          "outdoor 🌤": 1
         }
       }
     }
