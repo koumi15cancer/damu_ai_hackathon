@@ -5,23 +5,26 @@ This document describes the enhanced AI integration system that supports multipl
 ## Features
 
 ### 🔄 Multi-Provider Support
+
 - **OpenAI GPT** (GPT-4, GPT-4 Turbo, GPT-3.5 Turbo, GPT-4o)
-- **Anthropic Claude** (Claude 3 Sonnet, Claude 3 Haiku, Claude 3 Opus)
 - **Google Gemini** (Gemini 1.5 Pro, Gemini 1.5 Flash, Gemini 1.0 Pro)
 
 ### 📊 Performance Monitoring
+
 - Real-time response time tracking
 - Success/failure rate monitoring
 - Automatic performance-based provider selection
 - Historical performance analytics
 
 ### 🧪 A/B Testing
+
 - Multi-provider A/B testing
 - Configurable traffic splitting
 - Performance comparison
 - Result tracking and analysis
 
 ### 🎯 Smart Provider Selection
+
 - Performance-based auto-selection
 - Use case-specific recommendations
 - Cost optimization
@@ -37,15 +40,12 @@ Add the following to your `.env` file:
 # OpenAI
 OPENAI_API_KEY=your_openai_api_key
 
-# Anthropic
-ANTHROPIC_API_KEY=your_anthropic_api_key
-
 # Google AI
 GOOGLE_AI_API_KEY=your_google_ai_api_key
 
 # AI Configuration (optional)
 DEFAULT_AI_PROVIDER=openai
-FALLBACK_AI_PROVIDER=anthropic
+FALLBACK_AI_PROVIDER=google
 ```
 
 ### 2. Install Dependencies
@@ -59,14 +59,16 @@ pip install -r requirements.txt
 ### Provider Management
 
 #### Get Available Providers
+
 ```http
 GET /api/ai/providers
 ```
 
 Response:
+
 ```json
 {
-  "available_providers": ["openai", "anthropic", "google"],
+  "available_providers": ["openai", "google"],
   "current_provider": "openai",
   "providers_info": {
     "openai": {
@@ -79,23 +81,26 @@ Response:
 ```
 
 #### Switch Provider
+
 ```http
 POST /api/ai/switch-provider
 Content-Type: application/json
 
 {
-  "provider": "anthropic"
+  "provider": "google"
 }
 ```
 
 ### Performance Monitoring
 
 #### Get Performance Statistics
+
 ```http
 GET /api/ai/performance?time_window=24
 ```
 
 Response:
+
 ```json
 {
   "performance_stats": {
@@ -114,17 +119,19 @@ Response:
 ```
 
 #### Get Model Recommendations
+
 ```http
 GET /api/ai/recommendations?use_case=creative
 ```
 
 Response:
+
 ```json
 {
   "recommendations": {
     "fastest": "google",
     "most_reliable": "openai",
-    "cost_effective": "anthropic",
+    "cost_effective": "google",
     "best_for_use_case": "openai"
   },
   "use_case": "creative",
@@ -135,57 +142,54 @@ Response:
 ### A/B Testing
 
 #### Setup A/B Test
+
 ```http
 POST /api/ai/ab-test/setup
 Content-Type: application/json
 
 {
   "test_name": "suggestion_quality_test",
-  "providers": ["openai", "anthropic", "google"],
+  "providers": ["openai", "google"],
   "traffic_split": {
-    "openai": 0.4,
-    "anthropic": 0.3,
-    "google": 0.3
+    "openai": 0.6,
+    "google": 0.4
   }
 }
 ```
 
 #### Get A/B Test Results
+
 ```http
 GET /api/ai/ab-test/results/suggestion_quality_test
 ```
 
 Response:
+
 ```json
 {
   "test_name": "suggestion_quality_test",
   "start_time": "2024-01-15T10:30:00",
   "traffic_split": {
-    "openai": 0.4,
-    "anthropic": 0.3,
-    "google": 0.3
+    "openai": 0.6,
+    "google": 0.4
   },
   "results": {
     "openai": {
-      "requests": 40,
-      "successes": 38,
-      "success_rate": 0.95
-    },
-    "anthropic": {
-      "requests": 30,
-      "successes": 29,
+      "requests": 60,
+      "successes": 58,
       "success_rate": 0.967
     },
     "google": {
-      "requests": 30,
-      "successes": 27,
-      "success_rate": 0.9
+      "requests": 40,
+      "successes": 37,
+      "success_rate": 0.925
     }
   }
 }
 ```
 
 #### Get A/B Test Provider
+
 ```http
 GET /api/ai/ab-test/provider/suggestion_quality_test
 ```
@@ -193,6 +197,7 @@ GET /api/ai/ab-test/provider/suggestion_quality_test
 ### Testing
 
 #### Test AI Provider
+
 ```http
 POST /api/ai/test
 Content-Type: application/json
@@ -203,6 +208,7 @@ Content-Type: application/json
 ```
 
 Response:
+
 ```json
 {
   "success": true,
@@ -215,6 +221,7 @@ Response:
 ### Enhanced Suggestions with A/B Testing
 
 #### Get Suggestions with A/B Test
+
 ```http
 POST /api/suggestions
 Content-Type: application/json
@@ -234,17 +241,12 @@ Content-Type: application/json
 ```python
 AI_CONFIG = {
     'default_provider': 'openai',
-    'fallback_provider': 'anthropic',
+    'fallback_provider': 'google',
     'models': {
         'openai': {
             'default': 'gpt-4',
             'fallback': 'gpt-3.5-turbo',
             'available': ['gpt-4', 'gpt-4-turbo', 'gpt-3.5-turbo', 'gpt-4o']
-        },
-        'anthropic': {
-            'default': 'claude-3-sonnet-20240229',
-            'fallback': 'claude-3-haiku-20240307',
-            'available': ['claude-3-sonnet-20240229', 'claude-3-haiku-20240307', 'claude-3-opus-20240229']
         },
         'google': {
             'default': 'gemini-1.5-pro',
@@ -275,7 +277,7 @@ providers = ai_service.get_available_providers()
 print(f"Available providers: {providers}")
 
 # Switch to specific provider
-ai_service.switch_provider('anthropic')
+ai_service.switch_provider('google')
 
 # Get performance stats
 stats = ai_service.get_performance_stats(time_window_hours=24)
@@ -284,8 +286,8 @@ print(f"Performance stats: {stats}")
 # Setup A/B test
 ai_service.setup_ab_test(
     test_name="quality_test",
-    providers=["openai", "anthropic"],
-    traffic_split={"openai": 0.5, "anthropic": 0.5}
+    providers=["openai", "google"],
+    traffic_split={"openai": 0.5, "google": 0.5}
 )
 
 # Get A/B test provider
@@ -304,7 +306,7 @@ const { available_providers, current_provider } = await response.json();
 await fetch('/api/ai/switch-provider', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ provider: 'anthropic' })
+  body: JSON.stringify({ provider: 'google' })
 });
 
 // Get suggestions with A/B testing
@@ -325,6 +327,7 @@ const suggestions = await fetch('/api/suggestions', {
 ### Performance-Based Selection
 
 The system automatically selects the best performing provider based on:
+
 - Response time
 - Success rate
 - Recent performance (configurable time window)
@@ -332,6 +335,7 @@ The system automatically selects the best performing provider based on:
 ### Cost Optimization
 
 The system can recommend cost-effective models based on:
+
 - Per-request cost estimates
 - Performance requirements
 - Use case requirements
@@ -339,8 +343,9 @@ The system can recommend cost-effective models based on:
 ### Use Case Recommendations
 
 Different providers are recommended for different use cases:
+
 - **Creative tasks**: OpenAI GPT
-- **Analytical tasks**: Anthropic Claude
+- **Analytical tasks**: OpenAI GPT
 - **Multimodal tasks**: Google Gemini
 
 ## Monitoring and Analytics
@@ -348,6 +353,7 @@ Different providers are recommended for different use cases:
 ### Performance Tracking
 
 The system tracks:
+
 - Response times
 - Success/failure rates
 - Error messages
@@ -381,6 +387,7 @@ print(f"Data exported to: {filename}")
 ### Debug Mode
 
 Enable debug logging by setting the environment variable:
+
 ```bash
 export FLASK_DEBUG=1
 ```
@@ -399,4 +406,4 @@ export FLASK_DEBUG=1
 - [ ] Custom model fine-tuning support
 - [ ] Multi-region provider support
 - [ ] Advanced A/B testing with statistical significance
-- [ ] Integration with monitoring tools (Prometheus, Grafana) 
+- [ ] Integration with monitoring tools (Prometheus, Grafana)

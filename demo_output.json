@@ -1,0 +1,230 @@
+{
+  "plans": [
+    {
+      "id": "plan_1",
+      "title": "District 1 Food & Karaoke Adventure",
+      "theme": "fun",
+      "phases": [
+        {
+          "name": "Hotpot Dinner at Pho 24",
+          "description": "Authentic Vietnamese hotpot experience with fresh ingredients and multiple soup bases",
+          "address": "123 Nguyen Hue, District 1, Ho Chi Minh City",
+          "googleMapsLink": "https://maps.google.com/?q=123+Nguyen+Hue+District+1",
+          "cost": 250000,
+          "isIndoor": true,
+          "isOutdoor": false,
+          "isVegetarianFriendly": true,
+          "isAlcoholFriendly": false,
+          "travelTime": null,
+          "distance": null
+        },
+        {
+          "name": "Karaoke at Golden Dragon",
+          "description": "Private karaoke rooms with great sound system and song selection",
+          "address": "456 Le Loi, District 1, Ho Chi Minh City",
+          "googleMapsLink": "https://maps.google.com/?q=456+Le+Loi+District+1",
+          "cost": 150000,
+          "isIndoor": true,
+          "isOutdoor": false,
+          "isVegetarianFriendly": false,
+          "isAlcoholFriendly": true,
+          "travelTime": 10,
+          "distance": 1.2
+        },
+        {
+          "name": "Rooftop Bar at Saigon Sky",
+          "description": "Stunning city views with craft cocktails and live music",
+          "address": "789 Dong Khoi, District 1, Ho Chi Minh City",
+          "googleMapsLink": "https://maps.google.com/?q=789+Dong+Khoi+District+1",
+          "cost": 100000,
+          "isIndoor": true,
+          "isOutdoor": true,
+          "isVegetarianFriendly": false,
+          "isAlcoholFriendly": true,
+          "travelTime": 8,
+          "distance": 0.8
+        }
+      ],
+      "totalCost": 500000,
+      "bestFor": ["Big Thanh", "Khang", "Roy", "Seven"],
+      "rating": 4,
+      "fitAnalysis": "Perfect for energetic team members who love karaoke and nightlife. The multi-phase approach allows for natural progression from dinner to entertainment.",
+      "optionalContributionsNeeded": true,
+      "longTermStrategy": "Rotate to chill theme next month to balance team preferences and give quieter members a chance to shine."
+    },
+    {
+      "id": "plan_2",
+      "title": "Cafe Hopping & Chill Vibes",
+      "theme": "chill",
+      "phases": [
+        {
+          "name": "Coffee & Chat at The Workshop",
+          "description": "Specialty coffee in a relaxed atmosphere with great conversation spaces",
+          "address": "27 Ngo Duc Ke, District 1, Ho Chi Minh City",
+          "googleMapsLink": "https://maps.google.com/?q=27+Ngo+Duc+Ke+District+1",
+          "cost": 120000,
+          "isIndoor": true,
+          "isOutdoor": false,
+          "isVegetarianFriendly": true,
+          "isAlcoholFriendly": false,
+          "travelTime": null,
+          "distance": null
+        },
+        {
+          "name": "Dinner at Hum Vegetarian",
+          "description": "Delicious vegetarian Vietnamese cuisine in a peaceful setting",
+          "address": "32 Vo Van Tan, District 3, Ho Chi Minh City",
+          "googleMapsLink": "https://maps.google.com/?q=32+Vo+Van+Tan+District+3",
+          "cost": 180000,
+          "isIndoor": true,
+          "isOutdoor": false,
+          "isVegetarianFriendly": true,
+          "isAlcoholFriendly": false,
+          "travelTime": 12,
+          "distance": 1.5
+        }
+      ],
+      "totalCost": 300000,
+      "bestFor": ["Ben", "Hoa", "Lil Thanh", "Mason"],
+      "rating": 5,
+      "fitAnalysis": "Ideal for chill team members who prefer quiet, meaningful conversations and vegetarian-friendly options. The cafe-hopping concept appeals to Ben and Lil Thanh's preferences.",
+      "optionalContributionsNeeded": false,
+      "longTermStrategy": "Next month focus on outdoor activities to include nature lovers and provide variety for the team."
+    },
+    {
+      "id": "plan_3",
+      "title": "Outdoor BBQ & Games",
+      "theme": "outdoor",
+      "phases": [
+        {
+          "name": "BBQ at Saigon Outcast",
+          "description": "Outdoor BBQ with live music, games, and plenty of space for team activities",
+          "address": "188/1 Nguyen Van Huong, District 2, Ho Chi Minh City",
+          "googleMapsLink": "https://maps.google.com/?q=188+Nguyen+Van+Huong+District+2",
+          "cost": 300000,
+          "isIndoor": false,
+          "isOutdoor": true,
+          "isVegetarianFriendly": true,
+          "isAlcoholFriendly": true,
+          "travelTime": null,
+          "distance": null
+        }
+      ],
+      "totalCost": 300000,
+      "bestFor": ["Cody", "Seven", "Khang", "Huy"],
+      "rating": 4,
+      "fitAnalysis": "Great for energetic members who enjoy outdoor activities and socializing. The BBQ format appeals to meat-lovers like Cody and Khang, while the outdoor setting provides fresh air and space for games.",
+      "optionalContributionsNeeded": false,
+      "longTermStrategy": "Consider indoor game night next month for variety and to accommodate different weather conditions."
+    },
+    {
+      "id": "plan_4",
+      "title": "Gaming & Movie Night",
+      "theme": "fun",
+      "phases": [
+        {
+          "name": "Board Games at The Board Game Cafe",
+          "description": "Wide selection of board games with food and drinks in a cozy atmosphere",
+          "address": "15 Le Thanh Ton, District 1, Ho Chi Minh City",
+          "googleMapsLink": "https://maps.google.com/?q=15+Le+Thanh+Ton+District+1",
+          "cost": 200000,
+          "isIndoor": true,
+          "isOutdoor": false,
+          "isVegetarianFriendly": true,
+          "isAlcoholFriendly": true,
+          "travelTime": null,
+          "distance": null
+        },
+        {
+          "name": "Movie Night at CGV Cinema",
+          "description": "Latest blockbuster movie with comfortable seating and snacks",
+          "address": "65 Le Loi, District 1, Ho Chi Minh City",
+          "googleMapsLink": "https://maps.google.com/?q=65+Le+Loi+District+1",
+          "cost": 150000,
+          "isIndoor": true,
+          "isOutdoor": false,
+          "isVegetarianFriendly": true,
+          "isAlcoholFriendly": false,
+          "travelTime": 5,
+          "distance": 0.5
+        }
+      ],
+      "totalCost": 350000,
+      "bestFor": ["Mason", "Huy", "Roy"],
+      "rating": 4,
+      "fitAnalysis": "Perfect for team members who enjoy games and movies. This plan combines Mason's love for games with Huy's movie night preference, creating a balanced entertainment experience.",
+      "optionalContributionsNeeded": false,
+      "longTermStrategy": "This gaming theme can be rotated with more active outdoor events to maintain team engagement variety."
+    },
+    {
+      "id": "plan_5",
+      "title": "Rooftop Dinner & Drinks",
+      "theme": "chill",
+      "phases": [
+        {
+          "name": "Dinner at Chill Skybar",
+          "description": "Elegant rooftop dining with panoramic city views and international cuisine",
+          "address": "76A Le Lai, District 1, Ho Chi Minh City",
+          "googleMapsLink": "https://maps.google.com/?q=76A+Le+Lai+District+1",
+          "cost": 400000,
+          "isIndoor": true,
+          "isOutdoor": true,
+          "isVegetarianFriendly": true,
+          "isAlcoholFriendly": true,
+          "travelTime": null,
+          "distance": null
+        }
+      ],
+      "totalCost": 400000,
+      "bestFor": ["Seven", "Big Thanh", "Hoa"],
+      "rating": 3,
+      "fitAnalysis": "Appeals to Seven's rooftop bar preference and provides a sophisticated dining experience. However, the higher cost may require optional contributions from team members.",
+      "optionalContributionsNeeded": true,
+      "longTermStrategy": "Use this premium option sparingly, perhaps quarterly, to maintain budget balance while providing special experiences."
+    }
+  ],
+  "user_preferences": {
+    "monthly_theme": "fun",
+    "optional_contribution": 100000,
+    "available_members": ["Ben", "Cody", "Big Thanh", "Khang", "Seven"],
+    "preferred_date": "2024-01-15",
+    "preferred_location_zone": "District 1"
+  },
+  "team_profiles": [
+    {
+      "id": 1,
+      "name": "Ben",
+      "location": "Mizuki Park, Binh Chanh",
+      "preferences": ["Vegetarian", "Chill places", "Cafe-hopping"],
+      "vibe": "Chill"
+    },
+    {
+      "id": 2,
+      "name": "Cody",
+      "location": "Huynh Tan Phat, D7",
+      "preferences": ["Meat-lover", "BBQ", "Bar/beer club", "Karaoke"],
+      "vibe": "Energetic"
+    },
+    {
+      "id": 4,
+      "name": "Big Thanh",
+      "location": "D1",
+      "preferences": ["Hotpot", "Karaoke", "Bar"],
+      "vibe": "Energetic"
+    },
+    {
+      "id": 7,
+      "name": "Khang",
+      "location": "Tan Phu",
+      "preferences": ["BBQ", "Karaoke", "Bar"],
+      "vibe": "Energetic"
+    },
+    {
+      "id": 9,
+      "name": "Seven",
+      "location": "Phu Nhuan",
+      "preferences": ["BBQ", "Rooftop bar", "Dinner & chat"],
+      "vibe": "Energetic"
+    }
+  ]
+}

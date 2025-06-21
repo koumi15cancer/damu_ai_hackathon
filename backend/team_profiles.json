@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Ben",
+    "location": "Mizuki Park, Binh Chanh",
+    "preferences": ["Vegetarian", "Chill places", "Cafe-hopping"],
+    "vibe": "Chill"
+  },
+  {
+    "id": 2,
+    "name": "Cody",
+    "location": "Huynh Tan Phat, D7",
+    "preferences": ["Meat-lover", "BBQ", "Bar/beer club", "Karaoke"],
+    "vibe": "Energetic"
+  },
+  {
+    "id": 3,
+    "name": "Lil Thanh",
+    "location": "Le Duc Tho, Go Vap",
+    "preferences": ["Hotpot", "Outdoor walks", "Chill cafes"],
+    "vibe": "Chill"
+  },
+  {
+    "id": 4,
+    "name": "Big Thanh",
+    "location": "D1",
+    "preferences": ["Hotpot", "Karaoke", "Bar"],
+    "vibe": "Energetic"
+  },
+  {
+    "id": 5,
+    "name": "Mason",
+    "location": "D3",
+    "preferences": ["Games", "Movie night", "Office snacks"],
+    "vibe": "Mixed"
+  },
+  {
+    "id": 6,
+    "name": "Hoa",
+    "location": "D10",
+    "preferences": ["Vegetarian", "Asian food", "Dinner & chat"],
+    "vibe": "Chill"
+  },
+  {
+    "id": 7,
+    "name": "Khang",
+    "location": "Tan Phu",
+    "preferences": ["BBQ", "Karaoke", "Bar"],
+    "vibe": "Energetic"
+  },
+  {
+    "id": 8,
+    "name": "Huy",
+    "location": "Binh Thanh",
+    "preferences": ["Games", "Cafe-hopping", "Movie night"],
+    "vibe": "Mixed"
+  },
+  {
+    "id": 9,
+    "name": "Seven",
+    "location": "Phu Nhuan",
+    "preferences": ["BBQ", "Rooftop bar", "Dinner & chat"],
+    "vibe": "Energetic"
+  },
+  {
+    "id": 10,
+    "name": "Roy",
+    "location": "D5",
+    "preferences": ["Hotpot", "Karaoke", "Bar", "Games"],
+    "vibe": "Energetic"
+  }
+]
